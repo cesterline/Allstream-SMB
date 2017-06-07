@@ -1,0 +1,357 @@
+<section class="dashboard-summary-container">
+    <div class="container">
+        <div class="info-caption-bar-wrap"> 
+            <div class="info-caption-bar scroll-fix" fix-scroll-elem="fix-elem" data-offset="-90">
+              <div class="wrap-fix-content flex-align no-padd-top-xs">  
+                <div class="left-flex-align">
+                    <h3 class="caption">Summary Of Services</h3>
+                </div>
+              </div>     
+            </div>
+        </div>
+       
+        <div class="empty-lg-40 empty-md-40 empty-sm-0 empty-xs-0"></div> 
+        <div class="accordion table-format green-style">
+            <div class="accordion-header">
+                <a class="accordion-link" ui-sref="app.service({path:'GigE Internet - Fixed 1000 Mbps', background: 'green'})">
+                    GigE Internet - Fixed 1000 Mbps
+                </a>
+                <div class="links-part">
+                    <a ui-sref="app.service({path:'GigE Internet - Fixed 1000 Mbps', scrollTo: '#enquipment', background: 'green'})">
+                        <span>Display enquipment</span>
+                        <img src="img/service-icon-1.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'GigE Internet - Fixed 1000 Mbps', scrollTo: '#guide', background: 'green'})">
+                        <span>User guide</span>
+                        <img src="img/service-icon-2.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'GigE Internet - Fixed 1000 Mbps', scrollTo: '#configuration', background: 'green'})">
+                        <span>Configuration</span>
+                        <img src="img/service-icon-3.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'GigE Internet - Fixed 1000 Mbps', background: 'green'})">
+                        <span>details</span>
+                        <img src="img/service-icon-4.png" alt="icon">
+                    </a>
+                </div>
+                <span class="accordion-btn" ng-class="{active: $ctrl.box5}" ng-click="$ctrl.box5=!$ctrl.box5; $ctrl.box6 = true; $ctrl.box7 = true;"></span>
+            </div>
+            <div class="accordion-content" data-slide-toggle="$ctrl.box5">
+                <div class="row table-row tables-row service-table-row bg-type">
+                    <div class="col-md-6">
+                        <table class="table-type_2 table-type_3">
+                            <tbody><tr>
+                                <td>System Number</td>
+                                <td class="number-format">16999-7.2</td>
+                            </tr>
+                            <tr>
+                                <td>Software version</td>
+                                <td class="number-format">F8.2</td>
+                            </tr>
+                            <tr>
+                                <td>System status</td>
+                                <td class="active number-format">Active</td>
+                            </tr>
+                            <tr>
+                                <td>Invoice frequency</td>
+                                <td class="number-format">1/month</td>
+                            </tr>
+                            <tr>
+                                <td>Contract number</td>
+                                <td class="number-format">16-106585</td>
+                            </tr>
+                            <tr>
+                                <td>Contract term</td>
+                                <td class="number-format"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table-type_2 table-type_3">
+                            <tbody><tr>
+                                <td>Lease type</td>
+                                <td class="number-format">None</td>
+                            </tr>
+                            <tr>
+                                <td>Serial number</td>
+                                <td class="expired number-format">39B20899</td>
+                            </tr>
+                            <tr>
+                                <td>IMAC address</td>
+                                <td>00-50-60-81-0E-D2</td>
+                            </tr>
+                            <tr>
+                                <td>IP address</td>
+                                <td class="number-format">10.1.180.11</td>
+                            </tr>
+                            <tr>
+                                <td>Alias</td>
+                                <td class="number-format">5134669</td>
+                            </tr>
+                            <tr>
+                                <td>Gatekeeper IP address</td>
+                                <td class="number-format">10.1.1.207 </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion table-format orange-style">
+            <div class="accordion-header">
+                <a class="accordion-link" ui-sref="app.service({path:'E100 Internet - Burstable', background: 'orange', })">
+                    E100 Internet - Burstable
+                </a>
+                <div class="links-part">
+                    <a ui-sref="app.service({path:'E100 Internet - Burstable', scrollTo: '#enquipment', background: 'orange'})">
+                        <span>Display enquipment</span>
+                        <img src="img/service-icon-1.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'E100 Internet - Burstable', scrollTo: '#guide', background: 'orange'})">
+                        <span>User guide</span>
+                        <img src="img/service-icon-2.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'E100 Internet - Burstable', scrollTo: '#configuration', background: 'orange'})">
+                        <span>Configuration</span>
+                        <img src="img/service-icon-3.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'E100 Internet - Burstable', background: 'orange'})">
+                        <span>details</span>
+                        <img src="img/service-icon-4.png" alt="icon">
+                    </a>
+                </div>
+                <span class="accordion-btn" ng-class="{active: $ctrl.box6}" ng-click="$ctrl.box6=!$ctrl.box6; $ctrl.box5 = true; $ctrl.box7 = true;"></span>
+            </div>
+            <div class="accordion-content ng-isolate-scope hidden-accordion"  data-slide-toggle="$ctrl.box6">
+                <div class="row table-row tables-row service-table-row bg-type">
+                    <div class="col-md-4">
+                        <table class="table-type_2 table-type_3">
+                            <tbody><tr>
+                                <td>System Number</td>
+                                <td class="number-format">16999-7.2</td>
+                            </tr>
+                            <tr>
+                                <td>Software</td>
+                                <td class="number-format"></td>
+                            </tr>
+                            <tr>
+                                <td>System Status</td>
+                                <td class="active number-format">Active</td>
+                            </tr>
+                            <tr>
+                                <td>Cutover</td>
+                                <td class="number-format"></td>
+                            </tr>
+                            <tr>
+                                <td>Software Version</td>
+                                <td class="number-format">F8.2</td>
+                            </tr>
+                            <tr class="hidden-data">
+                                <td>0</td>
+                                <td class="number-format"></td>
+                            </tr>
+                            <tr>
+                                <td>Manufact. Discontinued</td>
+                                <td class="number-format">False</td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+                    <div class="col-md-4">
+                        <table class="table-type_2 table-type_3">
+                            <tbody><tr>
+                                <td>System Number</td>
+                                <td class="number-format">None</td>
+                            </tr>
+                            <tr>
+                                <td>Contract Status</td>
+                                <td class="expired number-format">Expired</td>
+                            </tr>
+                            <tr>
+                                <td>Contract Start</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Contract End</td>
+                                <td class="number-format"></td>
+                            </tr>
+                            <tr>
+                                <td>Contract Number</td>
+                                <td class="number-format">16-106585</td>
+                            </tr>
+                            <tr>
+                                <td>Contract Price</td>
+                                <td class="number-format"></td>
+                            </tr>
+                            <tr>
+                                <td>Invoice Frequency</td>
+                                <td class="number-format">1/month</td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+                    <div class="col-md-4">
+                        <table class="table-type_2 table-type_3">
+                            <tbody><tr>
+                                <td>System Number</td>
+                                <td class="number-format">39B20899</td>
+                            </tr>
+                            <tr>
+                                <td>MAC Address</td>
+                                <td class="number-format">00-50-60-81-0E-D2</td>
+                            </tr>
+                            <tr>
+                                <td>IP Address</td>
+                                <td class="number-format">10.1.180.11</td>
+                            </tr>
+                            <tr>
+                                <td>CutoAliasver</td>
+                                <td class="number-format">5134669</td>
+                            </tr>
+                            <tr>
+                                <td>Gatekeeper IP Address</td>
+                                <td class="number-format">10.1.1.207</td>
+                            </tr>
+                            <tr class="hidden-data">
+                                <td>0</td>
+                                <td class="number-format"></td>
+                            </tr>
+                            <tr>
+                                <td>End of Life</td>
+                                <td>N</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion table-format blue-style">
+            <div class="accordion-header">
+                <a class="accordion-link" ui-sref="app.service({path:'Voice - Business Line', background: 'blue'})">
+                    Voice - Business Line
+                </a>
+                <div class="links-part">
+                    <a ui-sref="app.service({path:'Voice - Business Line', scrollTo: '#enquipment', background: 'blue'})">
+                        <span>Display enquipment</span>
+                        <img src="img/service-icon-1.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'Voice - Business Line', scrollTo: '#guide', background: 'blue'})">
+                        <span>User guide</span>
+                        <img src="img/service-icon-2.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'Voice - Business Line', scrollTo: '#configuration', background: 'blue'})">
+                        <span>Configuration</span>
+                        <img src="img/service-icon-3.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'Voice - Business Line', background: 'blue'})">
+                        <span>details</span>
+                        <img src="img/service-icon-4.png" alt="icon">
+                    </a>
+                </div>
+                <span class="accordion-btn" ng-class="{active: $ctrl.box7}" ng-click="$ctrl.box7=!$ctrl.box7; $ctrl.box6 = true; $ctrl.box5 = true;"></span>
+            </div>
+            <div class="accordion-content hidden-accordion" data-slide-toggle="$ctrl.box7">
+                <div class="row table-row tables-row service-table-row bg-type">
+                    <div class="col-md-4">
+                        <table class="table-type_2 table-type_3">
+                            <tbody><tr>
+                                <td>System Number</td>
+                                <td class="number-format">16999-7.2</td>
+                            </tr>
+                            <tr>
+                                <td>Software</td>
+                                <td class="number-format"></td>
+                            </tr>
+                            <tr>
+                                <td>System Status</td>
+                                <td class="active number-format">Active</td>
+                            </tr>
+                            <tr>
+                                <td>Cutover</td>
+                                <td class="number-format"></td>
+                            </tr>
+                            <tr>
+                                <td>Software Version</td>
+                                <td class="number-format">F8.2</td>
+                            </tr>
+                            <tr class="hidden-data">
+                                <td>0</td>
+                                <td class="number-format"></td>
+                            </tr>
+                            <tr>
+                                <td>Manufact. Discontinued</td>
+                                <td class="number-format">False</td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+                    <div class="col-md-4">
+                        <table class="table-type_2 table-type_3">
+                            <tbody><tr>
+                                <td>System Number</td>
+                                <td class="number-format">None</td>
+                            </tr>
+                            <tr>
+                                <td>Contract Status</td>
+                                <td class="expired number-format">Expired</td>
+                            </tr>
+                            <tr>
+                                <td>Contract Start</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Contract End</td>
+                                <td class="number-format"></td>
+                            </tr>
+                            <tr>
+                                <td>Contract Number</td>
+                                <td class="number-format">16-106585</td>
+                            </tr>
+                            <tr>
+                                <td>Contract Price</td>
+                                <td class="number-format"></td>
+                            </tr>
+                            <tr>
+                                <td>Invoice Frequency</td>
+                                <td class="number-format">1/month</td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+                    <div class="col-md-4">
+                        <table class="table-type_2 table-type_3">
+                            <tbody><tr>
+                                <td>System Number</td>
+                                <td class="number-format">39B20899</td>
+                            </tr>
+                            <tr>
+                                <td>MAC Address</td>
+                                <td class="number-format">00-50-60-81-0E-D2</td>
+                            </tr>
+                            <tr>
+                                <td>IP Address</td>
+                                <td class="number-format">10.1.180.11</td>
+                            </tr>
+                            <tr>
+                                <td>CutoAliasver</td>
+                                <td class="number-format">5134669</td>
+                            </tr>
+                            <tr>
+                                <td>Gatekeeper IP Address</td>
+                                <td class="number-format">10.1.1.207</td>
+                            </tr>
+                            <tr class="hidden-data">
+                                <td>0</td>
+                                <td class="number-format"></td>
+                            </tr>
+                            <tr>
+                                <td>End of Life</td>
+                                <td>N</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

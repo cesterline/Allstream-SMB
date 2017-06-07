@@ -1,0 +1,77 @@
+<div class="container payment-container">
+	<div class="row ">
+		<div class="col-sm-5">
+			<div class="payment-box">
+				<h1>Make a Payment</h1>
+				<h2>Please verify all information below:</h2>
+				<div class="payment-info">
+					<div>Billing Account # : 010009876543</div>
+					<div><strong>Amount Due: $1,798.73</strong></div>
+				</div>
+				<div class="payment-amount">
+					<h3>Payment Amount:</h3>
+					<input type="text" class="simple-input" value="$1,798.73"/>
+					<label>Click on the amount if you wish to edit it.</label>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-7">
+			<div class="payment-process">
+				<div class="payment-process-inner">
+					<h2><img src="img/payment-icon.png" alt="icon">Secure Payment</h2>
+					<p>Your credit or debit card information will be kept encrypted and secure.</p>
+					<label for="name" class="simple-label">Cardholder Name *</label>
+					<input class="simple-input" id="name" type="text" value="">
+					<div class="card-info clearfix">
+						<div class="card-info-left card-info-left_lg">
+							<label class="simple-label">Card Number *</label>
+							<input class="simple-input"  maxlength="16" type="text" >
+						</div>
+						<div class="card-info-right">
+							<img class="banking-img" src="img/banking-icon.png" alt="icon">
+						</div>
+					</div>
+					<div class="card-info clearfix">
+						<div class="card-info-left card-info-left_sm">
+							<label class="simple-label">Expiry Date *</label>
+							<input class="simple-input simple-input-sm"  placeholder="MM" maxlength="2"  type="text" >
+							<input class="simple-input simple-input-sm"  placeholder="YY" maxlength="4" type="text" >
+						</div>
+						<div class="card-info-right relative">
+							<label class="simple-label">CVV *</label>
+							<input class="simple-input simple-input-sm"   maxlength="3" type="text">
+							<img class="cvv-icon" src="img/cvv-icon.png" alt="icon">
+                            <div class="tooltip-block">
+                                <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h6>
+                            </div>
+						</div>
+					</div>
+				</div>
+				<button class="payment-btn" ng-click="$ctrl.submitPayment()">
+					Process Payment
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="app-popup" ng-show="$ctrl.isOpenPopup">
+    <div class="app-popup-container">
+        <div class="app-popup-container-inner" ng-show="!$ctrl.success">
+            <img class="close-btn" ng-click="$ctrl.closePopup()" src="img/close-btn.png" alt="icon">
+            <div class="app-popup-text">Are you sure you would like a make a payment of <span>$1,798.73</span> </div>
+            <div class="text-center popup-small-btn">
+                <a class="app-btn mt5"  ng-click="$ctrl.success = true;">YES</a>
+                <a class="app-btn app-btn_black mt5" ng-click="$ctrl.closePopup()" >NO</a>
+            </div>
+        </div>
+        <div class="app-popup-container-inner" ng-show="$ctrl.success">
+            <img class="close-btn" ng-click="$ctrl.closePopup()" src="img/close-btn.png" alt="icon">
+            <div class="app-popup-text">Thank you for your payment!</div>
+            <div class="text-center popup-small-btn">
+                <a class="app-btn mt5" ng-click="$ctrl.closePopup()"  ui-sref="app.confirm" >Ok</a>
+            </div>
+        </div>
+    </div>
+</div>
+

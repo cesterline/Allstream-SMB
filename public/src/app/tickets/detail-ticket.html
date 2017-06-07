@@ -1,0 +1,72 @@
+
+<div class="mt-47" ng-init="$ctrl.activeLink()">
+    <div class="container">
+        <div class="detail-info" ng-init="$ctrl.detaiFnc()">
+
+           <div class="info-caption-bar-wrap"> 
+            <div class="info-caption-bar scroll-fix" fix-scroll-elem="fix-elem" data-offset="-90">
+              <div class="wrap-fix-content flex-align">  
+                <div class="left-flex-align">
+                    <h3 class="caption tu">{{$ctrl.item.type}} Ticket #{{$ctrl.item.number}}</h3>
+                </div>
+                <div class="right-block">
+                    <a class="app-btn btn-white" ui-sref="app.tickets">view all tickets</a>
+                </div>
+              </div>     
+            </div>
+          </div>
+          
+           <div class="order-detail-content">
+           <div class="row">
+               <div class="col-md-4 col-sm-4 col-xs-12">
+                  <span><b class="medium-font">Priority:</b> <span class="tt">{{$ctrl.item.status}}</span></span>
+                  <div class="empty-lg-0 empty-md-0 empty-sm-20 empty-xs-20"></div> 
+               </div>
+               <div class="col-md-4 col-sm-4 col-xs-12">
+                  <span><b class="medium-font">Placed: </b> {{$ctrl.item.date}}</span>
+                  <div class="empty-lg-0 empty-md-0 empty-sm-20 empty-xs-20"></div> 
+               </div>
+               <div class="col-md-4 col-sm-4 col-xs-12">
+                  <span><b class="medium-font">Circuit / Telephone# / Service ID</b></span> 
+               </div>
+           </div>
+           <div class="empty-sm-40 empty-xs-40"></div>
+           <div class="detail-description">
+              <div class="simple-text">
+                 <p>{{$ctrl.item.content}}</p>
+              </div>
+           </div>
+           <div class="empty-sm-60 empty-xs-40"></div>
+           <div class="wrap">
+           <div class="user-ticket-item">
+                <img src="img/avatar-icon.png" alt="">
+                <div class="user-ticket-name">
+                    <h4 class="medium-font h4">User Name</h4>
+                    <span>Firstname Lastname</span>
+                </div>
+                <div class="text">
+                    <div class="simple-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium veniam quae soluta magni tempora placeat reiciendis deleniti nisi et facere, voluptates quam rem vero esse sequi officiis facilis ipsam in.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="user-ticket-item">
+                <img src="img/avatar-icon.png" alt="">
+                <div class="user-ticket-name">
+                    <h4 class="medium-font h4">User Name</h4>
+                    <span>Firstname Lastname</span>
+                </div>
+                <div class="text">
+                    <div class="simple-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium veniam quae soluta magni tempora placeat reiciendis deleniti nisi et facere, voluptates quam rem vero esse sequi officiis facilis ipsam in.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+           </div> 
+        </div>
+    </div>
+</div>
+
+
+<div class="empty-sm-80 empty-xs-80"></div>

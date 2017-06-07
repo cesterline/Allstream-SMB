@@ -1,0 +1,77 @@
+.app-popup {
+	position: fixed;
+	z-index: 99999;
+	left: 0;
+	top: 0;
+	background: rgba(29,29,29, .9);
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	overflow-y: auto;
+	font-size: 0;
+}
+
+.app-popup-container {
+	background: #fff;
+	max-width: 560px;
+	margin: 0 auto;
+	border-top: 4px solid #f57f20;
+	padding: 76px 30px 68px;
+	text-align: center;
+	position: relative;
+	vertical-align: middle;
+	display: inline-block;
+	@media screen and (max-width:550px) {
+		padding: 30px;
+	}
+}
+
+
+.app-popup-text {
+	font-size: 24px;
+	line-height: 31px;
+	letter-spacing: 1px;
+	padding: 0 10px;
+	@media screen and (max-width:550px) {
+		font-size: 20px;
+	}
+}
+
+.app-popup-container-inner {
+	max-width: 365px;
+	margin: 0 auto;
+	width: 100%;
+	.app-btn {
+		margin-top: 40px;
+		width: 100%;
+		@media screen and (max-width:550px) {
+			padding-left: 20px;
+			padding-right: 20px;
+			margin-top: 20px;
+		}
+	}
+}
+
+.app-popup.ng-hide-add {
+	-webkit-animation:0.5s hide;
+	animation:0.5s hide;
+}
+
+.app-popup.ng-hide-remove {
+	-webkit-animation:0.3s show;
+	animation:0.3s show;
+}
+
+
+.app-popup:before {
+	content: '';
+	position: relative;
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.app-popup-text-logout {
+	padding:  30px;
+}
+

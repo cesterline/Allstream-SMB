@@ -1,0 +1,41 @@
+<div class="container settings-container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="info-block">
+                <h1 class="title text-center">
+                    Default time zone
+                </h1>
+                <h2>
+                    Your current time zone is
+                    <span>
+                        EST (UTC-5)
+                    </span>
+                </h2>
+                <label for="timeZone" class="simple-label">Select a new default time zone</label>
+                <div class="select-wrapp">
+                    <select name="" id="timeZone">
+                        <option value="">EST (UTC-5)</option>
+                        <option value="">EST (UTC-6)</option>
+                        <option value="">EST (UTC-7)</option>
+                        <option value="">EST (UTC-8)</option>
+                    </select>
+                    <i></i>
+                </div>
+                <div class="text-center">
+                    <a class="app-btn mt20" ng-click="$ctrl.success = true">Save</a>
+                </div>
+                <div class="valid-message" ng-show="$ctrl.success">
+                    <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.success}">
+                        <div class="app-popup-container-inner" >
+                            <img class="close-btn" ng-click="$ctrl.success = false" src="img/close-btn.png" alt="icon">
+                            <div class="app-popup-text text-center">Your time zone has been successfully changed.</div>
+                            <div class="text-center popup-small-btn">
+                                <a class="app-btn mt5" ui-sref="app.board">Ok</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+<div class="mt-47">
+    <div class="container">
+       
+        <div class="info-caption-bar-wrap"> 
+            <div class="info-caption-bar scroll-fix" fix-scroll-elem="fix-elem" data-offset="-90">
+              <div class="wrap-fix-content flex-align no-padd-top-xs">  
+                <div class="left-flex-align">
+                    <h3 class="caption">Account Users</h3>
+                </div>
+                <div class="right-block">
+                    <a class="app-btn btn-white" ui-sref="app.newuser">Add a user</a> 
+                </div>
+              </div>     
+            </div>
+        </div>
+        
+        <div class="empty-sm-40 empty-xs-30"></div>
+        <div class="block-item table-inset">
+            <div class="table-wrap">
+            <table class="table-user-setting table-tr-hover custome-layout">
+                <tr class="caption-tr caption-tr-style-1">
+                   <th class="tr-block col-1">    
+                     <div class="caption">
+                         user name
+                     </div>
+                   </th>
+                   <th class="tr-block">    
+                     <div class="caption text-center">
+                         Portal Access
+                     </div> 
+                   </th>
+                   <th class="tr-block custome-padding">    
+                     <div class="caption">
+                         Actions
+                     </div> 
+                   </th>
+                   <th class="tr-block"> 
+                   
+                   </th>
+                   <th class="tr-block"> 
+                   
+                   </th>
+                </tr>
+                <tr ng-repeat="user in $ctrl.data">  
+                  <td class="tr-block">
+                     <div class="account-name">
+                        <b>{{user.userName}}</b>
+                     </div>
+                  </td> 
+                  <td class="tr-block text-center">
+                      <label class="checkbox-entry type-3" for="#{{user.id}}" ng-click="$ctrl.addAccess(user)">
+                        <input type="checkbox" id="{{user.id}}" ng-checked="user.active" >
+                          <i><b></b></i>
+                      </label>
+                  </td>
+                  <td class="tr-block">
+                      <div class="link-button animate-if" ng-if="user.active == false">Manage sub-accounts</div> 
+                      <a class="link-button animate-if" ng-if="user.active" ui-sref="app.subaccount">Manage sub-accounts</a> 
+                  </td>
+                  <td class="tr-block">
+                     <div class="link-user-access">
+                        <div class="link-button animate-if" ng-if="user.active == false">Manage permissions</div> 
+                        <a class="link-button animate-if" ng-if="user.active" ui-sref="app.premissions">Manage permissions</a>   
+                     </div>
+                      
+                  </td>
+                  <td class="tr-block">
+                  
+                  </td>
+                </tr> 
+            </table>
+            </div>
+            <div class="valid-message" ng-show="$ctrl.popup_grant">
+                <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.popup_grant}">
+                    <div class="app-popup-container-inner" >
+                        <img class="close-btn" ng-click="$ctrl.popup_grant = false" src="img/close-btn.png" alt="icon">
+                        <div class="app-popup-text text-center">Are you sure you want to grant access to the user?</div>
+                        <div class="text-center two-button-wrapp mt-47">
+                            <a class="app-btn mt5">Yes</a>
+                            <a class="app-btn app-btn_grey mt5" ng-click="$ctrl.popup_grant = false">No</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="valid-message" ng-show="$ctrl.popup_suspend">
+                <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.popup_suspend}">
+                    <div class="app-popup-container-inner" >
+                        <img class="close-btn" ng-click="$ctrl.popup_suspend = false" src="img/close-btn.png" alt="icon">
+                        <div class="app-popup-text text-center">Are you sure you want to suspend access for the user?</div>
+                        <div class="text-center two-button-wrapp mt-47">
+                            <a class="app-btn mt5" ng-click="$ctrl.popup_suspend = false">Yes</a>
+                            <a class="app-btn app-btn_grey mt5" ng-click="$ctrl.popup_suspend = false">No</a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<div class="empty-sm-90 empty-xs-90"></div>

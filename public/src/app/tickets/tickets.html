@@ -1,0 +1,277 @@
+
+<div class="mt-47" ng-init="$ctrl.activeLinkMenu()">
+    <div class="container">
+       
+       <div class="info-caption-bar-wrap"> 
+            <div class="info-caption-bar scroll-fix" fix-scroll-elem="fix-elem" data-offset="-90">
+              <div class="wrap-fix-content flex-align no-padd-top-xs">  
+                <div class="left-flex-align">
+                    <h3 class="caption">Your Tickets</h3>
+                </div>
+                <div class="right-block">
+                    <a class="app-btn btn-white" ui-sref="app.newticket">new ticket</a> 
+                </div>
+              </div>     
+            </div>
+        </div>
+        
+        <div class="empty-lg-40 empty-md-40 empty-sm-0 empty-xs-0"></div>
+           <div class="row">
+             <div class="col-md-12"> 
+              <div class="input-icon">
+                 <span class="caption">From</span>
+                 <div class="in-icon">
+                  <input date-time name="pickerMinDate" ng-model="$ctrl.from_date" id="pickerMinDate" view="date" min-view="date" format="M/d/yyyy" class="simple-input">
+                  <img src="img/calendar.png" alt="">
+                 </div>  
+              </div>  
+              <div class="input-icon"> 
+                 <span class="caption">To</span>  
+                 <div class="in-icon">
+                  <input date-time name="pickerMaxDate" ng-model="$ctrl.to_date" id="pickerMaxDate" view="date" min-view="date" format="M/d/yyyy" class="simple-input">
+                  <img src="img/calendar.png" alt="">
+                 </div>
+              </div>
+              <div class="input-button">
+                <input class="simple-input invoice-search" ng-model="all" type="text" value="" placeholder="Search Tickets" required>
+                  <div class="serch-btn-icon"></div>
+              </div>
+            </div>  
+          </div>       
+          <div class="empty-lg-40 empty-md-40 empty-sm-40 empty-xs-40"></div> 
+          <div class="arrange-wrap">
+          <div class="tab-nav-filter">
+          <div class="tab-nav">
+             <button ng-class="{active: $ctrl.isSet(1)}" ng-click="$ctrl.setTab(1)" class="tab-nav_item">New</button>
+             <button ng-class="{active: $ctrl.isSet(2)}" ng-click="$ctrl.setTab(2)" class="tab-nav_item">In Progress</button>
+             <button ng-class="{active: $ctrl.isSet(3)}" ng-click="$ctrl.setTab(3)" class="tab-nav_item">Resolved</button>
+          </div>
+               <div class="open-filter">
+                 <span ng-show="$ctrl.openFilter == false">More Filters</span>
+                 <span ng-show="$ctrl.openFilter == true">Hide Filters</span>
+                  <span class="accordion-btn" ng-click="$ctrl.openFilters()" ng-class="{active: $ctrl.openFilter == false}">      
+                  </span>
+               </div>
+          </div>
+          <div class="clearfix table-filter-wrap" ng-show="$ctrl.openFilter" ng-init="$ctrl.typeDefined()">
+              <div class="empty-lg-25 empty-md-25 empty-sm-25 empty-xs-0"></div>
+              <div class="checkbox-entry-wrap type-3">  
+                        <label class="checkbox-entry">
+                            <input type="checkbox" ng-model="ticket_type1" ng-click="$ctrl.type1('billing')" ng-checked="$ctrl.ticket_type1"><span>Billing</span>
+                        </label>
+                      </div>
+                      <div class="checkbox-entry-wrap type-3">  
+                        <label class="checkbox-entry">
+                            <input type="checkbox" ng-model="ticket_type2" ng-click="$ctrl.type2('incident')" ng-checked="$ctrl.ticket_type2"><span>Incident</span>
+                        </label>
+                      </div>
+                      <div class="checkbox-entry-wrap type-3">  
+                        <label class="checkbox-entry">
+                            <input type="checkbox" ng-model="ticket_type3" ng-click="$ctrl.type3('sales')" ng-checked="$ctrl.ticket_type3"><span>Support</span>
+                        </label>
+                      </div> 
+
+              <div class="fr">
+              <div class="checkbox-entry-wrap type-3">  
+                <label class="checkbox-entry">
+                    <input type="checkbox"><span>Show only my tickets</span>
+                </label>
+              </div>
+              </div>
+              <div class="empty-sm-30 empty-xs-30"></div> 
+          </div>
+          
+          <div class="tab-content no-top-padd">
+            <div class="tab-content_item clearfix" ng-show="$ctrl.isSet(1)">
+              <div class="scroll-table">
+                <div class="table-type_1 style-2 order-table table-display">
+                    <div class="caption-tr tr">
+                        <div class="th-table">
+                            <div class="th">TICKET 
+                            <img ng-click="$ctrl.changeSorting('number')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="th-table">
+                           <div class="th">TYPE  
+                            <img ng-click="$ctrl.changeSorting('type')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                           </div>
+                        </div>
+                        <div class="th-table">
+                            <div class="th">PRIORITY 
+                            <img ng-click="$ctrl.changeSorting('state')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="th-table">
+                            <div class="th">SUBMITED 
+                            <img ng-click="$ctrl.changeSorting('date')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="th-table">
+                            <div class="th">UPDATED
+                            <img ng-click="$ctrl.changeSorting('updated')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="th-table">
+                            <div class="th">Circuit / phone / service id
+                            </div>
+                        </div>
+                        <div class="th-table">
+                            <div class="th">Date closed
+                            <img ng-click="$ctrl.changeSorting('closedata')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="th-table">
+                        </div>    
+                    </div>
+                    <div class="tr" ng-repeat="item in $ctrl.ticket | orderBy:$ctrl.sort.column:$ctrl.sort.descending | dateRange : $ctrl.from_date: $ctrl.to_date | filter: $ctrl.ticket.state = 'new' | typeFilter : $ctrl.billing : $ctrl.incident : $ctrl.sales | filter: all">
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="order-number td-table">#{{item.number}}</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="td-table">{{item.type}}</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="td-table">{{item.status}}</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="number-format td-table">{{item.date}}</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="number-format td-table">{{item.updated}}</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="number-format td-table">416 834 2269</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="number-format td-table"><p ng-show="!item.closedata">N/A</p>{{item.closedata}}</a>
+                        <div class="td-table">
+                            <div class="info-hint">
+                                <img src="img/info.png" alt="" ng-click="myVar='open-class'">
+                                <div class="info-hint-mess" ng-class="myVar">
+                                    <img src="img/close-hint.png" alt="" class="close-hint" ng-click="myVar=''">
+                                    <p>Ticket description audantium impedit des recusandae, eum delectus quod, odit um omnis odio eve niet.Sapiente pariaturhil pers piciatis voluptates conseqatur exp edita, sunt aspernatur temporibus</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>   
+            </div>
+            <div class="tab-content_item clearfix" ng-show="$ctrl.isSet(2)">
+               <div class="scroll-table">
+                <div class="table-type_1 style-2 order-table table-display">
+                    <div class="caption-tr tr">
+                        <div class="th-table">
+                            <div class="th">TICKET 
+                            <img ng-click="$ctrl.changeSorting('number')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="th-table">
+                           <div class="th">TYPE  
+                            <img ng-click="$ctrl.changeSorting('type')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                           </div>
+                        </div>
+                        <div class="th-table">
+                            <div class="th">PRIORITY 
+                            <img ng-click="$ctrl.changeSorting('state')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="th-table">
+                            <div class="th">SUBMITED 
+                            <img ng-click="$ctrl.changeSorting('date')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="th-table">
+                            <div class="th">UPDATED
+                            <img ng-click="$ctrl.changeSorting('updated')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="th-table">
+                            <div class="th">Circuit / phone / service id
+                            </div>
+                        </div>
+                        <div class="th-table">
+                            <div class="th">Date closed
+                            <img ng-click="$ctrl.changeSorting('closedata')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="th-table">
+                        </div>    
+                    </div>
+                    <div class="tr" ng-repeat="item in $ctrl.ticket | filter : all | orderBy:$ctrl.sort.column:$ctrl.sort.descending | dateRange : $ctrl.from_date: $ctrl.to_date | filter: $ctrl.ticket.state = 'open' | typeFilter : $ctrl.billing : $ctrl.incident : $ctrl.sales | filter: all">
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="order-number td-table">#{{item.number}}</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="td-table">{{item.type}}</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="td-table">{{item.status}}</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="number-format td-table">{{item.date}}</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="number-format td-table">{{item.updated}}</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="number-format td-table">416 834 2269</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="number-format td-table"><p ng-show="!item.closedata">N/A</p>{{item.closedata}}</a>
+                        <div class="td-table">
+                            <div class="info-hint">
+                                <img src="img/info.png" alt="" ng-click="myVar='open-class'">
+                                <div class="info-hint-mess" ng-class="myVar">
+                                    <img src="img/close-hint.png" alt="" class="close-hint" ng-click="myVar=''">
+                                    <p>Ticket description audantium impedit des recusandae, eum delectus quod, odit um omnis odio eve niet.Sapiente pariaturhil pers piciatis voluptates conseqatur exp edita, sunt aspernatur temporibus</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>  
+            </div>
+            <div class="tab-content_item clearfix" ng-show="$ctrl.isSet(3)">
+               <div class="scroll-table">
+                <div class="table-type_1 style-2 order-table table-display">
+                    <div class="caption-tr tr">
+                        <div class="th-table">
+                            <div class="th">TICKET 
+                            <img ng-click="$ctrl.changeSorting('number')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="th-table">
+                           <div class="th">TYPE  
+                            <img ng-click="$ctrl.changeSorting('type')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                           </div>
+                        </div>
+                        <div class="th-table">
+                            <div class="th">PRIORITY 
+                            <img ng-click="$ctrl.changeSorting('state')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="th-table">
+                            <div class="th">SUBMITED 
+                            <img ng-click="$ctrl.changeSorting('date')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="th-table">
+                            <div class="th">UPDATED
+                            <img ng-click="$ctrl.changeSorting('updated')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="th-table">
+                            <div class="th">Circuit / phone / service id
+                            </div>
+                        </div>
+                        <div class="th-table">
+                            <div class="th">Date closed
+                            <img ng-click="$ctrl.changeSorting('closedata')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="th-table">
+                        </div>    
+                    </div>
+                    <div class="tr" ng-repeat="item in $ctrl.ticket | filter : all |  orderBy:$ctrl.sort.column:$ctrl.sort.descending | dateRange : $ctrl.from_date: $ctrl.to_date | filter: $ctrl.ticket.state = 'closed' | typeFilter : $ctrl.billing : $ctrl.incident : $ctrl.sales | filter: all">
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="order-number td-table">#{{item.number}}</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="td-table">{{item.type}}</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="td-table">{{item.status}}</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="number-format td-table">{{item.date}}</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="number-format td-table">{{item.updated}}</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="number-format td-table">416 834 2269</a>
+                        <a ui-sref="app.detailticket({ticketId : item.id})" class="number-format td-table"><p ng-show="!item.closedata">N/A</p>{{item.closedata}}</a>
+                        <div class="td-table">
+                            <div class="info-hint">
+                                <img src="img/info.png" alt="" ng-click="myVar='open-class'">
+                                <div class="info-hint-mess" ng-class="myVar">
+                                    <img src="img/close-hint.png" alt="" class="close-hint" ng-click="myVar=''">
+                                    <p>Ticket description audantium impedit des recusandae, eum delectus quod, odit um omnis odio eve niet.Sapiente pariaturhil pers piciatis voluptates conseqatur exp edita, sunt aspernatur temporibus</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>   
+            </div>
+          </div>
+          
+         
+        </div>
+    </div>
+    <div class="empty-sm-50 empty-xs-50"></div> 
+</div>

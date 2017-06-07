@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <h1 class="auth-title auth-title-lg">
+                Resetting your username
+            </h1>
+            <div class="registration-step user-form">
+                <h3 class="step-title active">
+                    Please provide the following information connected to your account
+                </h3>
+                <form  name="varificationForm" class="step-form step-form-1 clearfix" novalidate>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="acc-num" class="simple-label simple-label-type_2">Account number * :</label>
+                            <input class="simple-input simple-input-type_2" id="acc-num" ng-minlength="3" type="number" ng-model="$ctrlAuth.user.userAccountNumber" required>
+                            <span class="validation-tooltip"></span>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="inv-number" class="simple-label simple-label-type_2">Invoice number * :</label>
+                            <input class="simple-input simple-input-type_2" id="inv-number" ng-minlength="3" ng-model="$ctrlAuth.user.userInvoiceNumber" type="number" required>
+                            <span class="validation-tooltip"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="post-code" class="simple-label simple-label-type_2">Head Office Postal Code * :</label>
+                            <input class="simple-input  simple-input-type_2" id="post-code" ng-minlength="3" ng-model="$ctrlAuth.user.userPostCode" type="text" required>
+                            <span class="validation-tooltip"></span>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="last-amount" class="simple-label simple-label-type_2">Last Paid Amount * :</label>
+                            <input class="simple-input simple-input-type_2" id="last-amount"  ng-minlength="3" type="number" ng-model="$ctrlAuth.user.userPaid" required>
+                            <span class="validation-tooltip"></span>
+                        </div>
+                    </div>
+                    <div class="valid-message" ng-show="$ctrlAuth.error">
+                        <div class="error-mess valid-mess">
+                            <p>The account data is not correct. Plase verify and try again.</p>
+                        </div>
+                    </div>
+                    <div class="center-btn">
+                       <input type="submit" class="app-btn app-btn-lg app-btn-lg_orange" value="Reset" ng-click="$ctrlAuth.resetName(varificationForm)">
+                    </div>
+                </form>
+                <div class="valid-message" ng-show="$ctrlAuth.errorPopup">
+                    <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrlAuth.errorPopup}">
+                        <div class="app-popup-container-inner" >
+                            <div class="app-popup-text text-center">The account data is not correct. Please verify and try again.</div>
+                            <div class="text-center popup-small-btn">
+                                <a class="app-btn mt5" ng-click="$ctrlAuth.errorPopup = false">Ok</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

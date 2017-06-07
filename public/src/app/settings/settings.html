@@ -1,0 +1,180 @@
+<div class="container">
+    <div class="empty-sm-50 empty-xs-40"></div>
+    <div class="info-caption-bar-wrap"> 
+        <div class="info-caption-bar no-fix">
+          <div class="wrap-fix-content flex-align no-padd-top-xs">  
+            <div class="left-flex-align">
+                <h3 class="caption">Account Settings</h3>
+            </div>
+          </div>     
+        </div>
+    </div>
+</div>
+
+<div ng-controller="SettingsCtrl as $SettingsCtrl">
+   <div class="container settings-container">
+    <div class="row column-row md-row-block">
+        <div class="col-lg-7 col-md-12 col-xs-12">
+          <div class="info-block type-2 setting-block" ng-init="getData()">
+            <div class="info-setting-title" ng-class="{active : $ctrl.edit}">
+                <h3 class="title">Account Settings</h3>
+                <div class="edit-icon" ng-click="$ctrl.edit = true">
+                    <img src="img/edit.png" alt="">
+                </div> 
+                <div class="edit-button">
+                   <a class="app-btn btn-white">Save</a> 
+                   <div class="discard-change" ng-click="$ctrl.edit = false"><img src="img/close.png" alt=""></div>
+                </div>
+            </div>
+            <div class="empty-sm-25 empty-xs-25"></div>
+            <form action="#" name="settingForm" class="upload-image-form">
+                <div class="setting-block-field">
+                    <label for="fname" class="set-label">First Name</label>
+                    <input type="text" id="fname" value="Alex" ng-model="$ctrl.userSettings.firstName" ng-keyup="$ctrl.edit = true">
+                </div> 
+                <div class="setting-block-field">
+                    <label for="lname" class="set-label">Last Name</label>
+                    <input type="text" id="lname" value="Longerlastname" ng-model="$ctrl.userSettings.lastName" ng-keyup="$ctrl.edit = true">
+                </div> 
+                <div class="setting-block-field">
+                    <label for="uname" class="set-label">Username</label>
+                    <input type="text" id="uname" value="LastnameAlex_1" ng-model="$ctrl.userSettings.nikName" ng-keyup="$ctrl.edit = true">
+                </div> 
+                <div class="setting-block-field space-wh">
+                    <label for="upass" class="set-label">Password</label>
+                    <input type="password" id="upass" value="LastnameAlex_1" ng-model="$ctrl.userSettings.password" ng-keyup="$ctrl.edit = true">
+                    <div class="right-align">
+                        <a class="app-btn btn-dark-grey type-download medium-font" ui-sref="app.changepassword">Change password</a>
+                    </div>
+                </div> 
+                <div class="setting-block-field">
+                    <label for="uemail" class="set-label">Email</label>
+                    <input type="text" id="uemail" value="alex@abcinc.com" ng-model="$ctrl.userSettings.email" ng-keyup="$ctrl.edit = true">
+                </div>
+                <div class="setting-block-field">
+                    <label for="uphone" class="set-label">Phone</label>
+                    <input type="text" id="uphone" value="1(905)2298345" ng-model="$ctrl.userSettings.phone" ng-keyup="$ctrl.edit = true">
+                </div> 
+                <div class="setting-block-field">
+                    <label for="upavatar" class="set-label">Your Avatar</label>
+                    <div class="new-avatart" ng-click="$ctrl.openList()">
+                          <div ngf-background="picFile" ngf-as-background="true" ngf-accept="'img/*'" class="bg"></div>
+                          <div class="bg bg-def" ng-show="!picFile" style="background-image: url(img/new_avatart.png)"></div>
+                        <ul class="list" ng-show="$ctrl.list">
+                            <li ng-click="picFile = null">Remove Existing</li>
+                            <li>
+                              <div class="upload-img">
+                                 <input type="file" ngf-select ng-model="picFile" name="photo"    
+                                     ngf-max-size="2MB" required
+                                     ngf-model-invalid="errorFile">
+                                     Upload New 
+                              </div>
+                           </li>
+                        </ul>
+                    </div>
+                    <button class="app-btn uplad-server" ng-click="uploadPic(picFile)" ng-if="picFile">
+                         Save
+                    </button>
+                    <i ng-show="settingForm.photo.$error.maxSize" class="error-ava">File too large {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+                      <span class="progress" ng-show="picFile.progress >= 0">
+                        <div style="width:{{picFile.progress}}%" 
+                            ng-bind="picFile.progress + '%'"></div>
+                      </span> 
+                </div>
+            </form>      
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-12 col-xs-12">
+            <div class="info-block type-2 setting-block company-info">
+                <div class="info-setting-title">
+                    <h3 class="title">Company Information</h3> 
+                </div>
+                <div class="setting-block-content">
+                <ul class="account-list-info ul">
+                    <li><span>Customer#:</span> <p>613841</p></li>
+                    <li><span>Company:</span> <p>ABC Incorporated Inc.</p></li>
+                    <li><span>Main location:</span> <p>Toronto</p></li>
+                    <li><span>Branch:</span> <p>123 Downtown</p></li>
+                    <li><span>Address:</span> <p>8000 Example Ave</p></li>
+                    <li><span>Address 2:</span> <p>Unit 705</p></li>
+                    <li><span>City:</span> <p>Missisauga</p></li>
+                    <li><span>Province:</span> <p>On</p></li>
+                    <li><span>Postal Code: </span> <p>M3T 7W9</p></li>
+                </ul>
+                </div>
+            </div>
+        </div>
+         
+    </div>
+    <div class="row column-row md-row-block">
+        <div class="col-lg-7 col-md-12 col-xs-12">
+            <div class="info-block type-2 setting-block"> 
+                <div class="info-setting-title">
+                    <h3 class="title">Contact Allstream </h3> 
+                </div>
+                <div class="setting-block-content">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6">
+                       <h6 class="title-border">Technical Support</h6>
+                        <ul class="account-info ul">
+                             <li><span>Name:</span> George Smith</li>
+                             <li><span>Phone:</span> <a href="tel:(905) 900-0000">(905) 900-0000</a></li>
+                             <li><span>Email:</span> <a href="mailto:g.smith@allstream.com">g.smith@allstream.com</a></li>
+                        </ul>
+                       <div class="empty-sm-20 empty-xs-20"></div>     
+                       <h6 class="title-border">Service</h6>
+                        <ul class="account-info ul">
+                             <li><span>Name:</span> George Smith</li>
+                             <li><span>Phone:</span> <a href="tel:(905) 900-0000">(905) 900-0000</a></li>
+                             <li><span>Email:</span> <a href="mailto:g.smith@allstream.com">g.smith@allstream.com</a></li>
+                        </ul> 
+                        <div class="empty-lg-0 empty-md-20 empty-sm-20 empty-xs-20"></div>    
+                    </div>
+                    <div class="col-lg-5 col-md-6">
+                       <h6 class="title-border">Sales Representative</h6>
+                        <ul class="account-info ul">
+                             <li><span>Name:</span> George Smith</li>
+                             <li><span>Phone:</span> <a href="tel:(905) 900-0000">(905) 900-0000</a></li>
+                             <li><span>Email:</span> <a href="mailto:g.smith@allstream.com">g.smith@allstream.com</a></li>
+                        </ul>
+                        <div class="empty-sm-20 empty-xs-20"></div> 
+                       <h6 class="title-border">Billing</h6>
+                        <ul class="account-info ul">
+                             <li><span>Name:</span> George Smith</li>
+                             <li><span>Phone:</span> <a href="tel:(905) 900-0000">(905) 900-0000</a></li>
+                             <li><span>Email:</span> <a href="mailto:g.smith@allstream.com">g.smith@allstream.com</a></li>
+                        </ul>    
+                    </div>
+                </div>
+                </div>
+            </div> 
+        </div>
+        <div class="col-lg-5 col-md-12 col-xs-12">
+            <div class="info-block type-2 setting-block"> 
+                <div class="info-setting-title">
+                    <h3 class="title">Language And Region</h3> 
+                </div>
+                <div class="setting-block-content">
+                <label for="timeZone" class="simple-label">Select a new default time zone</label>
+                <div class="select-wrapp main-col-text">
+                <select name="mySelect2" id="mySelect2" ng-options="option.name for option in $ctrl.dataTime.availableOptions track by option.id" ng-model="$ctrl.dataTime.selectedOption" class="save-change"></select>   
+                    <i></i>
+                    <div class="save-mess">
+                        Changes saved
+                    </div>
+                </div>
+                
+                <label for="langList" class="simple-label">Select language for invoices</label>
+                <div class="select-wrapp main-col-text">
+                    <select name="mySelect" id="mySelect" ng-options="option.name for option in $ctrl.dataLang.availableOptions track by option.id" ng-model="$ctrl.dataLang.selectedOption" class="save-change"></select>
+                    <i></i>
+                    <div class="save-mess">
+                        Changes saved
+                    </div>
+                </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+</div>
+</div>

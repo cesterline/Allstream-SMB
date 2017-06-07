@@ -1,0 +1,333 @@
+<div class="tab mt-47">
+    <div class="container">
+        <div class="info-caption-bar-wrap type-2"> 
+            <div class="info-caption-bar scroll-fix type-2" fix-scroll-elem="fix-elem" data-offset="-90">
+              <div class="wrap-fix-content flex-align">  
+                <div class="left-flex-align">
+                    <div ng-class="{active: $ctrl.isSet(1)}" ng-click="$ctrl.setTab(1)" class="tab-caption">
+                        Current Payment
+                    </div>
+                    <div ng-class="{active: $ctrl.isSet(2)}" ng-click="$ctrl.setTab(2)" class="tab-caption">Payment History
+                    </div>
+                </div>
+                <div class="right-block right-block-vis">
+                    <a class="app-btn btn-white" href="#" ui-sref="app.preauthorized">setup pre-authorized payments</a> 
+                </div>
+              </div>     
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+       <div class="empty-sm-40 empty-xs-30"></div>
+        <div class="row">
+           <div class="invoice-info-box custome-width">
+                <ul class="ul">
+                    <li><strong>Company:</strong> ABC Incorporated</li>
+                    <li><strong>Address:</strong> 9000 Street St. Suite 2001, Toronto, ON, M3D 1H3</li>
+                </ul>
+           </div>
+           <div class="invoice-info-box custome-width">
+                <ul class="ul">
+                    <li><strong>Contract #:</strong> 1837</li>
+                    <li><strong>Billing Account # :</strong> 010009876543</li>
+                </ul>
+           </div>
+           <div class="invoice-info-box custome-width">
+                <ul class="ul">  
+                     <li><strong>Invoice due date:</strong> November 30, 2016</li>
+                     <li><a class="red-link"><strong>Invoice due November 30, 2016</strong></a></li>
+                </ul>
+           </div>
+       </div>
+    </div>
+    
+    <div class="tab-content">
+        <div class="tab-content_item clearfix" ng-show="$ctrl.isSet(1)">
+         <div class="container">
+           <div class="clearfix">
+                <div class="pay-info padd-l-15"> 
+                    <span><b class="medium-font">Billing Account # :</b> 010009876543</span>
+                    <div class="empty-sm-5 empty-xs-5"></div>
+                    <span><b class="medium-font">Amount Due:</b> $1,798.73</span>
+                </div>
+                <div class="pay-info">
+                  <div class="payment-amount">
+                    <label>Click on the amount if you wish to edit it.</label>
+                    <input type="text" class="simple-input" value="$1,798.73"/>
+                  </div>
+                </div>
+           </div>
+           <div class="empty-sm-30 empty-xs-30"></div>
+           <div class="row column-row md-row-block">
+               <div class="col-md-6">
+                    <div class="block-item clearfix cell-parent data-card-block">
+                        <div class="cell-top">
+                            <div class="empty-sm-20 empty-xs-20"></div>    
+                            <div class="icon-title">
+                                <img src="img/payment-icon.png" alt=""> 
+                                <h3>Pre-Authorized Payments</h3>
+                                <div class="empty-sm-30 empty-xs-30"></div> 
+                            </div> 
+                        </div>     
+                        <div class="center-cell full" ng-hide="$ctrl.isOpenPopup" ng-show="!$ctrl.update">
+                            <h3 class="h3 no-card" >No pre-authorized payments set.</h3>
+                        </div>   
+                        <div class="cell-bottom" ng-hide="$ctrl.isOpenPopup">
+                            <a class="payment-btn" ng-click="$ctrl.isOpenPopup = true" ng-hide="$ctrl.update">Setup Payments</a>
+                        </div>                    
+                        <div class="card-info-fill" ng-hide="!$ctrl.update">
+                          <div class="empty-lg-80 empty-md-80 empty-sm-30 empty-xs-30"></div>    
+                            <h5 class="title">CREDIT CARD</h5>
+                               <div class="empty-sm-30 empty-xs-30"></div>
+                                <table class="table-info">
+                                    <tr>
+                                        <td>
+                                            <div class="th medium-font">Name:</div>
+                                        </td>
+                                        <td>
+                                            <div class="card-data"><div ng-bind="$ctrl.addcardName" ></div></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="th medium-font">Card Number:</div>
+                                        </td>
+                                        <td>
+                                            <div class="card-data">**** **** **** <span>{{$ctrl.addNumber}}</span></div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>
+                                            <div class="th medium-font">Expiry Date:</div>
+                                        </td>
+                                        <td>
+                                            <div class="card-data">** / <span ng-bind="$ctrl.addcardYY"></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="th medium-font">Payment Day:</div>
+                                        </td>
+                                        <td>
+                                            <div class="card-data">10th of every month</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="th medium-font">Authorized by:</div>
+                                        </td>
+                                        <td>
+                                            <div class="card-data">Firstname Lastname</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="empty-sm-30 empty-xs-30"></div>
+                                <div class="text-center">
+                                    <a class="app-btn app-btn-lg app-btn-lg_orange" ng-click="$ctrl.updateCard()">Update</a>
+                                </div>
+                        </div>
+                        
+                        <div class="valid-message" ng-show="$ctrl.isOpenPopup">
+                           <div class="empty-lg-80 empty-md-80 empty-sm-30 empty-xs-30"></div> 
+                            <div class="valid-mess no-padd" ng-class="{'active':$ctrl.isOpenPopup}">
+                               <div class="payment-process no-box">
+                                    <div class="empty-sm-10 empty-xs-10"></div>   
+                                      <form novalidate name="addCardForm">  
+                                        <div class="payment-process-inner no-padd">
+                                            <label for="namecard" class="simple-label">Name on the card *</label>
+                                            <input class="simple-input" id="namecard" type="text" ng-model="$ctrl.addcardName" required>
+                                            <div class="card-info clearfix">
+                                                <div class="card-info-left card-info-left_lg">
+                                                    <label class="simple-label">Card Number *</label>
+                                                    <input class="simple-input" maxlength="16" type="text" ng-model="$ctrl.addcardNumber" required>
+                                                </div>
+                                                <div class="card-info-right">
+                                                    <img class="banking-img" src="img/banking-icon.png" alt="icon">
+                                                </div>
+                                            </div>
+                                            <div class="card-info clearfix">
+                                                <div class="card-info-left card-info-left_sm fl">
+                                                    <label class="simple-label">Expiry Date *</label>
+                                                    <input class="simple-input simple-input-sm"  placeholder="MM" maxlength="2" type="text" ng-model="$ctrl.addcardMM" required>
+                                                    <input class="simple-input simple-input-sm"  placeholder="YY" type="text" ng-model="$ctrl.addcardYY" maxlength="2" required>
+                                                </div>
+                                                <div class="card-info-right relative fr">
+                                                    <label class="simple-label">CVV *</label>
+                                                    <input class="simple-input simple-input-sm" maxlength="3" type="text" ng-model="$ctrl.addcardCvv" required>
+                                                    <img class="cvv-icon" src="img/cvv-icon.png" alt="icon">
+                                                    <div class="tooltip-block">
+                                                        <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="empty-sm-30 empty-xs-30"></div>
+                                            <div class="date-choose">
+                                               <span>*Starts on<img src="img/calendar.png" alt="">repeats monthly</span>
+                                            </div>
+                                            <div class="empty-sm-10 empty-xs-10"></div>
+                                        </div>
+                                        <div class="empty-sm-30 empty-xs-30"></div>
+                                        <input type="submit" value="Submit" class="payment-btn" ng-click="$ctrl.addCard(addCardForm)">
+                                      </form>     
+                                </div>
+                            </div>
+                        </div>
+                        <div class="valid-message" ng-show="$ctrl.errorCard">
+                            <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.errorCard}">
+                                <div class="app-popup-container-inner" >
+                                    <img class="close-btn" ng-click="$ctrl.errorCard = false" src="img/close-btn.png" alt="icon">
+                                    <div class="app-popup-text text-center">Please make sure all fields are populated correctly and try again.</div>
+                                    <div class="text-center mt-47 two-button-wrapp">
+                                        <a class="app-btn" ng-click="$ctrl.errorCard = false">Ok</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="valid-message" ng-show="$ctrl.success">
+                            <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.success}">
+                                <div class="app-popup-container-inner" >
+                                    <img class="close-btn" ng-click="$ctrl.success = false" src="img/close-btn.png" alt="icon">
+                                    <div class="app-popup-text text-center" ng-show="!$ctrl.update">Thank you! Pre-authorized payments have been setup.</div>
+                                    <div class="app-popup-text text-center" ng-show="$ctrl.update">Thank you! The information has been updated successfully</div>
+                                    <div class="text-center mt-47 two-button-wrapp">
+                                        <a class="app-btn" ng-click="$ctrl.updateCardData()">Ok</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>     
+                              
+                    </div>
+                 <div class="empty-lg-0 empty-md-30 empty-sm-30 empty-xs-30"></div>     
+               </div>
+               <div class="col-md-6">   
+                   <div class="block-item clearfix">
+                    <div class="payment-process no-box">
+                      <form name="payForm" novalidate>
+                        <div class="empty-sm-20 empty-xs-20"></div>    
+                        <div class="icon-title">
+                            <img src="img/payment-icon.png" alt=""> 
+                            <h3>Payment By Credit Card</h3>
+                        </div>
+                        <div class="empty-sm-10 empty-xs-10"></div> 
+                        <div class="payment-process-inner">
+                            <label for="name" class="simple-label">Cardholder Name *</label>
+                            <input class="simple-input" id="name" type="text" ng-model="$ctrl.cardName" required>
+                            <div class="card-info clearfix">
+                                <div class="card-info-left card-info-left_lg">
+                                    <label class="simple-label">Card Number *</label>
+                                    <input class="simple-input" maxlength="16" type="number" ng-model="$ctrl.cardNumber" required>
+                                </div>
+                                <div class="card-info-right">
+                                    <img class="banking-img" src="img/banking-icon.png" alt="icon">
+                                </div>
+                            </div>
+                            <div class="card-info clearfix">
+                                <div class="card-info-left card-info-left_sm fl">
+                                    <label class="simple-label">Expiry Date *</label>
+                                    <input class="simple-input simple-input-sm"  placeholder="MM" maxlength="2"  type="number" ng-model="$ctrl.cardDate" required>
+                                    <input class="simple-input simple-input-sm"  placeholder="YY" maxlength="4" type="number" ng-model="$ctrl.cardYear" required>
+                                </div>
+                                <div class="card-info-right relative fr">
+                                    <label class="simple-label">CVV *</label>
+                                    <input class="simple-input simple-input-sm" maxlength="3" type="text" ng-model="$ctrl.cardCvv" required>
+                                    <img class="cvv-icon" src="img/cvv-icon.png" alt="icon">
+                                    <div class="tooltip-block">
+                                        <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="empty-sm-30 empty-xs-30"></div>
+                        <input class="payment-btn" type="submit" value="Process Payment" ng-click="$ctrl.payCard(payForm)">
+                      </form>    
+                    </div>
+                    <div class="valid-message" ng-show="$ctrl.error">
+                        <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.error}">
+                            <div class="app-popup-container-inner" >
+                                <img class="close-btn" ng-click="$ctrl.error = false" src="img/close-btn.png" alt="icon">
+                                <div class="app-popup-text text-center">Please make sure all fields are populated correctly and try again.</div>
+                                <div class="text-center mt-47 two-button-wrapp">
+                                    <a class="app-btn" ng-click="$ctrl.error = false">Ok</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="valid-message" ng-show="$ctrl.thank">
+                        <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.thank}">
+                            <div class="app-popup-container-inner" ng-hide="$ctrl.confirm">
+                            <img class="close-btn" ng-click="$ctrl.thank = false" src="img/close-btn.png" alt="icon">
+                            <div class="app-popup-text text-center">Are you sure you would like a make a payment of <span>$1,798.73</span> </div>
+                                <div class="text-center popup-small-btn">
+                                    <a class="app-btn mt5"  ng-click="$ctrl.confirm = true;">YES</a>
+                                    <a class="app-btn app-btn_black mt5" ng-click="$ctrl.thank = false" >NO</a>
+                                </div>
+                            </div>
+                            <div class="app-popup-container-inner" ng-show="$ctrl.confirm">
+                            <div class="app-popup-text text-center">Thank you for your payment!</div>
+                                <div class="text-center popup-small-btn">
+                                    <a class="app-btn mt5" ui-sref="app.confirm" >Ok</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+               </div>
+           </div>
+           </div>   
+        </div>
+        <div class="tab-content_item clearfix" ng-show="$ctrl.isSet(2)">
+         <div class="container"> 
+              <div class="input-icon">
+                 <span class="caption">From</span>
+                 <div class="in-icon">
+                  <input date-time name="pickerMinDate" ng-model="$ctrl.from_date" id="pickerMinDate" view="date" min-view="date" format="M/d/yyyy" class="simple-input">
+                  <img src="img/calendar.png" alt="">
+                 </div>  
+              </div>  
+              <div class="input-icon"> 
+                 <span class="caption">To</span>  
+                 <div class="in-icon">
+                  <input date-time name="pickerMaxDate" ng-model="$ctrl.to_date" id="pickerMaxDate" view="date" min-view="date" format="M/d/yyyy" class="simple-input">
+                  <img src="img/calendar.png" alt="">
+                 </div>
+              </div>
+            </div>
+            <div class="empty-sm-40 empty-xs-40"></div>
+            <div class="container">
+                <div class="app-table-responsive mb-40">
+                    <table class="table-type_1 style-2 center-td">
+                        <tr class="caption-tr">
+                            <th><div class="th">Invoice# 
+                                <img ng-click="$ctrl.changeSorting('invoice')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                                </div>
+                            </th>
+                            <th><div class="th">Payment date 
+                                <img ng-click="$ctrl.changeSorting('date')" class="filter-icon" src="img/filter-image2.png" alt="icon"></div>
+                            </th>
+                            <th><div class="th">Amount 
+                                <img ng-click="$ctrl.changeSorting('amount')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                                </div>
+                            </th>
+                            <th><div class="th">Transaction result
+                                <img ng-click="$ctrl.changeSorting('result')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                                </div>
+                            </th>
+                            <th>Transaction ID</th>
+                        </tr>
+                        <tr ng-repeat="data in filed = ($ctrl.dataAmount | orderBy:$ctrl.sort.column:$ctrl.sort.descending | dateRange : $ctrl.from_date: $ctrl.to_date)">
+                            <td>{{data.invoice}}</td>
+                            <td class="number-format">{{data.date}}</td>
+                            <td class="number-format">${{data.amount}}</td>
+                            <td>{{data.result}}</td>
+                            <td>{{data.ID}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="empty-sm-50 empty-xs-40"></div>
+</div>

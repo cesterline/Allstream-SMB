@@ -1,0 +1,174 @@
+.filter-item .title {font-size: 15px;font-family: 'HelveticaNeue-Medium';letter-spacing: 0.5px; color: #6d6e71; display: block; margin-bottom: 5px;}
+.filter-item .checkbox-entry-wrap {margin-bottom: 10px;}
+.block-item .invoice-info-box {padding-left: 0px;}
+
+.accordion-btn.sm {width: 25px; height: 25px; border-width: 2px;}
+.accordion-btn.sm:before {width: 1px; height: 12px; margin-top: -6px; margin-left: 0px;}
+.accordion-btn.sm:after {width: 12px; height: 1px; margin-left: -6px;}
+.row.offset-10 {margin-left: -5px; margin-right: -5px;}
+.row.offset-10 > div[class*="col"] {padding: 0 5px;}
+.fr {float: right;}
+.fl {float: left;}
+.col-clear-4 > div[class*="col"]:nth-child(4n + 1), .col-clear-4 > div[class*="col"]:nth-child(4n + 1) {clear: both;}
+
+.tickets-type {margin-bottom: 40px;}
+.ticket-item {position: relative; width: 100%; border: 1px solid #bcbec0; border-top-width: 4px; box-shadow: 2px 1px 8px rgba(23, 28, 30, 0.2); background: #fff; display: inline-block; margin-bottom: 10px; min-height: 420px;}
+.tck-header {position: relative; width: 100%; padding: 10px; border-bottom: 1px solid #bcbec0; min-height: 45px;}
+.tck-header .text {padding: 5px 0px;}
+.tck-header .number {font-family: 'HelveticaNeue-Medium'; color: #333; position: relative; float: left;}
+.tck-header p {font-size: 12px; line-height: 16px!important; padding: 0px 30px 0px 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.tck-header .accordion-btn {right: 10px; top: 10px;}
+.tck-content {position: relative; display: inline-block; width: 100%;}
+.tck-content-top {border-bottom: 1px solid #bcbec0; padding:15px 30px; position: relative; height: 235px;}
+.tck-content-top .simple-text {max-height: 147px; overflow: hidden; position: relative; text-overflow: ellipsis;}
+.tck-content-top .simple-text.sm p {font-size: 13px; line-height: 18px;}
+.tck-content-bottom {position: relative; display: inline-block; width: 100%; padding:15px 30px;}
+.tck-content-bottom .app-btn {float: right;}
+
+.tck-txt {margin-bottom: 10px;}
+.tck-txt p.tt {text-transform: uppercase;}
+.tck-txt span {font-size: 14px; display: inline-block; vertical-align: middle; padding-right: 5px; line-height: 18px;}
+.tck-txt p {display: inline-block; vertical-align: middle; font-size: 14px; line-height: 18px;}
+.tck-type {position: absolute; left: 13px; bottom: 10px; text-transform: uppercase; transform: rotate(-90deg); transform-origin: left center; letter-spacing: 1px;}
+.tickets-type-title {margin-bottom: 40px;}
+.tck-content-top.hight-type .tck-type {color: #be1d2c;}
+.tck-content-top.low-type .tck-type {color: #6c6d70;}
+
+.ticket-item.closed-state {border-color: #17a450;}
+.ticket-item.closed-state .tck-content-bottom .tck-txt, .ticket-item.closed-state .tck-content-bottom .tck-txt p  {color: #17a450;}
+.ticket-item.new-state {border-color: #f57f1f;}
+.ticket-item.new-state .tck-content-bottom .tck-txt, .ticket-item.new-state .tck-content-bottom .tck-txt p {color: #f57f1f;}
+td.new-state .txt {color: #f57f1f;}
+td.closed-state .txt {color: #17a450;} 
+.new-ticket-conf .in-label {display: inline-block; vertical-align: middle; font-size: 16px; margin: 0px; color: #6d6e71; padding-right: 30px;}
+.new-ticket-conf .checkbox-entry-wrap {display: inline-block; padding-right: 20px; vertical-align: middle;}
+.new-ticket-conf .checkbox-entry-wrap .checkbox-entry input {margin: 0px;}
+.new-ticket-conf input.simple-input {max-width: 50%;}
+.new-ticket-conf textarea.simple-input {resize: none; height: 250px;}
+.closed-status {color: #17a450;}
+.detail-description .txt p {font-size: 15px; color: #333;}
+.detail-info .tickets-type-title {margin-bottom: 0px;}
+
+.user-ticket-item {display: flex; width: 100%; align-items: center; justify-content: space-between; padding: 30px 10px; border-bottom: 1px solid #bcbec0;}
+.user-ticket-item:first-child() {border-top: 1px solid #bcbec0;}
+.user-ticket-item img {max-width: 50px; position: relative;}
+.user-ticket-name {position: relative; padding-left: 15px; min-width: 180px;}
+.user-ticket-name h4 {margin-bottom: 5px; font-size: 15px; line-height: 18px; color: #6d6e71;}
+.user-ticket-name span {font-size: 15px; color: #6d6e71;}
+
+.input-icon {position: relative; display:inline-block;
+    & img {position: absolute; right: 15px; top: 50%; margin-top: -8px;}
+    & .caption {font-size: 14px;position: relative; display: inline-block; vertical-align: middle; float: left; padding: 10px 10px 10px 0px; color: #6d6e71;}
+    & select, & .simple-input {width: 130px; height: 40px; line-height: 38px; font-size: 15px; color: #f57f1f; font-family: 'HelveticaNeue-Medium';}
+    & .select-wrapp {display: inline-block;}
+    & .in-icon {width: auto; margin-right: 10px;}
+    & .caption {padding: 12px 10px 12px 0px;}
+}
+.invoice-info-box.margin-b-0 {margin-bottom: 0px;}
+.in-icon {position: relative; display: inline-block; width: 80%;}
+.input-data-wrap .medium-font {color: #6d6e71; font-size: 15px;}
+.wide-block .invoice-info-box {width: 25%;}
+.input-data-wrap {width: 50%; float: left; padding-left: 20px;}
+[date-picker] .now {background: #f57f1f;}
+[date-picker] span {line-height: 20px; font-size: 13px;}
+[date-picker] table {padding: 10px; box-shadow: 2px 1px 8px rgba(23, 28, 30, 0.2);}
+.txt-center td {text-align: center;}
+
+.ticket-item:hover {z-index: 5;}
+.detail-item {position: absolute; left: -1px; top: -4px; width: 525px; background: #fff; padding: 0px 15px 15px; visibility: hidden; opacity: 0; border: 1px solid #bcbec0; transition: all 0.35s ease-out;}
+.detail-item .app-btn {float: right;}
+.ticket-item:hover .detail-item {opacity: 1; visibility: visible;}
+.user-ticket-item.type-2  {margin-bottom: 0px; padding-bottom: 20px; border-bottom: 0 none;}
+.user-ticket-item.type-2 .text {padding-left: 0px; width: 100%;}
+.user-ticket-item.type-2 .img {width: 100%; margin-bottom: 10px;}
+div[class*="col"]:nth-child(4n) .detail-item {left: auto; right: -1px;}
+
+.sm-font.tck-txt {overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.sm-font.tck-txt span, .sm-font.tck-txt p {font-size: 12px;}
+.open-filter {position: relative; float: right; cursor: pointer;}
+.open-filter span {color: #343435; padding-right: 15px; display: inline-block; vertical-align: middle; font-size: 15px;}
+.open-filter .accordion-btn {display: inline-block; vertical-align: middle; position: relative; right: auto; top: auto;}
+.tab-nav-filter .open-filter {position: absolute; right: 30px; top: 15px; margin-top: 0px; z-index: 50;}
+
+.tab-nav-new.active, .tab-nav-new:hover {color: #d10000; border-color: #d10000;}
+.tab-nav-new {color: #d10000;}
+.tab-nav-progress.active, .tab-nav-progress:hover {color: #0aaa30; border-color: #0aaa30;}
+.tab-nav-progress {color: #0aaa30;}
+.tab-nav-resolved.active, .tab-nav-resolved:hover {color: #aea297; border-color: #aea297;}
+.tab-nav-resolved {color: #aea297;}
+.table-filter-wrap .checkbox-entry-wrap {float: left; margin: 0 30px 0 35px;}
+
+.checkbox-entry-wrap.type-3 .checkbox-entry span:after {border-radius: 3px; border:2px solid rgba(0,0,0,0.2);}
+.checkbox-entry-wrap.type-3 .checkbox-entry span:before {width: 12px; height: 12px; left: -24px; top: 0px; border-radius: 2px;}
+.checkbox-entry-wrap.type-3 .checkbox-entry.type-2 span:before {top: 2px; left: 2px;}
+.checkbox-entry-wrap.type-3 .checkbox-entry input:checked + span:before {background: #f57f20;}
+.checkbox-entry input {margin: 0px;}
+.tab-content .app-table-responsive {overflow-y: auto;}
+.tab-nav-filter {position: relative;}
+.filter-item-block {position: relative; float: left; padding-left: 70px;}
+.filter-item-block .fl {padding-right: 30px;}
+.filter-item-block:last-child {padding-left: 40px;}
+
+
+.table-display {position: relative; display: table; width: 100%; border-collapse:separate; border-spacing: 0 5px; box-shadow: none; margin-top: -5px; overflow: hidden;}
+.table-display .tr {position: relative; width: 100%; font-size: 0px; display: table-row; background: #fff; transition: all 0.3s ease-out;}
+.table-display .tr:not(.caption-tr) {box-shadow: 2px 1px 8px rgba(23, 28, 30, 0.2);}
+.table-display .tr:hover {background: #f5f5f5;}
+.table-display .td-table {display: table-cell; vertical-align: middle; padding: 30px; font-size: 12px; color: #343435;}
+.table-display .th-table {background: #343435; font-size: 12px; text-transform: uppercase; padding: 15px 30px; display: table-cell; vertical-align: middle;}
+.info-hint {position: relative; display: inline-block; cursor: help;}
+
+.info-hint-mess {position: absolute; min-width: 350px; background: #f5f5f5; border-radius: 5px; padding: 25px 75px 25px 25px;box-shadow: 2px 1px 8px rgba(23, 28, 30, 0.2); right: -10px; top: -68px; visibility: hidden; opacity: 0; transition: all 0.3s ease-out;}
+.info-hint-mess.open-class {visibility: visible; opacity: 1;}
+.info-hint-mess .close-hint {position: absolute; right: 10px; top: 50%; margin-top: -11px; cursor: pointer;}
+.info-hint-mess p {font-size: 13px; line-height: 18px; color: #000; text-transform: none; font-family: 'HelveticaNeue-Light'; }
+.scroll-table {position: relative; width: 100%; overflow-x: auto;}
+
+@media screen and (max-width: 1200px) { 
+    .wide-block .invoice-info-box {width: 50%;}
+    .input-data-wrap {clear: left; width: 80%; padding-left: 0px;}
+    .input-button.sm-sm {max-width: 320px;}
+    .filter-item-block {padding-left: 35px;}
+}
+@media screen and (max-width: 991px) { 
+    .detail-item {display: none;}
+    .ticket-item {min-height: 100%;}
+    .open-filter {margin-top: 20px; float: left;}
+    .fr-md {float: right;}
+    .detail-info .info-caption-bar:not(.type-2) .wrap-fix-content {padding: 0px;}
+    .filter-item-block:last-child {padding-left: 35px; margin-top: 20px;}
+}
+@media screen and (max-width: 768px) { 
+    .user-ticket-item .img {margin-bottom: 20px;}
+    .user-ticket-item .img, .in-icon {width: 100%;}
+    .user-ticket-item .text {padding-left: 0px;}
+    .tab-nav-filter .open-filter {position: relative; float: right; margin: 20px 0px; top: auto; right: auto;}
+    .table-filter-wrap .checkbox-entry-wrap {margin: 0 15px;}
+    .user-ticket-item {display: block; text-align: center;}
+    .user-ticket-name {padding-left: 0px; margin: 20px 0px;}
+    .filter-item-block:last-child {margin-top: 0px;}
+    
+}
+@media screen and (max-width: 480px) { 
+    .new-ticket-conf input.simple-input {max-width: 100%;}
+    .input-data-wrap, .new-ticket-conf .in-label, .wide-block .invoice-info-box {width: 100%;}
+    .detail-description .text-left-xs {text-align: left; width: 100%; margin-bottom: 10px;}
+    .text-center-xs {text-align: center;}
+    .user-ticket-item {padding: 30px 15px;}
+    .tck-content-bottom, .tck-content-top {padding-right: 15px;}
+    .input-icon {width: 50%; float: left;}
+    .input-icon .caption {display: block; width: 100%;}
+    .input-icon select, .input-icon .simple-input {width: 100%;}
+    .table-filter-wrap .checkbox-entry-wrap {width: 100%; margin: 0px auto 10px;}
+    .table-filter-wrap .fr {float: left;}
+    .input-button, .input-button.sm-sm {max-width: 100%;}
+    .filter-item-block {padding-left: 0px; width: 100%;}
+    .filter-item-block:last-child {padding-left: 0px;}
+    .service-header h1 {text-align: left;}
+    .service-header {padding: 20px 15px;}
+    .balance-list {padding: 0 15px; max-width: 100%;}
+    .info-caption-bar:not(.type-2) .wrap-fix-content.no-padd-top-xs {padding-top: 0px;}
+    
+    .table-display .td-table, .table-display .th-table {padding: 20px 15px;}
+    
+}

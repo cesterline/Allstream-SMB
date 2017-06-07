@@ -1,0 +1,314 @@
+body {
+	font-family: 'HelveticaNeue';
+	background: #fafafa;
+	font-size: 15px;
+}
+
+.transition-color {
+	transition: color 0.4s linear;
+}
+
+html, body, .wrapper {
+	height: 100%;
+}
+
+.main {
+	min-height: 100%;
+	padding-bottom: 79px;
+    padding-top: 90px;
+}
+
+a {
+	cursor: pointer;
+	&:hover, &:active, &:focus {
+		text-decoration: none;
+		outline: none;
+	}
+}
+
+a:focus, .app-btn.app-btn-border:focus {
+	color: #f57f1f;
+}
+
+.app-btn:focus {
+	color: #fff;
+}
+
+.relative {
+	position: relative;
+}
+
+@keyframes hide {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	30% {
+		transform: scale(1.02);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+}
+
+@keyframes show {
+	0% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+	70% {
+		transform: scale(1.02);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes hideOpacity {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes showOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.mt-47 {
+	margin-top: 47px;
+}
+
+.mt-30 {
+	margin-top: 30px;
+}
+
+.bg-white {
+	background: #fff;
+}
+
+.bg-grey {
+	background: #f0f4f7;
+}
+
+.mb-30 {
+	margin-bottom: 30px;
+}
+
+.grey-bg {
+	background: #f0f4f6;
+}
+
+.app-popup-text {
+	span {
+		font-family: 'HelveticaNeue-Medium';
+	}
+}
+
+.popup-small-btn {
+	a {
+		display: inline-block;
+		width: auto !important;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+}
+
+.close-btn {
+	cursor: pointer;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+}
+
+.variants {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background: #414042;
+	top: 33px;
+	border-radius: 20px;
+	padding-bottom: 5px;
+	transition: all 0.4s ease;
+	opacity: 0;
+	visibility: hidden;
+	&.active, &.variants-hover {
+		opacity: 1;
+		visibility: visible;
+	}
+	&.deactive {
+		opacity: 0;
+		visibility: hidden;
+	}
+	li {
+		list-style: none;
+		cursor: pointer;
+		padding: 10px 10px 5px;
+		color: #fff;
+		font-size: 13px;
+		@extend .transition-color;
+		&:hover {
+			color: #f57f1f;
+		}
+	}
+}
+
+
+
+ .inline {
+	display: inline-block;
+}
+
+.show-pass {
+	position: absolute;
+	padding: 0 15px;
+	right: 2px;
+	top: 2px;
+	background: #f57f1f;
+	color: #fff;
+	height: 46px;
+	line-height: 46px;
+	border-radius: 0 4px 4px 0;
+	transition: background 0.4s ease;
+	cursor: pointer;
+	&:hover {
+		background: #343435;
+	}
+}
+
+tr.blue {
+	opacity: 0 !important;
+}
+
+.app-popup-container {
+	width: 100%;
+}
+
+.close-btn {
+	@media screen and (max-width:418px) {
+		top: 5px;
+		right: 5px;
+	}
+}
+
+.invoice-col-btn .var_btn {
+	margin-bottom: 10px;
+	min-width: 168px;
+	display: inline-block;
+	padding-left: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-right: 0;
+	span {
+		padding-top: 0;
+		padding-bottom: 0;
+		display: inline;
+		color: inherit;
+	}
+	a {
+		color: #f57f1f;
+		margin-bottom:0;
+		min-width: initial;
+		padding-left: 18px;
+		padding-top: 10px;
+		padding-bottom: 9px;
+	}
+	img {
+		padding-right: 18px;
+		position: relative;
+		top: 0;
+	}
+}
+
+
+@media screen and (min-width: 991px) {
+	::-webkit-scrollbar {
+		width: 10px;
+		margin-left: 1px;
+		margin-right: 1px;
+		border-left: 1px solid  #c1c1c1;
+		border-right: 1px solid  #c1c1c1;
+	}
+
+	::-webkit-scrollbar-thumb {
+		border-radius: 5px;
+		background:  #c1c1c1;
+		width: 8px;
+	}
+}
+
+[ui-view].animate.ng-enter, [ui-view].animate.ng-leave {
+	position: relative;
+	left: 0;
+	right: 0;
+}
+
+
+[ui-view].animate.ng-enter {
+	transition: all .5s ease-in-out ;
+}
+
+[ui-view].animate.ng-enter {
+	opacity: 0;
+}
+
+[ui-view].animate.ng-enter-active {
+	opacity: 1;
+}
+
+.content-loaded {
+	display: none;
+}
+
+
+.body-hidden {
+	overflow: hidden;
+}
+
+
+.mb-40 {
+	margin-bottom: 40px;
+}
+
+.resend-span {
+	position: absolute;
+	right: 0;
+	bottom: auto;
+	font-size: 12px;
+	text-align: center;
+	width: 100%;
+	top: -8px;
+	@media screen and (max-width:1200px) {
+		top: -18px;
+	}
+	@media screen and (max-width:767px) {
+		position: relative;
+		right: 0;
+		bottom: 0;
+		font-size: 12px;
+		display: block;
+		margin-top: 20px;
+		text-align: center;
+		top: 0;
+	}
+}
+
+
+.confirmation-wrapp {
+	float: right;
+	position: relative;
+	@media screen and (max-width:481px) {
+		width: 100%;
+	}
+}
+.no-padding, .no-padding > div[class*="col"] {padding-left: 0px; padding-right: 0px;}
+.no-padding .row {margin-left: 0px; margin-right: 0px;} 

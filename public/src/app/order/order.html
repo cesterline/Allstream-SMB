@@ -1,0 +1,204 @@
+<div class="mt-47" ng-init="$ctrl.activeLinkOrder()">
+    <div class="container">
+    
+    <div class="info-caption-bar-wrap"> 
+        <div class="info-caption-bar scroll-fix" fix-scroll-elem="fix-elem" data-offset="-90">
+          <div class="wrap-fix-content flex-align no-padd-top-xs">  
+            <div class="left-flex-align">
+                <h3 class="caption">Your Orders</h3>
+            </div>
+          </div>     
+        </div>
+    </div>
+          
+    <div class="empty-lg-40 empty-md-40 empty-sm-0 empty-xs-0"></div>
+       <div class="row">
+         <div class="col-md-12"> 
+          <div class="input-icon">
+             <span class="caption">From</span>
+             <div class="in-icon">
+              <input date-time name="pickerMinDate" ng-model="$ctrl.from_date" id="pickerMinDate" view="date" min-view="date" format="M/d/yyyy" class="simple-input">
+              <img src="img/calendar.png" alt="">
+             </div>  
+          </div>  
+          <div class="input-icon"> 
+             <span class="caption">To</span>  
+             <div class="in-icon">
+              <input date-time name="pickerMaxDate" ng-model="$ctrl.to_date" id="pickerMaxDate" view="date" min-view="date" format="M/d/yyyy" class="simple-input">
+              <img src="img/calendar.png" alt="">
+             </div>
+          </div>
+          <div class="input-button">
+            <input class="simple-input invoice-search" ng-model="allfilter" type="text" value="" placeholder="Search Order #, service order #, description" required>
+              <div class="serch-btn-icon"></div>
+          </div>
+        </div>  
+     </div>     
+    </div>
+    <div class="empty-sm-50 empty-xs-40"></div>
+    <div class="container" ng-init="$ctrl.stateDefined()">
+         <div class="arrange-wrap">
+           <div class="tab-nav">
+             <button ng-class="{active: $ctrl.isSet(1)}" ng-click="$ctrl.setTab(1)" class="tab-nav_item">New</button>
+             <button ng-class="{active: $ctrl.isSet(2)}" ng-click="$ctrl.setTab(2)" class="tab-nav_item">In Progress</button>
+             <button ng-class="{active: $ctrl.isSet(3)}" ng-click="$ctrl.setTab(3)" class="tab-nav_item">Resolved</button>
+           </div>
+           <div class="tab-content no-top-padd">
+               <div class="tab-content_item clearfix" ng-show="$ctrl.isSet(1)">
+                  <div class="scroll-table">
+                    <div class="table-type_1 style-2 order-table table-display">
+                        <div class="caption-tr tr">
+                            <div class="th-table">
+                                <div class="th">Order 
+                                <img ng-click="$ctrl.changeSorting('number')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                                </div>
+                            </div>
+                            <div class="th-table">
+                               <div class="th">Service order  
+                                <img ng-click="$ctrl.changeSorting('order')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                               </div>
+                            </div>
+                            <div class="th-table">
+                                <div class="th">Service 
+                                <img ng-click="$ctrl.changeSorting('type')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                                </div>
+                            </div>
+                            <div class="th-table">
+                                <div class="th">Submitted by 
+                                <img ng-click="$ctrl.changeSorting('created')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                                </div>
+                            </div>
+                            <div class="th-table">
+                                <div class="th">Date submitted
+                                <img ng-click="$ctrl.changeSorting('result')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                                </div>
+                            </div>
+                            <div class="th-table">
+                            </div>
+                        </div>
+                        <div class="tr" ng-repeat="item in $ctrl.order | orderBy:$ctrl.sort.column:$ctrl.sort.descending | dateRange : $ctrl.from_date: $ctrl.to_date | filter: allfilter | filter: $ctrl.order.state = 'new'">
+                            <a ui-sref="app.detaiorder({postID : item.id})" class="order-number td-table">#{{item.number}}</a>
+                            <a ui-sref="app.detaiorder({postID : item.id})" class="td-table">{{item.order}}</a>
+                            <a ui-sref="app.detaiorder({postID : item.id})" class="td-table">{{item.type}}</a>
+                            <a ui-sref="app.detaiorder({postID : item.id})" class="number-format td-table">{{item.created}}</a>
+                            <a ui-sref="app.detaiorder({postID : item.id})" class="number-format td-table">{{item.date}}</a>
+                            <div class="td-table">
+                                <div class="info-hint">
+                                    <img src="img/info.png" alt="" ng-click="myVar='open-class'">
+                                    <div class="info-hint-mess" ng-class="myVar">
+                                        <img src="img/close-hint.png" alt="" class="close-hint" ng-click="myVar=''">
+                                        <p>Ticket description audantium impedit des recusandae, eum delectus quod, odit um omnis odio eve niet.Sapiente pariaturhil pers piciatis voluptates conseqatur exp edita, sunt aspernatur temporibus</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>    
+               </div>
+               <div class="tab-content_item clearfix" ng-show="$ctrl.isSet(2)">
+                  <div class="scroll-table">
+                    <div class="table-type_1 style-2 order-table table-display">
+                        <div class="caption-tr tr">
+                            <div class="th-table">
+                                <div class="th">Order 
+                                <img ng-click="$ctrl.changeSorting('number')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                                </div>
+                            </div>
+                            <div class="th-table">
+                               <div class="th">Service order  
+                                <img ng-click="$ctrl.changeSorting('order')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                               </div>
+                            </div>
+                            <div class="th-table">
+                                <div class="th">Service 
+                                <img ng-click="$ctrl.changeSorting('type')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                                </div>
+                            </div>
+                            <div class="th-table">
+                                <div class="th">Submitted by 
+                                <img ng-click="$ctrl.changeSorting('created')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                                </div>
+                            </div>
+                            <div class="th-table">
+                                <div class="th">Date submitted
+                                <img ng-click="$ctrl.changeSorting('result')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                                </div>
+                            </div>
+                            <div class="th-table">
+                            </div>
+                        </div>
+                        <div class="tr" ng-repeat="item in $ctrl.order | orderBy:$ctrl.sort.column:$ctrl.sort.descending | dateRange : $ctrl.from_date: $ctrl.to_date | filter: allfilter | filter: $ctrl.order.state = 'open'">
+                            <a ui-sref="app.detaiorder({postID : item.id})" class="order-number td-table">#{{item.number}}</a>
+                            <a ui-sref="app.detaiorder({postID : item.id})" class="td-table">{{item.order}}</a>
+                            <a ui-sref="app.detaiorder({postID : item.id})" class="td-table">{{item.type}}</a>
+                            <a ui-sref="app.detaiorder({postID : item.id})" class="number-format td-table">{{item.created}}</a>
+                            <a ui-sref="app.detaiorder({postID : item.id})" class="number-format td-table">{{item.date}}</a>
+                            <div class="td-table">
+                                <div class="info-hint">
+                                    <img src="img/info.png" alt="" ng-click="myVar='open-class'">
+                                    <div class="info-hint-mess" ng-class="myVar">
+                                        <img src="img/close-hint.png" alt="" class="close-hint" ng-click="myVar=''">
+                                        <p>Ticket description audantium impedit des recusandae, eum delectus quod, odit um omnis odio eve niet.Sapiente pariaturhil pers piciatis voluptates conseqatur exp edita, sunt aspernatur temporibus</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+               </div>
+               <div class="tab-content_item clearfix" ng-show="$ctrl.isSet(3)">
+                   <div class="scroll-table">
+                    <div class="table-type_1 style-2 order-table table-display">
+                        <div class="caption-tr tr">
+                            <div class="th-table">
+                                <div class="th">Order 
+                                <img ng-click="$ctrl.changeSorting('number')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                                </div>
+                            </div>
+                            <div class="th-table">
+                               <div class="th">Service order  
+                                <img ng-click="$ctrl.changeSorting('order')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                               </div>
+                            </div>
+                            <div class="th-table">
+                                <div class="th">Service 
+                                <img ng-click="$ctrl.changeSorting('type')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                                </div>
+                            </div>
+                            <div class="th-table">
+                                <div class="th">Submitted by 
+                                <img ng-click="$ctrl.changeSorting('created')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                                </div>
+                            </div>
+                            <div class="th-table">
+                                <div class="th">Date submitted
+                                <img ng-click="$ctrl.changeSorting('result')" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                                </div>
+                            </div>
+                            <div class="th-table">
+                            </div>
+                        </div>
+                        <div class="tr" ng-repeat="item in $ctrl.order | orderBy:$ctrl.sort.column:$ctrl.sort.descending | dateRange : $ctrl.from_date: $ctrl.to_date | filter: allfilter | filter: $ctrl.order.state = 'closed'">
+                            <a ui-sref="app.detaiorder({postID : item.id})" class="order-number td-table">#{{item.number}}</a>
+                            <a ui-sref="app.detaiorder({postID : item.id})" class="td-table">{{item.order}}</a>
+                            <a ui-sref="app.detaiorder({postID : item.id})" class="td-table">{{item.type}}</a>
+                            <a ui-sref="app.detaiorder({postID : item.id})" class="number-format td-table">{{item.created}}</a>
+                            <a ui-sref="app.detaiorder({postID : item.id})" class="number-format td-table">{{item.date}}</a>
+                            <div class="td-table">
+                                <div class="info-hint">
+                                    <img src="img/info.png" alt="" ng-click="myVar='open-class'">
+                                    <div class="info-hint-mess" ng-class="myVar">
+                                        <img src="img/close-hint.png" alt="" class="close-hint" ng-click="myVar=''">
+                                        <p>Ticket description audantium impedit des recusandae, eum delectus quod, odit um omnis odio eve niet.Sapiente pariaturhil pers piciatis voluptates conseqatur exp edita, sunt aspernatur temporibus</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+               </div>
+           </div>
+         </div> 
+    </div>
+</div>
+<div class="empty-sm-90 empty-xs-90"></div>

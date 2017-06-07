@@ -1,0 +1,166 @@
+<div class="mt-47">
+   <div class="container">
+         <div class="info-caption-bar-wrap"> 
+            <div class="info-caption-bar scroll-fix" fix-scroll-elem="fix-elem" data-offset="-90">
+              <div class="wrap-fix-content flex-align no-padd-top-xs">  
+                <div class="left-flex-align">
+                    <h3 class="caption">Permission Matrix</h3>
+                </div>
+                <div class="right-block">
+                    <select name="select-user" id="userSelect" class="dropdown-select type-2">
+                        <option value="" selected>Firstname Lastname 1</option>
+                        <option value="">Firstname Lastname 2</option>
+                        <option value="">Firstname Lastname 3</option>
+                        <option value="">Firstname Lastname 4</option>
+                    </select>
+                    <i></i>
+                </div>
+              </div>     
+            </div>
+        </div>
+        <div class="empty-sm-30 empty-xs-30"></div>
+        <div class="table-button-bottom">
+         <div class="app-table-responsive">
+         <table class="table-user-permission table-tr-hover custome-layout-3">
+            <tr class="caption-tr caption-tr-style-1">
+               <th class="tr-block col-1">    
+                 <div class="caption">
+                    account name 
+                 </div>
+               </th>
+               <th class="tr-block">    
+                 <div class="caption">
+                     account number 
+                 </div> 
+               </th>
+               <th class="tr-block custome-padding">    
+                 <div class="caption">
+                     view Invoices
+                 </div> 
+               </th>
+               <th class="tr-block custome-padding">    
+                 <div class="caption">
+                     1-time payments
+                 </div> 
+               </th>
+               <th class="tr-block custome-padding">    
+                 <div class="caption">
+                     Billing tickets
+                 </div> 
+               </th>
+               <th class="tr-block custome-padding">    
+                 <div class="caption">
+                     incident tickets
+                 </div> 
+               </th>
+                <th class="tr-block custome-padding">    
+                 <div class="caption">
+                     Sales/Service Tickets
+                 </div> 
+               </th>
+               <th class="tr-block custome-padding">    
+                 <div class="caption">
+                     orders
+                 </div> 
+               </th>
+               <th class="tr-block custome-padding">    
+                 <div class="caption">
+                     all
+                 </div> 
+               </th>
+            </tr>
+            <tr ng-repeat="user in $ctrl.dataAccess">  
+               <td class="tr-block">
+                 <div class="account-name">
+                    <b>{{user.name}}</b>
+                 </div>
+               </td>
+               <td class="tr-block">
+                 <div class="account-name">
+                    <b>{{user.number}}</b>
+                 </div>
+              </td>
+              <td class="tr-block">
+                   <div class="checkbox-entry-wrap type-3 inline">  
+                    <label class="checkbox-entry type-2">
+                        <input type="checkbox" ng-model="user.viewInvoices" ng-true-value="1" ng-false-value="0" ng-click="all = false"><span></span>
+                    </label>
+                   </div> 
+              </td>
+              <td class="tr-block">
+                   <div class="checkbox-entry-wrap type-3 inline">  
+                    <label class="checkbox-entry type-2">
+                        <input type="checkbox" ng-model="user.firstTimePayments" ng-true-value="1" ng-false-value="0" ng-click="all = false"><span></span>
+                    </label>
+                   </div> 
+              </td>
+              <td class="tr-block">
+                   <div class="checkbox-entry-wrap type-3 inline">  
+                    <label class="checkbox-entry type-2">
+                        <input type="checkbox" ng-model="user.billingTickets" ng-true-value="1" ng-false-value="0" ng-click="all = false"><span></span>
+                    </label>
+                   </div> 
+              </td>
+              <td class="tr-block">
+                   <div class="checkbox-entry-wrap type-3 inline">  
+                    <label class="checkbox-entry type-2">
+                        <input type="checkbox" ng-model="user.incidentTickets" ng-true-value="1" ng-false-value="0" ng-click="all = false"><span></span>
+                    </label>
+                   </div> 
+              </td>
+              <td class="tr-block">
+                   <div class="checkbox-entry-wrap type-3 inline">  
+                    <label class="checkbox-entry type-2">
+                        <input type="checkbox" ng-model="user.salesServiceTickets" ng-true-value="1" ng-false-value="0" ng-click="all = false"><span></span>
+                    </label>
+                   </div> 
+              </td>
+              <td class="tr-block">
+                   <div class="checkbox-entry-wrap type-3 inline">  
+                    <label class="checkbox-entry type-2">
+                        <input type="checkbox" ng-model="user.orders" ng-true-value="1" ng-false-value="0" ng-click="all = false"><span></span>
+                    </label>
+                   </div> 
+              </td>
+              <td class="tr-block">
+                   <div class="checkbox-entry-wrap type-3 inline">  
+                    <label class="checkbox-entry type-2" >
+                        <input type="checkbox" ng-model="all" ng-change="$ctrl.checkAll(user, all)"><span></span>
+                    </label>
+                   </div> 
+              </td> 
+            </tr>
+        </table>
+        </div>
+          <div class="text-right two-button-wrapp bg-layer">
+                <a class="app-btn mt5" ng-click="$ctrl.save = true">Save</a>
+                <a class="app-btn app-btn_grey mt5" ng-click="$ctrl.cancel = true">Cancel</a>
+          </div>
+           <div class="valid-message" ng-show="$ctrl.cancel">
+                <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.cancel}">
+                    <div class="app-popup-container-inner" >
+                        <img class="close-btn" ng-click="$ctrl.cancel = false" src="img/close-btn.png" alt="icon">
+                        <div class="app-popup-text text-center">Are you sure you want to discard the changes?</div>
+                        <div class="text-center two-button-wrapp mt-47">
+                            <a class="app-btn mt5" ui-sref="app.user">Yes</a>
+                            <a class="app-btn app-btn_grey mt5" ng-click="$ctrl.cancel = false">No</a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="valid-message" ng-show="$ctrl.save">
+                <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.save}">
+                    <div class="app-popup-container-inner" >
+                        <img class="close-btn" ng-click="$ctrl.save = false" src="img/close-btn.png" alt="icon">
+                        <div class="app-popup-text text-center">Are you sure you want to save your changes?</div>
+                        <div class="text-center two-button-wrapp mt-47">
+                            <a class="app-btn mt5" ui-sref="app.user">Yes</a>
+                            <a class="app-btn app-btn_grey mt5" ng-click="$ctrl.save = false">No</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>     
+    </div>
+</div>
+<div class="empty-sm-90 empty-xs-80"></div> 

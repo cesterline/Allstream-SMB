@@ -1,0 +1,194 @@
+<div class="mt-47">
+    <div class="container">
+     
+      <div class="info-caption-bar-wrap"> 
+        <div class="info-caption-bar scroll-fix" fix-scroll-elem="fix-elem" data-offset="-90">
+          <div class="wrap-fix-content flex-align no-padd-top-xs">  
+            <div class="left-flex-align">
+                <h3 class="caption">Add New User</h3>
+            </div>
+            <div class="right-block">
+                <a class="app-btn btn-white" ui-sref="app.user">back to account users</a> 
+            </div>
+          </div>     
+        </div>
+      </div>
+        
+    <form name="newUserForm" novalidate>
+      <div class="empty-sm-40 empty-xs-30"></div> 
+       <div class="row">
+
+           <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="input-wrapp main-col-text">
+                   <label for="simple-label2" class="in-label">Username</label>
+                   <input class="simple-input sm color-place" ng-model="$ctrl.userName" id="simple-label2" type="text" placeholder="dtrumpenjos" required>
+                </div>
+                <div class="empty-sm-30 empty-xs-30"></div>
+           </div>
+           <div class="col-md-4 col-sm-4 col-xs-12">
+               <div class="input-wrapp main-col-text">
+                   <label for="simple-label" class="in-label">First Name</label>
+                   <input class="simple-input sm color-place" ng-model="$ctrl.firstName" id="simple-label" type="text" placeholder="Donaldinjo" required>
+               </div>
+               <div class="empty-sm-30 empty-xs-30"></div>
+           </div>
+           <div class="col-md-4 col-sm-4 col-xs-12">
+               <div class="input-wrapp main-col-text">
+                   <label for="simple-label2" class="in-label">Last Name</label>
+                   <input class="simple-input sm color-place" ng-model="$ctrl.lastName" id="simple-label2" type="text" placeholder="Trumpenjos" required>
+               </div>
+               <div class="empty-sm-30 empty-xs-30"></div>
+           </div>
+        </div>
+        <div class="row">             
+           <div class="col-md-4 col-sm-4 col-xs-12">
+               <div class="input-wrapp main-col-text">
+                   <label for="simple-label3" class="in-label">Email</label>
+                   <input class="simple-input sm color-place" id="simple-label3" ng-model="$ctrl.email" type="email" placeholder="someuser@email.com" required>
+               </div>
+               <div class="empty-lg-0 empty-md-0 empty-sm-30 empty-xs-30"></div> 
+           </div>
+           <div class="col-md-4 col-sm-4 col-xs-12">
+               <div class="input-wrapp main-col-text">
+                   <label for="simple-label4" class="in-label">Phone number</label>
+                   <input class="simple-input sm color-place" id="simple-label4" ng-model="$ctrl.phone"  type="text" placeholder="(416) 123-4567" required>
+               </div>
+           </div>
+       </div>
+       <div class="empty-sm-60 empty-xs-40"></div>
+       <h3 class="title h1 lg">Populate Permission Matrix</h3>
+       <div class="empty-sm-25 empty-xs-25"></div>
+       <div class="table-button-bottom">
+       <div class="app-table-responsive">
+         <table class="table-user-permission table-tr-hover">
+            <tr class="caption-tr caption-tr-style-1">
+               <th class="tr-block col-1">    
+                 <div class="caption">
+                    account name 
+                 </div>
+               </th>
+               <th class="tr-block">    
+                 <div class="caption">
+                     account number 
+                 </div> 
+               </th>
+               <th class="tr-block custome-padding">    
+                 <div class="caption">
+                     view Invoices
+                 </div> 
+               </th>
+               <th class="tr-block custome-padding">    
+                 <div class="caption">
+                     1-time payments
+                 </div> 
+               </th>
+               <th class="tr-block custome-padding">    
+                 <div class="caption">
+                     Billing tickets
+                 </div> 
+               </th>
+               <th class="tr-block custome-padding">    
+                 <div class="caption">
+                     incident tickets
+                 </div> 
+               </th>
+                <th class="tr-block custome-padding">    
+                 <div class="caption">
+                     Sales/Service Tickets
+                 </div> 
+               </th>
+               <th class="tr-block custome-padding">    
+                 <div class="caption">
+                     orders
+                 </div> 
+               </th>
+               <th class="tr-block custome-padding">    
+                 <div class="caption">
+                     all
+                 </div> 
+               </th>
+            </tr>
+            <tr ng-repeat="user in $ctrl.dataAccess">  
+               <td class="tr-block">
+                 <div class="account-name">
+                    <b>{{user.name}}</b>
+                 </div>
+               </td>
+               <td class="tr-block">
+                 <div class="account-name">
+                    <b>{{user.number}}</b>
+                 </div>
+              </td>
+              <td class="tr-block">
+                   <div class="checkbox-entry-wrap type-3 inline">  
+                    <label class="checkbox-entry type-2">
+                        <input type="checkbox" ng-model="user.viewInvoices" ng-true-value="1" ng-false-value="0" ng-click="all = false"><span></span>
+                    </label>
+                   </div> 
+              </td>
+              <td class="tr-block">
+                   <div class="checkbox-entry-wrap type-3 inline">  
+                    <label class="checkbox-entry type-2">
+                        <input type="checkbox" ng-model="user.firstTimePayments" ng-true-value="1" ng-false-value="0" ng-click="all = false"><span></span>
+                    </label>
+                   </div> 
+              </td>
+              <td class="tr-block">
+                   <div class="checkbox-entry-wrap type-3 inline">  
+                    <label class="checkbox-entry type-2">
+                        <input type="checkbox" ng-model="user.billingTickets" ng-true-value="1" ng-false-value="0" ng-click="all = false"><span></span>
+                    </label>
+                   </div> 
+              </td>
+              <td class="tr-block">
+                   <div class="checkbox-entry-wrap type-3 inline">  
+                    <label class="checkbox-entry type-2">
+                        <input type="checkbox" ng-model="user.incidentTickets" ng-true-value="1" ng-false-value="0" ng-click="all = false"><span></span>
+                    </label>
+                   </div> 
+              </td>
+              <td class="tr-block">
+                   <div class="checkbox-entry-wrap type-3 inline">  
+                    <label class="checkbox-entry type-2">
+                        <input type="checkbox" ng-model="user.salesServiceTickets" ng-true-value="1" ng-false-value="0" ng-click="all = false"><span></span>
+                    </label>
+                   </div> 
+              </td>
+              <td class="tr-block">
+                   <div class="checkbox-entry-wrap type-3 inline">  
+                    <label class="checkbox-entry type-2">
+                        <input type="checkbox" ng-model="user.orders" ng-true-value="1" ng-false-value="0" ng-click="all = false"><span></span>
+                    </label>
+                   </div> 
+              </td>
+              <td class="tr-block">
+                   <div class="checkbox-entry-wrap type-3 inline">  
+                    <label class="checkbox-entry type-2" >
+                        <input type="checkbox" ng-model="all" ng-change="$ctrl.checkAll(user, all)"><span></span>
+                    </label>
+                   </div> 
+              </td> 
+            </tr>
+        </table>
+        </div>
+       <div class="valid-message" ng-show="$ctrl.correct">
+            <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.correct}">
+                <div class="app-popup-container-inner" >
+                    <img class="close-btn" ng-click="$ctrl.correct = false" src="img/close-btn.png" alt="icon">
+                    <div class="app-popup-text text-center">Please make sure all fields are populated correctly and try again</div>
+                    <div class="text-center two-button-wrapp mt-47">
+                        <a class="app-btn app-btn_black mt5" ng-click="$ctrl.correct = false">Ok</a>
+                    </div>
+                </div>
+            </div>
+       </div> 
+       </div>
+       <div class="empty-lg-70 empty-md-70 empty-sm-40 empty-xs-30"></div>   
+        <div class="text-center two-button-wrapp">
+            <input type="submit" class="app-btn mt5" ng-click="$ctrl.validUser(newUserForm)" value="Submit">
+            <a class="app-btn app-btn_black mt5" ui-sref="app.user">Cancel</a>
+        </div>
+                        
+    </form> 
+</div>
+<div class="empty-sm-90 empty-xs-80"></div>

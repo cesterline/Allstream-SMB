@@ -1,0 +1,363 @@
+<div class="bg-white">
+<div class="empty-sm-40 empty-xs-40"></div>
+    <div class="container">
+      <div class="service-header-wrap"> 
+        <section class="service-header scroll-fix {{$ctrl.background}}" fix-scroll-elem="fix-bar" data-offset="-90">
+            <div class="title-wrap">
+                <h1>{{$ctrl.name}}</h1>
+                <div class="open-service-list" ng-click="$ctrl.openList()">
+                    <img src="img/head_arrow1.png" alt="" ng-show="$ctrl.list">
+                    <img src="img/head_arrow2.png" alt="" ng-hide="$ctrl.list">
+                </div>
+            </div>
+            <ul class="services-menu">
+                <li>
+                    <a scroll-to-item scroll-to="#enquipment" scroll-to-offset="158" class="scroll-to-elem">
+                        <img src="img/services-icon1.png" alt="icon">
+                        <span>Equipment</span>
+                    </a>
+                </li>
+                <li>
+                    <a scroll-to-item scroll-to="#guide" scroll-to-offset="158" class="scroll-to-elem">
+                        <img src="img/services-icon2.png" alt="icon">
+                        <span>Guides</span>
+                    </a>
+                </li>
+                <li>
+                    <a scroll-to-item scroll-to="#configuration" scroll-to-offset="158" class="scroll-to-elem">
+                        <img src="img/services-icon3.png" alt="icon">
+                        <span>Config</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="all-service-list" ng-show="$ctrl.list">
+                <li class="green-style">
+                    <div class="accordion-header">
+                        <a class="accordion-link" ui-sref="app.service({path:'GigE Internet - Fixed 1000 Mbps', background: 'green'})">
+                            GigE Internet - Fixed 1000 Mbps
+                        </a>
+                        <div class="links-part">
+                            <a ui-sref="app.service({path:'GigE Internet - Fixed 1000 Mbps', scrollTo: '#enquipment', background: 'green'})">
+                                <span>Display enquipment</span>
+                                <img src="img/service-icon-1.png" alt="icon">
+                            </a>
+                            <a ui-sref="app.service({path:'GigE Internet - Fixed 1000 Mbps', scrollTo: '#guide', background: 'green'})">
+                                <span>User guide</span>
+                                <img src="img/service-icon-2.png" alt="icon">
+                            </a>
+                            <a ui-sref="app.service({path:'GigE Internet - Fixed 1000 Mbps', scrollTo: '#configuration', background: 'green'})">
+                                <span>Configuration</span>
+                                <img src="img/service-icon-3.png" alt="icon">
+                            </a>
+                            <a ui-sref="app.service({path:'GigE Internet - Fixed 1000 Mbps', background: 'green'})">
+                                <span>details</span>
+                                <img src="img/service-icon-4.png" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="orange-style">
+                    <div class="accordion-header">
+                        <a class="accordion-link" ui-sref="app.service({path:'E100 Internet - Burstable', background: 'orange', })">
+                            E100 Internet - Burstable
+                        </a>
+                        <div class="links-part">
+                            <a ui-sref="app.service({path:'E100 Internet - Burstable', scrollTo: '#enquipment', background: 'orange'})">
+                                <span>Display enquipment</span>
+                                <img src="img/service-icon-1.png" alt="icon">
+                            </a>
+                            <a ui-sref="app.service({path:'E100 Internet - Burstable', scrollTo: '#guide', background: 'orange'})">
+                                <span>User guide</span>
+                                <img src="img/service-icon-2.png" alt="icon">
+                            </a>
+                            <a ui-sref="app.service({path:'E100 Internet - Burstable', scrollTo: '#configuration', background: 'orange'})">
+                                <span>Configuration</span>
+                                <img src="img/service-icon-3.png" alt="icon">
+                            </a>
+                            <a ui-sref="app.service({path:'E100 Internet - Burstable', background: 'orange', })">
+                                <span>details</span>
+                                <img src="img/service-icon-4.png" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="blue-style">
+                    <div class="accordion-header">
+                        <a class="accordion-link" ui-sref="app.service({path:'Voice - Business Line', background: 'blue'})">
+                            Voice - Business Line
+                        </a>
+                        <div class="links-part">
+                            <a ui-sref="app.service({path:'Voice - Business Line', scrollTo: '#enquipment', background: 'blue'})">
+                                <span>Display enquipment</span>
+                                <img src="img/service-icon-1.png" alt="icon">
+                            </a>
+                            <a ui-sref="app.service({path:'Voice - Business Line', scrollTo: '#guide', background: 'blue'})">
+                                <span>User guide</span>
+                                <img src="img/service-icon-2.png" alt="icon">
+                            </a>
+                            <a ui-sref="app.service({path:'Voice - Business Line', scrollTo: '#configuration', background: 'blue'})">
+                                <span>Configuration</span>
+                                <img src="img/service-icon-3.png" alt="icon">
+                            </a>
+                            <a ui-sref="app.service({path:'Voice - Business Line', background: 'blue'})">
+                                <span>details</span>
+                                <img src="img/service-icon-4.png" alt="icon">
+                            </a>
+                        </div>
+                    </div>    
+                </li>
+            </ul>    
+        </section>
+     </div>      
+    </div> 
+</div>
+
+<section class="bg-white service-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <table class="table-type_2 style-border">
+                    <tbody><tr>
+                        <td>System Number</td>
+                        <td class="number-format">16999-7.2</td>
+                    </tr>
+                    <tr>
+                        <td>Software version</td>
+                        <td class="number-format">F8.2</td>
+                    </tr>
+                    <tr>
+                        <td>System status</td>
+                        <td class="active number-format">Active</td>
+                    </tr>
+                    <tr>
+                        <td>Invoice frequency</td>
+                        <td class="number-format">1/month</td>
+                    </tr>
+                    <tr>
+                        <td>Contract number</td>
+                        <td class="number-format">16-106585</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <table class="table-type_2 style-border">
+                    <tbody><tr>
+                        <td>Lease type</td>
+                        <td class="number-format">None</td>
+                    </tr>
+                    <tr>
+                        <td>Serial number</td>
+                        <td class="expired number-format">39B20899</td>
+                    </tr>
+                    <tr>
+                        <td>IP address</td>
+                        <td>10.1.180.11</td>
+                    </tr>
+                    <tr>
+                        <td>Alias</td>
+                        <td class="number-format">5134669</td>
+                    </tr>
+                    <tr>
+                        <td>Gatekeeper IP</td>
+                        <td class="number-format">10.1.1.207</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+               <div class="accordion dark type-2" ng-class="$ctrl.usageColor()">
+				<div class="accordion-header type-2">
+					Current Usage
+				</div>
+				<div class="accordion-content usage-info-container no-border">
+					<div class="progress-box" ng-show="$ctrl.background == 'green'">
+						<div class="progress-title">
+							GigE Internet - Fixed 1000Mbps <i>(10GB included)</i>
+						</div>
+						<div class="progress-usage">
+							<span class="green-usage" style="width: 70%"></span>
+						</div>
+						<div class="usage-info">
+							6.5GB used <span class="sep">|</span> 3.5GB left
+						</div>
+						<div class="empty-sm-30 empty-xs-30"></div>
+					</div>
+					<div class="progress-box" ng-show="$ctrl.background == 'orange'">
+						<div class="progress-title">
+							E100 Internet - Burstable <i>(10GB included)</i>
+						</div>
+						<div class="progress-usage">
+							<span class="orange-usage" style="width: 80%"></span>
+						</div>
+						<div class="usage-info">
+							7.2GB used <span class="sep">|</span> 2.8GB left
+						</div>
+						<div class="empty-sm-30 empty-xs-30"></div>
+					</div>
+					<div class="progress-box" ng-show="$ctrl.background == 'blue'">
+						<div class="progress-title">
+							Voice - Business Line <i>(1000min included)</i>
+						</div>
+						<div class="progress-usage">
+							<span class="blue-usage" style="width: 90%"></span>
+						</div>
+						<div class="usage-info">
+							920 min used <span class="sep">|</span> <span class="usage-limit">80 min left</span>
+						</div>
+						<div class="empty-sm-30 empty-xs-30"></div>
+					</div>
+					
+				</div> 
+			 </div>
+             
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-grey table-section service-section" id="enquipment">
+    <div class="container">
+        <div class="title-row">
+            <h2><img src="img/service-icon-1.png" alt="icon">Equipment</h2>
+        </div>
+        <div class="app-table-responsive">
+            <table class="table-type_1 style-2">
+                <tr class="caption-tr">
+                    <th>
+                        <div class="th">Product Name 
+                            <img ng-click="$ctrl.changeSorting('product', $ctrl.sort2)" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                        </div>
+                    </th>
+                    <th>
+                        <div class="th">Description 
+                            <img ng-click="$ctrl.changeSorting('desc', $ctrl.sort2)" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                        </div>
+                    </th>
+                    <th>Qty.</th>
+                    <th>
+                        <div class="th">Ship Date 
+                            <img ng-click="$ctrl.changeSorting('ship', $ctrl.sort2)" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                        </div>
+                    </th>
+                    <th>
+                        <div class="th">Eff Date 
+                            <img ng-click="$ctrl.changeSorting('eff', $ctrl.sort2)" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                        </div>
+                    </th>
+                    <th>
+                        <div class="th">Order # 
+                            <img ng-click="$ctrl.changeSorting('order', $ctrl.sort2)" class="filter-icon" src="img/filter-image2.png" alt="icon">
+                        </div>
+                    </th>
+                    <th>Contact</th>
+                </tr>
+                <tr ng-repeat="data in $ctrl.data | orderBy:$ctrl.sort2.column:$ctrl.sort2.descending">
+                    <td>{{data.product}}</td>
+                    <td>{{data.desc}}</td>
+                    <td>{{data.qty}}</td>
+                    <td class="number-format">{{data.ship}}</td>
+                    <td class="number-format">{{data.eff}}</td>
+                    <td class="number-format">{{data.order}}</td>
+                    <td>{{data.contact}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+<section class="bg-white guide-section service-section" id="guide">
+    <div class="container">
+        <div class="title-row">
+            <h2><img src="img/service-icon-2.png" alt="icon">User Guide</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.docx</span>
+
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        Installation Guide for First Time Users
+                    </h3>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.pdf</span>
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        Setup Guide for Netgear NL-900
+                    </h3>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.txt</span>
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        Read Me Document for Terabit System AM3D-90093E
+                    </h3>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.xlsx</span>
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        Router Values for Optimal Performance
+                    </h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="service-section table-section bg-grey" id="configuration">
+    <div class="container">
+        <div class="title-row">
+            <h2><img src="img/service-icon-3.png" alt="icon">Configuration</h2>
+        </div>
+        <div class="app-table-responsive">
+            <table class="table-type_1 style-2">
+                <tr class="caption-tr">
+                    <th><div class="th">Product Name <img ng-click="$ctrl.changeSorting('product', $ctrl.sort)"
+                                          class="filter-icon" src="img/filter-image2.png" alt="icon"></div></th>
+                    <th><div class="th">Description <img ng-click="$ctrl.changeSorting('desc', $ctrl.sort)"
+                                         class="filter-icon" src="img/filter-image2.png" alt="icon"></div></th>
+                    <th>Qty.</th>
+                    <th><div class="th">Ship Date <img ng-click="$ctrl.changeSorting('ship', $ctrl.sort)"
+                                       class="filter-icon" src="img/filter-image2.png" alt="icon"></div></th>
+                    <th><div class="th">Eff Date <img ng-click="$ctrl.changeSorting('eff', $ctrl.sort)"
+                                      class="filter-icon" src="img/filter-image2.png" alt="icon"></div></th>
+                    <th><div class="th">Order # <img ng-click="$ctrl.changeSorting('order', $ctrl.sort)"
+                                     class="filter-icon" src="img/filter-image2.png" alt="icon"></div></th>
+                    <th>Contact</th>
+                </tr>
+                <tr ng-repeat="data in $ctrl.data2 | orderBy:$ctrl.sort.column:$ctrl.sort.descending">
+                    <td>{{data.product}}</td>
+                    <td>{{data.desc}}</td>
+                    <td>{{data.qty}}</td>
+                    <td class="number-format">{{data.ship}}</td>
+                    <td class="number-format">{{data.eff}}</td>
+                    <td class="number-format">{{data.order}}</td>
+                    <td>{{data.contact}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+<div class="empty-sm-20 empty-xs-20"></div>

@@ -1,0 +1,41 @@
+<div class="container settings-container">
+    <div class="row">
+        <div class="col-sm-12">
+             <div class="info-block edit-user-info">
+                <h3 class="app-popup-text no-padd">
+                    Edit account settings
+                </h3>
+                <div class="empty-sm-20 empty-xs-0"></div> 
+                <form action="" class="ng-pristine ng-valid">
+                    <label for="firstName" class="simple-label">First name:</label>
+                    <input class="simple-input" id="firstName" type="text" value="Alex">
+                    <label for="lastName" class="simple-label">Last name:</label>
+                    <input class="simple-input" id="lastName" type="text" value="Doeu">
+                    <label for="userName" class="simple-label">Username:</label>
+                    <input class="simple-input" id="userName" type="text" value="User1">
+                    <label for="userEmail" class="simple-label">Email:</label>
+                    <input class="simple-input" id="userEmail" type="text" value="example@gmail.com">
+                    <label for="userPhone" class="simple-label">Phone number:</label>
+                    <input class="simple-input" id="userPhone" type="text" value="0986324242332">
+                </form>
+                <div class="empty-sm-30 empty-xs-0"></div>
+                <div class="text-center two-button-wrapp"> 
+                  <a ui-sref="app.settings" class="app-btn mt5">Save</a>
+                  <a class="app-btn mt5 app-btn_black" ng-click="$ctrl.error = true">Cancel</a>
+                </div>
+                <div class="valid-message" ng-show="$ctrl.error">
+                    <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.error}">
+                        <div class="app-popup-container-inner" >
+                            <img class="close-btn" ng-click="$ctrl.error = false" src="img/close-btn.png" alt="icon">
+                            <div class="app-popup-text text-center">Are you sure you want to discard changes made?</div>
+                            <div class="text-center popup-small-btn">
+                                <a class="app-btn mt5" ui-sref="app.settings">Yes</a>
+                                <a class="app-btn mt5 app-btn_black" ng-click="$ctrl.error = false">No</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

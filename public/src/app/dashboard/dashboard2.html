@@ -1,0 +1,747 @@
+<div class="empty-sm-50 empty-xs-50"></div>
+   <div class="container dashboard-container scroll-fix" ng-init="$ctrl.pie" fix-scroll-elem="fix-elem" data-offset="10">
+    <div class="accordion welcome-board">
+        <div class="accordion-header">
+            <div class="welcome-title">
+                <span>Welcome back,</span>
+                <h1>Ian Wilson!</h1>
+            </div>
+            <div class="welcome-info">
+                <div>Below is your summary</div>
+                <div>as of <span>November 20, 2016</span></div>
+            </div>
+            <span class="accordion-btn tooltip-show" ng-class="{active: $ctrl.box4}" ng-click="$ctrl.box4=!$ctrl.box4">
+                <span class="tooltip-item">
+                  <h6>Collapse the widget</h6>
+                </span>
+            </span>
+        </div>
+        <div class="accordion-content welcome-content" data-slide-toggle="$ctrl.box4">
+            <div class="welcome-content-left">
+                <h4>Company ABC Incorporated</h4>
+                <h4>Billing Account # : 010009876543</h4>
+            </div>
+            <div class="welcome-content-right">
+                <h5>Billing Period:</h5>
+                <p>November 1, 2016 – December 1, 2016</p>
+                <span><i>(10 days left)</i></span>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-board">
+        <div class="col-md-3 col-sm-6">
+          <div class="scroll-info-elem">
+           <h5>Company:</h5>
+           <span> ABC Incorporated</span> 
+          </div> 
+          <div class="empty-lg-0 empty-md-0 empty-sm-10 empty-xs-10"></div>    
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="scroll-info-elem">
+           <h5>Billing Account #: </h5>
+           <span>010009876543</span> 
+          </div>
+          <div class="empty-lg-0 empty-md-10 empty-sm-10 empty-xs-10"></div>   
+        </div>
+        <div class="col-md-6 col-sm-12">
+           <div class="scroll-info-elem text-right">
+            <h5>Billing Period:</h5>
+            <span>November 1, 2016 – December 1, 2016 </span>
+               <p><i>(10 days left)</i></p> 
+           </div>  
+        </div>
+    </div>
+    <div class="flex-masonry-wrap">
+      <div class="row flex-masonry">
+      </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <div class="accordion dashboard-table table-format mt-30">
+                <div class="accordion-header">
+                    Tickets Summary
+                    <span class="accordion-btn tooltip-show" ng-class="{active: $ctrl.box10}"
+                          ng-click="$ctrl.box10=!$ctrl.box10">
+                          <span class="tooltip-item">
+                            <h6>Collapse the widget</h6>
+                          </span>      
+                    </span>
+                          
+                </div>
+                <div class="accordion-content account-summary" data-slide-toggle="$ctrl.box10">
+                    <table class="table-type-3">
+                        <tr>
+                            <th class="tb-caption"><a href="#" ui-sref="app.tickets({type:'billing'})">Billing Tickets</a></th>
+                            <th><b class="td-status-closed td-status"><a href="#" ui-sref="app.tickets({'status':'closed'})">Resolved</a></b></th>
+                            <th><b class="td-status-open td-status"><a href="#" ui-sref="app.tickets({'status':'open'})">In Progress</a></b></th>
+                        </tr>
+                        <tr>
+                            <td><a href="#" ui-sref="app.tickets({type:'billing'})">My Billing Tickets</a></td>
+                            <td class="number-format"><a href="#" ui-sref="app.tickets({type:'billing', 'status':'closed'})">2</a></td> 
+                            <td class="number-format"><a href="#" ui-sref="app.tickets({type:'billing', 'status':'open'})">2</a></td> 
+                        </tr>
+                        <tr>
+                            <td><b class="medium-font"><a href="#" ui-sref="app.tickets({type:'billing'})">All Billing Tickets</a></b></td>
+                            <td class="number-format"><b class="medium-font"><a href="#" ui-sref="app.tickets({type:'billing', 'status':'closed'})">8</a></b></td> 
+                            <td class="number-format"><b class="medium-font"><a href="#" ui-sref="app.tickets({type:'billing', 'status':'open'})">8</a></b></td> 
+                        </tr>
+                        <tr>
+                            <td class="tb-caption"><a href="#" ui-sref="app.tickets({type:'incident'})">Incident Tickets</a></td>
+                           <td></td> 
+                           <td></td> 
+                        </tr>
+                        <tr>
+                           <td><a href="#" ui-sref="app.tickets({type:'incident'})">My Incident Tickets</a></td>
+                            <td class="number-format"><a href="#" ui-sref="app.tickets({type:'incident', 'status':'closed'})">0</a></td> 
+                            <td class="number-format"><a href="#" ui-sref="app.tickets({type:'incident', 'status':'open'})">0</a></td> 
+                        </tr>
+                        <tr>
+                           <td><b class="medium-font"><a href="#" ui-sref="app.tickets({type:'incident'})">All Incident Tickets</a></b></td>
+                           <td class="number-format"><b class="medium-font"><a href="#" ui-sref="app.tickets({type:'incident', 'status':'closed'})">14</a></b></td> 
+                           <td class="number-format"><b class="medium-font"><a href="#" ui-sref="app.tickets({type:'incident', 'status':'open'})">14</a></b></td> 
+                        </tr>
+                        <tr>
+                            <td class="tb-caption"><a href="#" ui-sref="app.tickets({type:'sales'})">Service / Sales Tickets</a></td>
+                           <td></td> 
+                           <td></td> 
+                        </tr>
+                        <tr>
+                           <td><a href="#" ui-sref="app.tickets({type:'sales'})">My Service / Sales Tickets</a></td>
+                            <td class="number-format"><a href="#" ui-sref="app.tickets({type:'sales', 'status':'closed'})">1</a></td> 
+                            <td class="number-format"><a href="#" ui-sref="app.tickets({type:'sales', 'status':'open'})">1</a></td> 
+                        </tr>
+                        <tr>
+                           <td><b class="medium-font"><a href="#" ui-sref="app.tickets({type:'sales'})">All Service / Sales Tickets</a></b></td>
+                            <td class="number-format"><b class="medium-font"><a href="#" ui-sref="app.tickets({type:'sales', 'status':'closed'})">32</a></b></td> 
+                            <td class="number-format"><b class="medium-font"><a href="#" ui-sref="app.tickets({type:'sales', 'status':'open'})">32</a></b></td> 
+                        </tr>
+                    </table>
+                    <div class="text-right two-button-wrapp mt-47">
+                       <div class="fl-button">
+                         <a class="app-btn btn-grey" ui-sref="app.tickets">View All</a> 
+                       </div>
+                       <div class="fr-button">
+                        <a class="app-btn" ui-sref="app.newticket">New Ticket</a>  
+                       </div>
+                       <div class="empty-sm-30 empty-xs-30"></div> 
+                    </div>
+                </div>
+            </div>
+            <div class="accordion dashboard-table table-format mt-30">
+                <div class="accordion-header">
+                    Pre-Authorized Payments
+                    <span class="accordion-btn tooltip-show" ng-class="{active: $ctrl.box11}"
+                          ng-click="$ctrl.box11=!$ctrl.box11">
+                            <span class="tooltip-item">
+                              <h6>Collapse the widget</h6>
+                            </span>
+                          </span>
+                          
+                </div>
+                <div class="accordion-content account-summary" data-slide-toggle="$ctrl.box11">
+                        <div class="card-info-fill flex-align-top" ng-hide="$ctrl.update">
+                            <h5 class="table-caption type-2 text-left">Credit Card</h5>
+                                <table class="table-type-3 col-2-left">
+                                    <tr>
+                                        <td>
+                                            <div class="th medium-font">Name:</div>
+                                        </td>
+                                        <td>
+                                            <div class="card-data tu">{{$ctrl.payCardName}}</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="th medium-font">Card Number:</div>
+                                        </td>
+                                        <td>
+                                            <div class="card-data">**** **** **** <span>{{$ctrl.addNumber}}</span> <img src="img/visa.png" alt="" class="img-card"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="th medium-font">Expiry Date:</div>
+                                        </td>
+                                        <td>
+                                            <div class="card-data">** / {{$ctrl.payCardDate}}</div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                                <div class="text-center two-button-wrapp mt-47">
+                                   <a class="app-btn" ng-click="$ctrl.updateCard()">Review</a>
+                                   <div class="empty-sm-30 empty-xs-30"></div> 
+                                </div>    
+                        </div>
+                        
+                        <div class="valid-message" ng-show="$ctrl.isOpenPopup">
+                            <div class="valid-mess no-padd" ng-class="{'active':$ctrl.isOpenPopup}">
+                               <div class="payment-process no-box2">
+                                    <div class="empty-sm-10 empty-xs-10"></div>   
+                                      <form novalidate name="addCardForm">  
+                                        <div class="payment-process-inner no-padd">
+                                            <label for="namecard" class="simple-label">Name on the card *</label>
+                                            <input class="simple-input" id="namecard" type="text" ng-model="$ctrl.payCardName" required>
+                                            <div class="card-info clearfix">
+                                                <div class="card-info-left card-info-left_lg">
+                                                    <label class="simple-label">Card Number *</label>
+                                                    <input class="simple-input" mask-input maxlength="16" type="text" ng-model="$ctrl.payCardNumber" required>
+                                                </div>
+                                                <div class="card-info-right">
+                                                    <img class="banking-img" src="img/visa.png" alt="icon">
+                                                </div>
+                                            </div>
+                                            <div class="card-info clearfix">
+                                                <div class="card-info-left card-info-left_sm fl">
+                                                    <label class="simple-label">Expiry Date *</label>
+                                                    <input class="simple-input simple-input-sm"  placeholder="MM" maxlength="2" type="text" ng-model="$ctrl.payCardMonth" ng-init="$ctrl.replcaYear(payCardMonth)" required>
+                                                    <input class="simple-input simple-input-sm"  placeholder="YY" type="text" ng-model="$ctrl.payCardDate" maxlength="2" required>
+                                                </div>
+                                                <div class="card-info-right relative fr">
+                                                    <label class="simple-label">CVV *</label>
+                                                    <input class="simple-input simple-input-sm" maxlength="3" type="text" ng-model="$ctrl.payCardCvv" required>
+                                                    <img class="cvv-icon" src="img/cvv-icon.png" alt="icon">
+                                                    <div class="tooltip-block">
+                                                        <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="empty-sm-30 empty-xs-30"></div>
+                                            <div class="date-choose">
+                                               <span>*Starts on<img src="img/calendar.png" alt="">repeats monthly</span>
+                                            </div>
+                                            <div class="empty-sm-10 empty-xs-10"></div>
+                                        </div>
+                                        <div class="empty-sm-30 empty-xs-30"></div>
+                                        <input type="submit" value="Submit" class="payment-btn" ng-click="$ctrl.addCard(addCardForm)">
+                                      </form>      
+                                </div>
+                            </div>
+                        </div>
+                        <div class="valid-message" ng-show="$ctrl.errorCard">
+                            <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.errorCard}">
+                                <div class="app-popup-container-inner" >
+                                    <img class="close-btn" ng-click="$ctrl.errorCard = false" src="img/close-btn.png" alt="icon">
+                                    <div class="app-popup-text text-center">Please make sure all fields are populated correctly and try again.</div>
+                                    <div class="text-center mt-47 two-button-wrapp">
+                                        <a class="app-btn" ng-click="$ctrl.errorCard = false">Ok</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="valid-message" ng-show="$ctrl.success">
+                            <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.success}">
+                                <div class="app-popup-container-inner" >
+                                    <img class="close-btn" ng-click="$ctrl.success = false" src="img/close-btn.png" alt="icon">
+                                    <div class="app-popup-text text-center" ng-show="!$ctrl.update">Thank you! Pre-authorized payments have been setup.</div>
+                                    <div class="app-popup-text text-center" ng-show="$ctrl.update">Thank you! The information has been updated successfully</div>
+                                    <div class="text-center mt-47 two-button-wrapp">
+                                        <a class="app-btn" ng-click="$ctrl.success = false">Ok</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                   
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+             <div class="accordion dashboard-table table-format mt-30">
+               
+                <div class="accordion-header">
+                    Account Summary
+                    <span class="accordion-btn tooltip-show" ng-class="{active: $ctrl.box1234}"
+                          ng-click="$ctrl.box1234=!$ctrl.box1234">
+                            <span class="tooltip-item">
+                              <h6>Collapse the widget</h6>
+                            </span>
+                          </span>
+                </div>
+                <div class="accordion-content account-summary" data-slide-toggle="$ctrl.box1234">
+                    <table class="table-type_2">
+                        <tbody>
+                            <tr>
+                                <td>Amount Of Your Last Invoice</td>
+                                <td class="number-format">$235.17</td>
+                            </tr>
+                            <tr>
+                                <td>Payments And Adjustments Up To Oct 30, 2016</td>
+                                <td class="active number-format">-$161.67</td>
+                            </tr>
+                            <tr class="total-tr">
+                                <td>Balance Forward</td>
+                                <td class="number-format">$73.50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-caption">
+                        Current Charges
+                    </div>
+                    <table class="table-type_2">
+                        <tbody>
+                            <tr>
+                                <td>Usage Charges</td>
+                                <td class="number-format">$36.72</td>
+                            </tr>
+                            <tr>
+                                <td>Monthly Charges</td>
+                                <td class="number-format">$375.39</td>
+                            </tr>
+                            <tr>
+                                <td>Other Charges And Credits</td>
+                                <td class="number-format">$1,188.34</td>
+                            </tr>
+                            <tr>
+                                <td>Late Payments Charges</td>
+                                <td class="number-format">$0.00</td>
+                            </tr>
+                            <tr class="total-tr">
+                                <td>Total Before Taxes</td>
+                                <td class="number-format">$1,600.45</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-caption">
+                        Taxes
+                    </div>
+                    <table class="table-type_2">
+                        <tbody>
+                            <tr>
+                                <td>HST (Ontario)</td>
+                                <td class="number-format">$74.70</td>
+                            </tr>
+                            <tr>
+                                <td>QST (Quebec)</td>
+                                <td class="number-format">$0.00</td>
+                            </tr>
+                            <tr class="total-tr">
+                                <td>Total Before Taxes</td>
+                                <td class="number-format"> $50.08</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="total-due clearfix">
+                        <div class="total-due-title">
+                            <h3>Total Due</h3>
+                            <a class="app-btn" ui-sref="app.pay">Pay NOW</a>
+                        </div>
+                        <div class="total-due-sum">
+                            $1798.23
+                        </div>
+                    </div>
+                </div>
+             </div>
+             <div class="accordion dashboard-table table-format mt-30">
+               
+                <div class="accordion-header">
+                    Orders Summary
+                    <span class="accordion-btn tooltip-show" ng-class="{active: $ctrl.box12}"
+                          ng-click="$ctrl.box12=!$ctrl.box12">
+                            <span class="tooltip-item">
+                              <h6>Collapse the widget</h6>
+                            </span>
+                          </span>
+                </div>
+                <div class="accordion-content account-summary" data-slide-toggle="$ctrl.box12">
+                    <table class="table-type-3">
+                        <tr>
+                            <th><b class="medium-font">Order #</b></th>
+                            <th><b class="medium-font">Submitted</b></th>
+                            <th><b class="medium-font">Status</b></th>
+                        </tr>
+                        <tr>
+                           <td>12321</td>
+                           <td>10/28/2016</td> 
+                           <td><span class="td-status-closed td-status"><a ui-sref="app.order({status:'closed'})">Resolved</a></span></td> 
+                        </tr>
+                        <tr>
+                           <td>24742</td>
+                           <td>11/21/2016</td> 
+                           <td><span class="td-status-closed td-status"><a ui-sref="app.order({status:'closed'})">Resolved</a></span></td> 
+                        </tr>
+                        <tr>
+                           <td>28933</td>
+                           <td>12/30/2016</td> 
+                           <td><span class="td-status-open td-status"><a ui-sref="app.order({status:'open'})">In Progress</a></span></td> 
+                        </tr>
+                        <tr>
+                           <td>34779</td>
+                           <td>01/28/2017</td> 
+                           <td><span class="td-status-open td-status"><a ui-sref="app.order({status:'open'})">In Progress</a></span></td> 
+                        </tr>
+                        <tr>
+                           <td>38874</td>
+                           <td>02/26/2017</td> 
+                           <td><span class="td-status-open td-status"><a ui-sref="app.order({status:'open'})">In Progress</a></span></td> 
+                        </tr>
+                        <tr>
+                           <td>40112</td>
+                           <td>03/27/2017</td> 
+                           <td><span class="td-status-new td-status"><a href="#" ui-sref="app.order">NEW</a></span></td> 
+                        </tr>
+                    </table>
+                    <div class="text-center two-button-wrapp mt-47">
+                       <a class="app-btn" ui-sref="app.order">View All</a>
+                       <div class="empty-sm-30 empty-xs-30"></div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+       <div class="accordion dashboard-table table-format">
+            <div class="accordion-header inline-block type-2">
+               <div class="welcome-title">
+                Invoice History
+                <div class="empty-sm-10 empty-xs-10"></div>
+                <span>(March, 2017 - October, 2016)</span>
+               </div>
+                <span class="accordion-btn tooltip-show" ng-class="{active: $ctrl.box13}"
+                      ng-click="$ctrl.box13=!$ctrl.box13">
+                            <span class="tooltip-item">
+                              <h6>Collapse the widget</h6>
+                            </span>
+                      </span>
+            </div>
+            <div class="accordion-content account-summary" data-slide-toggle="$ctrl.box13">
+                 <div class="app-table-responsive">
+                  
+                   <table class="table-type_1 table-layout style-2 hover-row last-col center-td">
+                        <tr class="caption-tr">
+                            <th><div class="th">Date 
+                                <img ng-click="$ctrl.changeSorting('date')" class="filter-icon" src="img/filter-image2.png" alt="icon"></div>
+                            </th>
+                            <th class="number-format"><div class="th">Invoice # 
+                                <img ng-click="$ctrl.changeSorting('invoice')" class="filter-icon" src="img/filter-image2.png" alt="icon"></div>
+                            </th>
+                            <th><div class="th">Account 
+                                <img ng-click="$ctrl.changeSorting('account')" class="filter-icon" src="img/filter-image2.png" alt="icon"></div>
+                            </th>
+                            <th><div class="th">Amount 
+                                <img ng-click="$ctrl.changeSorting('amount')" class="filter-icon" src="img/filter-image2.png" alt="icon"></div>
+                            </th>
+                            <th>Actions </th>
+                        </tr>
+                        <tr ng-repeat="data in filed = ($ctrl.dataInvoice | orderBy:$ctrl.sort.column:$ctrl.sort.descending)">
+                            <td class="number-format">{{data.date}}</td>
+                            <td class="number-format"><a href="#" ui-sref="app.invoices">{{data.invoice}}</a></td>
+                            <td>${{data.amount}}</td>
+                            <td class="number-format">{{data.datepay}}</td>
+                            <td class="text-center"><a class="app-btn sm btn-grey-2" href="{{data.actions}}" target="_blank">download</a></td>
+                        </tr>
+                        <tr ng-show="!filed.length">
+                            <td>
+                                No results found
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="empty-sm-30 empty-xs-30"></div>
+            <div class="text-center two-button-wrapp">
+               <a class="app-btn" ui-sref="app.invoices({param1:'tab2'})">View All</a>
+            </div>
+            <div class="empty-sm-50 empty-xs-50"></div>
+        </div>
+    </div>
+</section>
+
+<section class="dashboard-summary-container">
+    <div class="container">
+        <h2 class="page-title">
+            Summary Of Services
+        </h2>
+        <div class="accordion table-format green-style">
+            <div class="accordion-header">
+                <a class="accordion-link" ui-sref="app.service({path:'GigE Internet - Fixed 1000 Mbps', background: 'green'})">
+                    GigE Internet - Fixed 1000 Mbps
+                </a>
+                <div class="links-part">
+                    <a ui-sref="app.service({path:'GigE Internet - Fixed 1000 Mbps', scrollTo: '#enquipment', background: 'green'})">
+                        <span>Display enquipment</span>
+                        <img src="img/service-icon-1.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'GigE Internet - Fixed 1000 Mbps', scrollTo: '#guide', background: 'green'})">
+                        <span>User guide</span>
+                        <img src="img/service-icon-2.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'GigE Internet - Fixed 1000 Mbps', scrollTo: '#configuration', background: 'green'})">
+                        <span>Configuration</span>
+                        <img src="img/service-icon-3.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'GigE Internet - Fixed 1000 Mbps', background: 'green'})">
+                        <span>Details</span>
+                        <img src="img/service-icon-4.png" alt="icon">
+                    </a>
+                </div>
+                <span class="accordion-btn tooltip-show" ng-class="{active: $ctrl.box5}" ng-click="$ctrl.box5=!$ctrl.box5; $ctrl.box6 = true; $ctrl.box7 = true;">
+                    <span class="tooltip-item">
+                      <h6>Collapse the widget</h6>
+                    </span>
+                </span>
+            </div>
+            <div class="accordion-content hidden-accordion" data-slide-toggle="$ctrl.box5">
+                <div class="row table-row tables-row bg-type">
+                    <div class="col-md-6">
+                        <table class="table-type_2">
+                            <tbody>
+                            <tr>
+                                <td>System Number</td>
+                                <td class="number-format">16999-7</td>
+                            </tr>
+                            <tr>
+                                <td>Software Version</td>
+                                <td class="number-format">F8.2</td>
+                            </tr>
+                            <tr>
+                                <td>System Status</td>
+                                <td class="active number-format">Active</td>
+                            </tr>
+                            <tr>
+                                <td>Invoice Frequency</td>
+                                <td class="number-format">1/month</td>
+                            </tr>
+                            <tr>
+                                <td>Contract Number</td>
+                                <td class="number-format">16-106595</td>
+                            </tr>
+                            <tr>
+                                <td>Contract Status</td>
+                                <td class="expired number-format">Expired</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table-type_2">
+                            <tbody>
+                            <tr>
+                                <td>Lease Type</td>
+                                <td class="number-format">None</td>
+                            </tr>
+                            <tr>
+                                <td>Serial Number</td>
+                                <td class="number-format">39B2899</td>
+                            </tr>
+                            <tr>
+                                <td>MAC Address</td>
+                                <td class="number-format">00-50-60-81-0E-D2</td>
+                            </tr>
+                            <tr>
+                                <td>IP Address</td>
+                                <td class="number-format">10.1.180.11</td>
+                            </tr>
+                            <tr>
+                                <td>Alias</td>
+                                <td class="number-format">5134660</td>
+                            </tr>
+                            <tr>
+                                <td>Gatekeeper IP Adress</td>
+                                <td class="number-format">10.1.1.207</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion table-format orange-style">
+            <div class="accordion-header">
+                <a class="accordion-link" ui-sref="app.service({path:'E100 Internet - Burstable', background: 'orange', })">
+                    E100 Internet - Burstable
+                </a>
+                <div class="links-part">
+                    <a ui-sref="app.service({path:'E100 Internet - Burstable', scrollTo: '#enquipment', background: 'orange'})">
+                        <span>Display enquipment</span>
+                        <img src="img/service-icon-1.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'E100 Internet - Burstable', scrollTo: '#guide', background: 'orange'})">
+                        <span>User guide</span>
+                        <img src="img/service-icon-2.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'E100 Internet - Burstable', scrollTo: '#configuration', background: 'orange'})">
+                        <span>Configuration</span>
+                        <img src="img/service-icon-3.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'E100 Internet - Burstable', background: 'orange', })">
+                        <span>details</span>
+                        <img src="img/service-icon-4.png" alt="icon">
+                    </a>
+                </div>
+                <span class="accordion-btn tooltip-show" ng-class="{active: $ctrl.box6}" ng-click="$ctrl.box6=!$ctrl.box6; $ctrl.box5 = true; $ctrl.box7 = true;">
+                    <span class="tooltip-item">
+                      <h6>Collapse the widget</h6>
+                    </span>
+                </span>
+            </div>
+            <div class="accordion-content ng-isolate-scope hidden-accordion"  data-slide-toggle="$ctrl.box6">
+                <div class="row table-row tables-row bg-type">
+                    <div class="col-md-6">
+                        <table class="table-type_2">
+                            <tbody>
+                            <tr>
+                                <td>System Number</td>
+                                <td class="number-format">16999-7</td>
+                            </tr>
+                            <tr>
+                                <td>Software Version</td>
+                                <td class="number-format">F8.2</td>
+                            </tr>
+                            <tr>
+                                <td>System Status</td>
+                                <td class="active number-format">Active</td>
+                            </tr>
+                            <tr>
+                                <td>Invoice Frequency</td>
+                                <td class="number-format">1/month</td>
+                            </tr>
+                            <tr>
+                                <td>Contract Number</td>
+                                <td class="number-format"> 16-106595</td>
+                            </tr>
+                            <tr>
+                                <td>Contract Status</td>
+                                <td class="expired number-format">Expired</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table-type_2">
+                            <tbody>
+                            <tr>
+                                <td>Lease Type</td>
+                                <td class="number-format">None</td>
+                            </tr>
+                            <tr>
+                                <td>Serial Number</td>
+                                <td class="number-format">39B2899</td>
+                            </tr>
+                            <tr>
+                                <td>MAC Address</td>
+                                <td class="number-format">00-50-60-81-0E-D2</td>
+                            </tr>
+                            <tr>
+                                <td>IP Address</td>
+                                <td class="number-format">10.1.180.11</td>
+                            </tr>
+                            <tr>
+                                <td>Alias</td>
+                                <td class="number-format">5134660</td>
+                            </tr>
+                            <tr>
+                                <td>Gatekeeper IP Adress</td>
+                                <td class="number-format">10.1.1.207</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion table-format blue-style">
+            <div class="accordion-header">
+                <a class="accordion-link" ui-sref="app.service({path:'Voice - Business Line', background: 'blue'})">
+                     Voice - Business Line
+                </a>
+                <div class="links-part">
+                    <a ui-sref="app.service({path:'Voice - Business Line', scrollTo: '#enquipment', background: 'blue'})">
+                        <span>Display enquipment</span>
+                        <img src="img/service-icon-1.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'Voice - Business Line', scrollTo: '#guide', background: 'blue'})">
+                        <span>User guide</span>
+                        <img src="img/service-icon-2.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'Voice - Business Line', scrollTo: '#configuration', background: 'blue'})">
+                        <span>Configuration</span>
+                        <img src="img/service-icon-3.png" alt="icon">
+                    </a>
+                    <a ui-sref="app.service({path:'Voice - Business Line', background: 'blue'})">
+                        <span>details</span>
+                        <img src="img/service-icon-4.png" alt="icon">
+                    </a>
+                </div>
+                <span class="accordion-btn tooltip-show" ng-class="{active: $ctrl.box7}" ng-click="$ctrl.box7=!$ctrl.box7; $ctrl.box6 = true; $ctrl.box5 = true;">
+                    <span class="tooltip-item">
+                      <h6>Collapse the widget</h6>
+                    </span>
+                </span>
+            </div>
+            <div class="accordion-content hidden-accordion" data-slide-toggle="$ctrl.box7">
+                <div class="row table-row tables-row bg-type">
+                    <div class="col-md-6">
+                        <table class="table-type_2">
+                            <tbody>
+                            <tr>
+                                <td>System Number</td>
+                                <td class="number-format">16999-7</td>
+                            </tr>
+                            <tr>
+                                <td>Software Version</td>
+                                <td class="number-format">F8.2</td>
+                            </tr>
+                            <tr>
+                                <td>System Status</td>
+                                <td class="active number-format">Active</td>
+                            </tr>
+                            <tr>
+                                <td>Invoice Frequency</td>
+                                <td class="number-format">1/month</td>
+                            </tr>
+                            <tr>
+                                <td>Contract Number</td>
+                                <td class="number-format">16-106595</td>
+                            </tr>
+                            <tr>
+                                <td>Contract Status</td>
+                                <td class="expired">Expired</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table-type_2">
+                            <tbody>
+                            <tr>
+                                <td>Lease Type</td>
+                                <td class="number-format">None</td>
+                            </tr>
+                            <tr>
+                                <td>Serial Number</td>
+                                <td class="number-format">39B2899</td>
+                            </tr>
+                            <tr>
+                                <td>MAC Address</td>
+                                <td class="number-format">00-50-60-81-0E-D2</td>
+                            </tr>
+                            <tr>
+                                <td>IP Address</td>
+                                <td class="number-format">10.1.180.11</td>
+                            </tr>
+                            <tr>
+                                <td>Alias</td>
+                                <td class="number-format">5134660</td>
+                            </tr>
+                            <tr>
+                                <td>Gatekeeper IP Adress</td>
+                                <td class="number-format">10.1.1.207</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <h1 class="auth-title auth-title-lg">
+                Resetting your password
+            </h1>
+            <div class="registration-step user-form">
+                <h3 class="step-title active">
+                    Please provide the following information connected to your account
+                </h3>
+                <form  name="varificationForm" class="step-form step-form-1 clearfix" novalidate>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="reg-user" class="simple-label simple-label-type_2">Username * :</label>
+                            <input class="simple-input simple-input-type_2" ng-minlength="5" id="reg-user" ng-required="true" ng-minlength="5" ng-model="$ctrlAuth.user.userName" type="text" required> 
+                            <span class="validation-tooltip"></span>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="reg-email" class="simple-label simple-label-type_2">Email * :</label>
+                            <input class="simple-input simple-input-type_2"  id="reg-email" ng-pattern="$ctrlAuth.emailFormat" type="email" ng-model="$ctrlAuth.user.userEmail" required>
+                            <span class="validation-tooltip"></span>
+                        </div>
+                    </div>
+                    <div class="center-btn">
+                        <input type="submit" class="app-btn app-btn-lg app-btn-lg_orange" value="Reset" ng-click="$ctrlAuth.resetPass(varificationForm)">
+                    </div>
+                </form>
+                <div class="valid-message" ng-show="$ctrlAuth.errorPopup">
+                    <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrlAuth.errorPopup}">
+                        <div class="app-popup-container-inner" >
+                            <div class="app-popup-text text-center">The account data is not correct. Please verify and try again.</div>
+                            <div class="text-center popup-small-btn">
+                                <a class="app-btn mt5" ng-click="$ctrlAuth.errorPopup = false">Ok</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="app-popup" ng-show="$ctrlAuth.success">
+    <div class="app-popup-container">
+        <div class="app-popup-container-inner" >
+            <img class="close-btn" ng-click="$ctrlAuth.success = false" src="img/close-btn.png" alt="icon">
+            <div class="popup-wrapp">
+                <div class="app-popup-text">Password reset requested</div>
+                <div class="text-left">   
+                <h4 class="caption">Password reset instructions text</h4>
+                <div class="simple-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit earum facilis ducimus, vel ullam architecto! Eum asperiores nam mollitia, temporibus eius blanditiis eligendi a voluptatum. Aut, porro perferendis deleniti architecto.</p>
+                </div>
+                <a href="#" class="link" ui-sref="app.new-pass">Click this link to reset your password</a>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>

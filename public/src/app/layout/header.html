@@ -1,0 +1,113 @@
+<header ng-controller="AuthCtrl as $ctrlAuth">
+  <div class="navigation-mobile"> 
+    <div class="container relative">
+        <div class="navbar-panel clearfix">
+            <a class="logo"
+               ui-sref="app.board">
+                <img class="logo-dark" src="img/logo.png" alt="logo">
+                <img class="logo-light" src="img/logo-light.png" alt="logo">
+            </a>
+            <nav class="nav">
+                <ul>
+                    <li>
+                        <a ui-sref-active="active" ui-sref="app.board">Dashboard</a>
+                    </li>
+                    <li>
+                        <a ui-sref-active="active" ui-sref="app.invoices">Invoices</a>
+                    </li>
+                    <li>
+                        <a ui-sref="app.serv" ng-class="{active: ('app.serv' | includedByState) || ('app.service' | includedByState)}">Services</a>
+                    </li>
+                    <li>
+                        <a ui-sref="app.pay" ng-class="{active: ('app.pay' | includedByState) || ('app.preauthorized' | includedByState)}">Payments</a>
+                    </li>
+                    <li>
+                        <a ui-sref="app.order" ng-class="{active: ('app.order' | includedByState) || ('app.detaiorder' | includedByState)}">Orders</a>
+                    </li>
+                    <li>
+                        <a ui-sref="app.tickets" ng-class="{active: ('app.tickets' | includedByState) || ('app.newticket' | includedByState) || ('app.detailticket' | includedByState)}">Tickets</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="lang-box lang-box-home">
+            <button class="lang-btn active">EN</button>
+            <span>/</span>
+            <button class="lang-btn">FR</button>
+            <a class="news-link scroll-to-elem" scroll-to-item scroll-to="#news" scroll-to-offset="0">What's new</a>
+        </div>
+        
+        <div class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+       
+    <div class="header-account-info header-account-info-mob">
+        <div class="container relative">
+            <h5 class="h-account-name">Internet Services:</h5>
+            <span class="h-account">Acc #: 010009876543</span>
+            <img class="mobile-arrow" src="img/mobile-arrow.png" alt="icon">
+        </div>
+    </div>
+    <div class="account-area">
+        <div class="top-likn">
+          <div class="lang-box">
+                <button class="lang-btn active">EN</button>
+                <span>/</span>
+                <button class="lang-btn">FR</button>
+          </div>
+        </div>
+        <div class="header-account-settings">
+          <div class="user-info hide-mobile">
+                <h5 class="h-user-name">ITW Consulting</h5>
+                <span class="h-address">Markham,On</span>
+          </div>
+          <div class="fl hover-item">  
+            <div class="header-account-info">
+                <h5 class="h-account-name">Internet Services:</h5>
+                <span class="h-account">Acc #: 010009876543</span>
+            </div>
+            <div class="arrow-icon">
+                <img src="img/icon-4.png" alt="icon">
+                <div class="accounts-select">
+                    <div class="select-account">Select an account</div>
+                    <div class="account-item active" >
+                        <h5>Internet Services:</h5>
+                        <span>Acc #: 010009876543</span>
+                    </div>
+                    <div class="account-item" >
+                        <h5>Long distance:</h5>
+                        <span>Acc #: 010009876541</span>
+                    </div>
+                    <div class="account-item">
+                        <h5>Voice services:</h5>
+                        <span>Acc #: 010009876542</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="avatar-icon">
+                <img src="img/avatar-icon.png" alt="avatar-icon">
+                <div class="user-info show-mobile">
+                    <h5 class="h-user-name">ITW Consulting</h5>
+                    <span class="h-address">Markham,On</span>
+                </div>
+                <ul class="account-menu">
+                    <li><a ui-sref="app.user" ng-class="{active: ('app.user' | includedByState) || ('app.newuser' | includedByState) || ('app.subaccount' | includedByState) || ('app.premissions' | includedByState)}">Users</a></li>
+                    <li><a ui-sref="app.settings" ng-class="{active: ('app.settings' | includedByState) || ('app.changepassword' | includedByState)}">Settings</a></li>
+                    <li><a ui-sref-active="active" ui-sref="app.logout-confirm">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+  </div>   
+</header>
+
+
+
+
+

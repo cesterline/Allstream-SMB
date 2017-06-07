@@ -1,0 +1,125 @@
+    
+<div class="mt-47">
+   <div class="container">
+       <div class="info-caption-bar-wrap"> 
+            <div class="info-caption-bar scroll-fix" fix-scroll-elem="fix-elem" data-offset="-90">
+              <div class="wrap-fix-content flex-align no-padd-top-xs">  
+                <div class="left-flex-align">
+                    <h3 class="caption">Sub-Accounts Visibility For</h3>
+                </div>
+                <div class="right-block">
+                    <select name="select-user" id="userSelect" ng-model="subuser" class="dropdown-select type-2">
+                        <option value="" selected>Firstname Lastname 1</a></option>
+                        <option value="">Firstname Lastname 2</option>
+                        <option value="">Firstname Lastname 3</option>
+                        <option value="">Firstname Lastname 4</option>
+                    </select>
+                    <i></i>
+                </div>
+              </div>     
+            </div>
+        </div>
+        <div class="empty-sm-30 empty-xs-30"></div>
+          <div class="table-button-bottom">
+            <div class="app-table-responsive">
+            <table class="table-user-setting table-tr-hover custome-layout-2">
+               <tr class="caption-tr caption-tr-style-1">
+                   <th class="tr-block col-1">    
+    
+                   </th>
+                   <th class="tr-block col-1">    
+                     <div class="caption">
+                         Account Name
+                     </div>
+                   </th>
+                   <th class="tr-block">    
+                     <div class="caption">
+                         Account Number
+                     </div> 
+                   </th>
+                   <th class="tr-block text-center">    
+                     <div class="caption">
+                         Account Visibility
+                     </div> 
+                   </th>
+                   <th class="tr-block col-1">    
+    
+                   </th>
+                </tr>
+                <tr ng-repeat="user in $ctrl.data"> 
+                  <td class="tr-block">
+                  </td> 
+                  <td class="tr-block"> 
+                      <div class="service-type account-name">
+                          <p>{{user.service}} Services</p>
+                      </div>
+                  </td> 
+                  <td class="tr-block">
+                     <b class="account-numb">{{user.number}}</b>
+                  </td>
+                  <td class="tr-block text-center">
+                      <label class="checkbox-entry type-3 save-click" for="#{{user.id}}" ng-click="$ctrl.addAccess(user)">
+                        <input type="checkbox" id="{{user.id}}" ng-checked="user.active">
+                          <i><b></b></i>
+                      </label>
+                      <div class="save-mess">
+                        Changes saved
+                      </div>
+                  </td>
+                  <td class="tr-block">
+                  </td>
+                </tr>
+            </table>
+            </div>
+            <div class="valid-message" ng-show="$ctrl.cancel">
+                <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.cancel}">
+                    <div class="app-popup-container-inner" >
+                        <img class="close-btn" ng-click="$ctrl.cancel = false" src="img/close-btn.png" alt="icon">
+                        <div class="app-popup-text text-center">Are you sure you want to discard the changes?</div>
+                        <div class="text-center two-button-wrapp mt-47">
+                            <a class="app-btn mt5" ui-sref="app.user">Yes</a>
+                            <a class="app-btn app-btn_grey mt5" ng-click="$ctrl.cancel = false">No</a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="valid-message" ng-show="$ctrl.save">
+                <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.save}">
+                    <div class="app-popup-container-inner" >
+                        <img class="close-btn" ng-click="$ctrl.save = false" src="img/close-btn.png" alt="icon">
+                        <div class="app-popup-text text-center">Are you sure you want to save your changes?</div>
+                        <div class="text-center two-button-wrapp mt-47">
+                            <a class="app-btn mt5" ui-sref="app.user">Yes</a>
+                            <a class="app-btn app-btn_grey mt5" ng-click="$ctrl.save = false">No</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="valid-message" ng-show="$ctrl.popup_grant">
+                <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.popup_grant}">
+                    <div class="app-popup-container-inner" >
+                        <img class="close-btn" ng-click="$ctrl.popup_grant = false" src="img/close-btn.png" alt="icon">
+                        <div class="app-popup-text text-center">Are you sure you want to grant access to the user?</div>
+                        <div class="text-center two-button-wrapp mt-47">
+                            <a class="app-btn mt5" ui-sref="app.user">Yes</a>
+                            <a class="app-btn app-btn_grey mt5" ng-click="$ctrl.popup_grant = false">No</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="valid-message" ng-show="$ctrl.popup_suspend">
+                <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.popup_suspend}">
+                    <div class="app-popup-container-inner" >
+                        <img class="close-btn" ng-click="$ctrl.popup_suspend = false" src="img/close-btn.png" alt="icon">
+                        <div class="app-popup-text text-center">Are you sure you want to suspend access for the user?</div>
+                        <div class="text-center two-button-wrapp mt-47">
+                            <a class="app-btn mt5" ui-sref="app.user">Yes</a>
+                            <a class="app-btn app-btn_grey mt5" ng-click="$ctrl.popup_suspend = false">No</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+   </div>
+</div>
+<div class="empty-sm-90 empty-xs-80"></div>

@@ -1,0 +1,335 @@
+<div class="container auth-view">
+    
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <h1 class="auth-title">
+                An easy, secure way to manage,
+                your services and view your bills online.
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+            <div class="registration-box">
+                <div class="registration-step">
+                    <h3 class="step-title" ng-class="{'active' : !$ctrlAuth.isVerify, 'disabled-step' : $ctrlAuth.isVerify}">
+                        <span ng-class="{'step-ready' : $ctrlAuth.isVerify}">1</span>
+                        Please verify account information
+                    </h3>
+                    <form name="varificationForm" class="step-form step-form-1 clearfix" novalidate>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="acc-num" class="simple-label simple-label-type_2">Account number * :</label>
+                                    <div class="auth-input-wrap"> 
+                                    <input class="simple-input simple-input-type_2" id="acc-num" ng-minlength="3" type="number" ng-model="$ctrlAuth.user.userAccountNumber" required>
+                                    <span class="validation-tooltip"></span>
+                                    </div>
+                                <div class="empty-sm-30 empty-xs-30"></div>    
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="inv-number" class="simple-label simple-label-type_2">Invoice number * :</label>
+                                    <div class="auth-input-wrap"> 
+                                    <input class="simple-input simple-input-type_2" id="inv-number" ng-minlength="3" ng-model="$ctrlAuth.user.userInvoiceNumber" type="number" required>
+                                    <span class="validation-tooltip"></span>
+                                    </div>
+                                <div class="empty-sm-30 empty-xs-30"></div>   
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="post-code" class="simple-label simple-label-type_2">Head Office Postal Code * :</label>
+                                    <div class="auth-input-wrap">  
+                                    <input class="simple-input  simple-input-type_2" id="post-code" ng-minlength="3" ng-model="$ctrlAuth.user.userPostCode" type="text" required>
+                                    <span class="validation-tooltip"></span>
+                                    </div> 
+                                <div class="empty-sm-30 empty-xs-30"></div> 
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="last-amount" class="simple-label simple-label-type_2">Last Paid Amount * :</label>
+                                    <div class="auth-input-wrap"> 
+                                    <input class="simple-input simple-input-type_2" id="last-amount"  ng-minlength="3" type="number" ng-model="$ctrlAuth.user.userPaid" required>
+                                    <span class="validation-tooltip"></span>
+                                    </div>
+                                <div class="empty-sm-30 empty-xs-30"></div> 
+                            </div>
+                        </div>
+                        <input type="submit" value="Continue" class="app-btn app-btn-lg app-btn-lg_orange" ng-click="$ctrlAuth.verify(varificationForm)">
+                        <div class="valid-message" ng-show="$ctrlAuth.errorPopup">
+                            <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrlAuth.errorPopup}">
+                                <div class="app-popup-container-inner" >
+                                    <div class="app-popup-text text-center">Account information is incorrect. Please verify and try again</div>
+                                    <div class="text-center popup-small-btn">
+                                        <a class="app-btn mt5" ng-click="$ctrlAuth.errorPopup = false">Ok</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="registration-step">
+                    <h3 class="step-title" ng-class="{'active' : $ctrlAuth.isVerify, 'disabled-step' : !$ctrlAuth.isVerify}">
+                        <span>2</span>
+                        Please fill in the registration form
+                    </h3>
+                    <form name="registartionForm" class="step-form step-form-2 clearfix z-hold" novalidate>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="reg-user" class="simple-label simple-label-type_2">Username * :</label>
+                                <div class="auth-input-wrap">
+                                <input class="simple-input simple-input-type_2" id="reg-user" ng-required="true" ng-minlength="5" ng-model="$ctrlAuth.user.userName" type="text" ng-focus="$ctrlAuth.clearErrorMess()" required>
+                                <span class="validation-tooltip"></span>
+                                </div>
+                                <div class="empty-sm-30 empty-xs-30"></div> 
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="reg-email" class="simple-label simple-label-type_2">Email * :</label>
+                                <div class="auth-input-wrap">
+                                <input class="simple-input simple-input-type_2" id="reg-email" ng-pattern="$ctrlAuth.emailFormat" type="email" ng-model="$ctrlAuth.user.userEmail" ng-focus="$ctrlAuth.clearErrorMess()" required>
+                                <span class="validation-tooltip"></span>
+                                </div>
+                                <div class="empty-sm-30 empty-xs-30"></div> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="reg-pass" class="simple-label simple-label-type_2">Password * :</label>
+                                <div class="auth-input-wrap">
+                                <button type="button" class="show-btn">Show</button>
+                                <input class="simple-input pass-input simple-input-type_2" id="reg-pass" ng-minlength="13" ng-model="$ctrlAuth.user.userPass" type="password" name="userpass" ng-focus="$ctrlAuth.clearErrorMess()" required>
+                                <div class="tooltip-block" ng-hide="$ctrlAuth.v() >= 2">
+                                    <h6>All passwords must include <span>at least three of the four</span> following: </h6>
+                                    <ul>
+                                        <li>13 or more characters</li>
+                                        <li>Upper & lowercase letters</li>
+                                        <li>At least one number (e.g. 0-9)</li>
+                                        <li>At least one special character
+                                            <i>(e.g., !$%^&*()_+|-={}[]:":'<>?,/)</i>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="validation-tooltip" ng-class="{'str' : $ctrlAuth.v() >= 2}"></span>
+                                </div>
+                                <div class="empty-sm-30 empty-xs-30"></div> 
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="reg-pass2" class="simple-label simple-label-type_2">Confirm password * :</label>
+                                <div class="auth-input-wrap">
+                                <button type="button" class="show-btn">Show</button>
+                                <input class="simple-input pass-input simple-input-type_2" id="reg-pass2" ng-minlength="13" ng-model="$ctrlAuth.user.userPassConfirm" name="userpassconfirm" type="password" ng-focus="$ctrlAuth.clearErrorMess()" required>
+                                <div class="tooltip-block">
+                                    <h5>Passwords should match</h5>
+                                </div>
+                                <span class="validation-tooltip" ng-class="{'str' : $ctrlAuth.user.userPass == $ctrlAuth.user.userPassConfirm}"></span>
+                                </div>
+                                <div class="empty-sm-30 empty-xs-30"></div> 
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="strength">
+                                    <h6>Password Strength:
+                                        <span ng-show="$ctrlAuth.v() == 1">Weak</span>
+                                        <span ng-show="$ctrlAuth.v() == 2">Medium</span>
+                                        <span ng-show="$ctrlAuth.v() >= 3">Strong</span>
+                                    </h6>
+                                    <div class="strength-progress">
+                                        <span ng-class="{'weak-pass' : $ctrlAuth.v() == 1, 'med-pass' : $ctrlAuth.v() == 2, 'strong-pass' : $ctrlAuth.v() >= 3}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="confirmation-wrapp">
+                            <input type="submit" class="app-btn app-btn-lg app-btn-lg_orange" ng-click="$ctrlAuth.registration(registartionForm)" value="SUBMIT"> 
+                        </div>
+                        <div class="valid-message" ng-show="$ctrlAuth.errorPopup">
+                            <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrlAuth.errorPopup}">
+                                <div class="app-popup-container-inner" >
+                                    <div class="app-popup-text text-center">Account information is incorrect. Please verify and try again</div>
+                                    <div class="text-center popup-small-btn">
+                                        <a class="app-btn mt5" ng-click="$ctrlAuth.errorPopup = false">Ok</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="valid-message" ng-show="$ctrlAuth.success">
+                           <div class="success-mess valid-mess register-success" ng-class="{'active':$ctrlAuth.success}">
+                              <div class="register-success-wrap">
+                               <div class="wrap-bg-1">
+                               <div class="empty-sm-15 empty-xs-15"></div> 
+                                <img src="img/logo-popup.png" alt="">
+                                <div class="empty-sm-15 empty-xs-15"></div>  
+                                <div class="icon-title text-center">
+                                  <img src="img/ok-icon.png" alt="">
+                                   <h3>Your Registration Submited Succesfully</h3>
+                                </div>
+                                <div class="empty-sm-20 empty-xs-20"></div> 
+                                    <div class="simple-text">
+                                       <p>Please check your email for a confirmation message or <a ng-click="$ctrlAuth.success = false">Return To Registration</a> form to correct your input if a mistake was made</p>
+                                    </div>
+                                <div class="empty-sm-30 empty-xs-30"></div> 
+                                </div>
+                                <div class="wrap-bg-2">
+                                  <div class="empty-sm-20 empty-xs-20"></div>     
+                                    <div class="icon-title text-center">
+                                      <img src="img/confirm.png" alt="">
+                                       <h4>Didn’t get email confirmation?</h4>
+                                    </div>
+                                    <div class="empty-sm-10 empty-xs-10"></div>
+                                    <a class="app-btn app-btn-lg app-btn-lg_orange" ng-click="$ctrlAuth.isResend = true">resend APPLICATION</a>
+                                    <div ng-show="$ctrlAuth.isResend">
+                                      <div class="empty-sm-20 empty-xs-20"></div>     
+                                         <div class="app-popup-text"></div>
+                                            <div class="icon-title text-center">
+                                               <h4>Please check your email!</h4>
+                                            </div>
+                                            <div class="empty-sm-15 empty-xs-15"></div> 
+                                              <a class="app-btn mt5" ng-click="$ctrlAuth.isResend = false">Ok</a>
+                                    </div>
+                                    <div class="empty-sm-35 empty-xs-30"></div>
+                                    
+                                 </div> 
+                                
+                              </div>       
+                            </div>  
+                        </div>
+                        <div class="valid-message" ng-show="$ctrlAuth.error2">
+                            <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrlAuth.error2}">
+                                <div class="app-popup-container-inner" >
+                                    <div class="app-popup-text text-center">Please make sure passwords match and try again</div>
+                                    <div class="text-center popup-small-btn">
+                                        <a class="app-btn mt5" ng-click="$ctrlAuth.error2 = false">Ok</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="valid-message" ng-show="$ctrlAuth.equalPass">
+                            <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrlAuth.equalPass}">
+                                <div class="app-popup-container-inner" >
+                                    <div class="app-popup-text text-center">Please make sure the new password matches the requirements.</div>
+                                    <div class="text-center popup-small-btn">
+                                        <a class="app-btn mt5" ng-click="$ctrlAuth.equalPass = false">Ok</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="login-box">
+                <h3>Already a user?</h3>
+                <form name="loginForm" novalidate>
+                  <div class="input-wrapper">   
+                    <label for="login-username" class="simple-label simple-label-type_2 light">Username :</label>
+                    <input class="simple-input simple-input-type_2 light" id="login-username" type="email" ng-model="$ctrlAuth.user.loginName" required>
+                  </div> 
+                  <div class="input-wrapper">       
+                    <label for="login-userpass" class="simple-label simple-label-type_2 light">Password :</label>
+                    <button type="button" class="show-btn">Show</button>
+                    <input class="simple-input simple-input-type_2 light" id="login-userpass" type="password" ng-model="$ctrlAuth.user.loginPass" required>
+                  </div>
+                  <div class="clearfix">    
+                    <div class="check-row fl">
+                        <label class="checkbox-entry light">
+                            <input type="checkbox"><span>Keep me logged in</span>
+                        </label>
+                    </div>
+                    <div class="fr">
+                        <input type="submit" class="app-btn btn-white-2" value="Login" ng-click="$ctrlAuth.loginForm(loginForm)">
+                    </div>
+                  </div>     
+                    <div class="empty-sm-30 empty-xs-30"></div> 
+                    <div class="forgot-area">
+                        <span>Forgot your <a ui-sref="app.reset-name">username</a> or <a ui-sref="app.reset-pass">password</a>?</span>
+                    </div>
+                </form>
+                <div class="valid-message" ng-show="$ctrlAuth.error">
+                    <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrlAuth.error}">
+                        <div class="app-popup-container-inner" >
+                            <div class="app-popup-text text-center">Account information is incorrect. Please verify and try again</div>
+                            <div class="text-center popup-small-btn">
+                                <a class="app-btn mt5" ng-click="$ctrlAuth.error = false">Ok</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <div id="news">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="auth-title">
+               What's new?
+            </h1>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="new-item">
+                <div class="image">
+                    <img src="img/news_img_1.jpg" alt="">
+                </div>
+                <div class="txt">
+                    <div class="caption">Title news here lorem ipsumm dollor sitt ammet</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur</p>
+                </div>
+            </div>
+          <div class="empty-sm-30 empty-xs-30"></div>    
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="new-item sm">
+                        <div class="image">
+                            <img src="img/news_img_2.jpg" alt="">
+                        </div>
+                        <div class="txt">
+                            <div class="caption">More news here dectus ipsum mass dolir sitt ammet</div>
+                            <p>Epsum dolor sit amet, consect</p>
+                        </div>
+                    </div> 
+                    <div class="empty-sm-30 empty-xs-30"></div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="new-item sm">
+                        <div class="image">
+                            <img src="img/news_img_3.jpg" alt="">
+                        </div>
+                        <div class="txt">
+                            <div class="caption">News here lorem ipsum mass dollor sitt ammet</div>
+                            <p>Lorem ipsum dolor sit amet, consect</p>
+                        </div>
+                    </div>
+                    <div class="empty-sm-30 empty-xs-30"></div> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="new-item sm">
+                        <div class="image">
+                            <img src="img/news_img_4.jpg" alt="">
+                        </div>
+                        <div class="txt">
+                            <div class="caption">Title here lorem ipsum ruxen gallor sitt apenduss</div>
+                            <p>Lorem ipsum dolor sit amet, consect</p>
+                        </div>
+                    </div>
+                    <div class="empty-sm-30 empty-xs-30"></div>  
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="new-item sm">
+                        <div class="image">
+                            <img src="img/news_img_5.jpg" alt="">
+                        </div>
+                        <div class="txt">
+                            <div class="caption">Customer lorem ipsum mass dollor sitt ammet</div>
+                            <p>Lorem ipsum dolor sit amet, consect</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+</div>
+

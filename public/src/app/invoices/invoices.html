@@ -1,0 +1,354 @@
+<div class="tab mt-47" ng-init="$ctrl.setPage()">
+    <div class="container">
+        <div class="info-caption-bar-wrap type-2"> 
+            <div class="info-caption-bar scroll-fix type-2" fix-scroll-elem="fix-elem" data-offset="-90">
+              <div class="wrap-fix-content flex-align">  
+                <div class="left-flex-align">
+                    <div ng-class="{active: $ctrl.isSet(1)}" ng-click="$ctrl.setTab(1)" class="tab-caption">Current
+                        Invoice
+                    </div>
+                    <div ng-class="{active: $ctrl.isSet(2)}" ng-click="$ctrl.setTab(2)" class="tab-caption">Invoice
+                        History
+                    </div>
+                </div>
+                <div class="right-block">
+                    <a class="app-btn btn-white app-btn-long" ui-sref="app.pay" href="#!/pay">PAY NOW</a> 
+                </div>
+              </div>     
+            </div>
+        </div>
+        
+    </div>
+        <div class="tab-content">
+            <div class="tab-content_item clearfix" ng-show="$ctrl.isSet(1)">
+               
+                <div class="container">
+                    <div class="invoice-info-container cleafix">
+                        <div class="invoice-info-box">
+                            <ul class="ul">
+                                <li><strong>Company:</strong> ABC Incorporated</li>
+                                <li><strong>Address:</strong> 9000 Street St. Suite 2001, Toronto, ON, M3D 1H3</li> 
+                            </ul>
+                        </div>
+                        <div class="invoice-info-box">
+                            <ul class="ul">
+                                <li><strong>Contract # :</strong> 1837</li>
+                                <li><strong>Billing Account # :</strong> 010009876543</li>
+                            </ul>
+                        </div>
+                        <div class="invoice-info-box">
+                            <ul class="ul">  
+                                 <li><strong>Invoice due date:</strong> November 30, 2016</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="current-invoice clearfix">
+                        <div class="current-invoice-head">
+                            <h3><span class="medium-font">Invoice #</span> 12090-01</h3>
+                        </div>
+                        <div class="current-invoice-detail">
+                            <div class="invoice-col flex-align">
+                              <div class="col-wrap">  
+                                <a class="app-btn btn-dark-grey type-download medium-font" target="_blank" href="pdf/info.pdf">DOWNLOAD INVOICE</a>
+                                <div class="empty-sm-15 empty-xs-15"></div>
+                                <a class="app-btn btn-dark-grey type-download medium-font" target="_blank" href="pdf/info.pdf" ng-click="$ctrl.setType('PDF', 'pdf/info.pdf')">DOWNLOAD CDR</a>
+                              </div>     
+                            </div>
+                            <div class="invoice-col invoice-col-current flex-align">
+                              <div class="col-wrap">     
+                                <span>Current Amount:</span>
+                                <div class="empty-sm-10 empty-xs-10"></div>
+                                <h3>$1,725.24</h3>
+                              </div>
+                            </div>
+                            <div class="invoice-col invoice-col-overdue flex-align">
+                              <div class="col-wrap">    
+                                <span>Overdue Amount:</span>
+                                <div class="empty-sm-10 empty-xs-10"></div>
+                                <h3>$173.50</h3>
+                              </div>
+                            </div>
+                            <div class="invoice-col invoice-col-overdue flex-align">
+                              <div class="col-wrap">    
+                                <span>Invoice Due Date:</span>
+                                <div class="empty-sm-10 empty-xs-10"></div>
+                                <h3>Nov 30 2016</h3>
+                              </div>
+                            </div>
+                            <div class="invoice-col invoice-col-status flex-align">
+                              <div class="col-wrap">   
+                                <span>Invoice Status:</span>
+                                <div class="empty-sm-10 empty-xs-10"></div>
+                                <h3>To Pay</h3>
+                                 <div class="empty-sm-15 empty-xs-15"></div>
+                                <a class="app-btn btn-white app-btn-long" ui-sref="app.pay" href="#!/pay">PAY NOW</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="invoice-section">
+                    <div class="container">
+                        <div class="table-info">
+                            <h2>Internet Services</h2>
+                            <p><strong>Billing period:</strong> Oct.1, 2016 – Oct. 31, 2016</p>
+                        </div>
+                        <div class="app-table-responsive">
+                            <table class="table-type_1 style-2">
+                                <tbody><tr class="caption-tr">
+                                    <th>Part #</th>
+                                    <th>Category</th>
+                                    <th>Service Description</th>
+                                    <th>Qty</th>
+                                    <th>Rate</th>
+                                    <th>Total Days</th>
+                                    <th>Charges</th>
+                                </tr>
+                                <tr>
+                                    <td class="number-format">INT1201</td>
+                                    <td>Business Internet</td>
+                                    <td>Business Internet</td>
+                                    <td>1</td>
+                                    <td class="number-format">$150.10</td>
+                                    <td>31</td>
+                                    <td class="number-format">$150.10</td>
+                                </tr>
+                                <tr>
+                                    <td class="number-format">INT1205</td>
+                                    <td>Ethernet</td>
+                                    <td>E100 Internet - Fixed 50Mbps</td>
+                                    <td>2</td>
+                                    <td class="number-format">$150.10</td>
+                                    <td>31</td>
+                                    <td class="number-format">$150.10</td>
+                                </tr>
+                                <tr>
+                                    <td class="number-format">INT1210</td>
+                                    <td>Miscellaneous</td>
+                                    <td>Business Internet</td>
+                                    <td>1</td>
+                                    <td class="number-format">$150.10</td>
+                                    <td>31</td>
+                                    <td class="number-format">$150.10</td>
+                                </tr>
+                                <tr>
+                                    <td class="number-format">INT1205</td>
+                                    <td>VoIP</td>
+                                    <td>Voice over IP</td>
+                                    <td>1</td>
+                                    <td class="number-format">$150.10</td>
+                                    <td>31</td>
+                                    <td class="number-format">$150.10</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                        <div class="total-invoice-table">
+                            Total:
+                            <span>$600.40</span>
+                        </div>
+
+                        <div class="table-info">
+                            <h2>Long Distance</h2>
+                            <p><strong>Billing period:</strong> Oct.1, 2016 – Oct. 31, 2016</p>
+                        </div>
+                        <div class="app-table-responsive">
+                            <table class="table-type_1 style-2">
+                                <tbody><tr class="caption-tr">
+                                    <th>Part #</th>
+                                    <th>Category</th>
+                                    <th>Service Description</th>
+                                    <th>Qty</th>
+                                    <th>Rate</th>
+                                    <th>Total Days</th>
+                                    <th>Charges</th>
+                                </tr>
+                                <tr>
+                                    <td class="number-format">INT1201</td>
+                                    <td>Business Internet</td>
+                                    <td>Business Internet</td>
+                                    <td>1</td>
+                                    <td class="number-format">$150.10</td>
+                                    <td>31</td>
+                                    <td class="number-format">$150.10</td>
+                                </tr>
+                                <tr>
+                                    <td class="number-format">INT1205</td>
+                                    <td>Ethernet</td>
+                                    <td>E100 Internet - Fixed 50Mbps</td>
+                                    <td>2</td>
+                                    <td class="number-format">$150.10</td>
+                                    <td>31</td>
+                                    <td class="number-format">$150.10</td>
+                                </tr>
+                                <tr>
+                                    <td class="number-format">INT1210</td>
+                                    <td>Miscellaneous</td>
+                                    <td>Business Internet</td>
+                                    <td>1</td>
+                                    <td class="number-format">$150.10</td>
+                                    <td>31</td>
+                                    <td class="number-format">$150.10</td>
+                                </tr>
+                                <tr>
+                                    <td class="number-format">INT1205</td>
+                                    <td>VoIP</td>
+                                    <td>Voice over IP</td>
+                                    <td>1</td>
+                                    <td class="number-format">$150.10</td>
+                                    <td>31</td>
+                                    <td class="number-format">$150.10</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="total-invoice-table">
+                            Total:
+                            <span>$1,000.05</span>
+                        </div>
+                    </div>
+                </section>
+                <div class="container sub-total-container">
+                    <div class="row">
+                        <div class="col-md-6 col-hidden"></div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="total-invoice-table sub-total">
+                                Subtotal:
+                                <span>$1,000.05</span>
+                            </div>
+                            <table class="table-type_2 mb-30">
+                                <tbody>
+                                <tr>
+                                    <td>HST (Ontario)</td>
+                                    <td class="number-format">$235.17</td>
+                                </tr>
+                                <tr>
+                                    <td>QST (Quebec)</td>
+                                    <td class="number-format">$44.08</td>
+                                </tr>
+                                <tr>
+                                    <td>PST (Manitoba)</td>
+                                    <td class="number-format">$12.00</td>
+                                </tr>
+                                <tr class="total-tr">
+                                    <td>Grand Total Current Charges</td>
+                                    <td class="number-format">$1,725.23</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="table-type_2">
+                                <tbody>
+                                <tr>
+                                    <td>Balance Forward</td>
+                                    <td class="number-format">$235.17</td>
+                                </tr>
+                                <tr>
+                                    <td>Payments / Adjustments</td>
+                                    <td class="active number-format">-$161.67</td>
+                                </tr>
+                                <tr class="total-tr total-tr-orange">
+                                    <td>Grand Total Current Charges</td>
+                                    <td class="number-format">$1,725.23</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="empty-sm-40 empty-xs-30"></div> 
+                    <div class="fr">
+                        <a class="app-btn app-btn-long" ui-sref="app.pay" href="#!/pay">PAY NOW</a> 
+                    </div>
+                    <div class="empty-sm-40 empty-xs-30"></div>
+                </div>
+            </div>
+            <div class="tab-content_item clearfix" ng-show="$ctrl.isSet(2)">
+                <div class="container">
+                    <div class="row">
+                       <div class="invoice-info-box custome-width">
+                            <ul class="ul">
+                                <li><strong>Company:</strong> ABC Incorporated</li>
+                                <li><strong>Address:</strong> 9000 Street St. Suite 2001, Toronto, ON, M3D 1H3</li>
+                            </ul>
+                       </div>
+                       <div class="invoice-info-box custome-width">
+                            <ul class="ul">
+                                <li><strong>Contract #:</strong> 1837</li>
+                                <li><strong>Billing Account # :</strong> 010009876543</li>
+                            </ul>
+                       </div>
+                    </div>
+                    <div class="empty-sm-10 empty-xs-10"></div> 
+                      <div class="input-icon">
+                         <span class="caption">From</span>
+                         <div class="in-icon">
+                            <div class="select-wrapp type-data-list">
+                                <select  ng-model="$ctrl.from_date">
+                                    <option ng-repeat="opt in $ctrl.dataInvoice" value="{{opt.date}}">{{opt.month}}</option>
+                                </select>
+                                <i></i>
+                            </div>
+                         </div>  
+                      </div>  
+                      <div class="input-icon"> 
+                         <span class="caption">To</span>  
+                         <div class="in-icon">
+                            <div class="select-wrapp type-data-list">
+                                <select ng-model="$ctrl.to_date" >
+                                    <option ng-repeat="opt in $ctrl.dataInvoice" value="{{opt.date}}">{{opt.month}}</option>
+                                </select>
+                                <i></i>
+                            </div>
+                         </div>
+                      </div>
+                      <form action="#" class="input-button">
+                        <input class="simple-input invoice-search" ng-model="$ctrl.searchInvoice" type="text" value="" placeholder="Type invoice number" required>
+                            <input type="submit" class="serch-btn-icon" value="">
+                      </form>
+                    <div class="empty-sm-40 empty-xs-30"></div> 
+                    <div class="app-table-responsive mb-40">
+                        <table class="table-type_1 table-layout style-2 hover-row last-col center-td">
+                            <tr class="caption-tr">
+                                <th><div class="th">Date 
+                                    <img ng-click="$ctrl.changeSorting('date')" class="filter-icon" src="img/filter-image2.png" alt="icon"></div>
+                                </th>
+                                <th class="number-format"><div class="th">Invoice # 
+                                    <img ng-click="$ctrl.changeSorting('invoice')" class="filter-icon" src="img/filter-image2.png" alt="icon"></div>
+                                </th>
+                                <th><div class="th">Account 
+                                    <img ng-click="$ctrl.changeSorting('account')" class="filter-icon" src="img/filter-image2.png" alt="icon"></div>
+                                </th>
+                                <th><div class="th">Amount 
+                                    <img ng-click="$ctrl.changeSorting('amount')" class="filter-icon" src="img/filter-image2.png" alt="icon"></div>
+                                </th>
+                                <th>Actions </th>
+                            </tr>
+                            <tr ng-repeat="data in filed = ($ctrl.dataInvoice | dateRange : $ctrl.from_date: $ctrl.to_date | orderBy:$ctrl.sort.column:$ctrl.sort.descending | filter:$ctrl.searchInvoice)">
+                                <td class="number-format">{{data.date}}</td>
+                                <td class="number-format">{{data.invoice}}</td>
+                                <td>{{data.account}}</td>
+                                <td class="number-format">${{data.amount}}</td>
+                                <td>
+                                 <div class="td-app-btn fr">
+                                  <a class="app-btn sm btn-grey-2" href="{{data.actions}}" target="_blank">download</a>
+                                 </div>  
+                                </td>
+                            </tr>
+                            <tr ng-show="!filed.length">
+                                <td>
+                                    No results found
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

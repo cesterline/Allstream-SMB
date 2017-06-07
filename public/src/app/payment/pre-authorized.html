@@ -1,0 +1,66 @@
+<div class="mt-47">
+   <div class="container">
+       <div class="row">
+         <div class="col-md-6 col-md-offset-3">
+           <div class="block-item clearfix">  
+              <div class="payment-process no-box">
+                <div class="text-center">
+                 <h3 class="h3 medium-font">Pre-authorized Payments</h3>  
+                </div>
+                <div class="empty-sm-30 empty-xs-30"></div> 
+                  <form novalidate name="addCardForm">  
+                    <div class="payment-process-inner">
+                        <label for="namecard" class="simple-label">Name on the card *</label>
+                        <input class="simple-input" id="namecard" type="text" ng-model="$ctrl.cardName" required>
+                        <div class="card-info clearfix">
+                            <div class="card-info-left card-info-left_lg">
+                                <label class="simple-label">Card Number *</label>
+                                <input class="simple-input" maxlength="16" minlength="12" type="number" ng-model="$ctrl.cardNumber" required>
+                            </div>
+                            <div class="card-info-right">
+                                <img class="banking-img" src="img/banking-icon.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="card-info clearfix">
+                            <div class="card-info-left card-info-left_sm fl">
+                                <label class="simple-label">Expiry Date *</label>
+                                <input class="simple-input simple-input-sm"  placeholder="MM" maxlength="2" type="text" ng-model="$ctrl.cardMM" ng-pattern="/[1-9]|1[012]/" required>
+                                <input class="simple-input simple-input-sm"  placeholder="YY" maxlength="4" type="text" ng-model="$ctrl.cardYY" min="2016" max="2050" required>
+                            </div>
+                            <div class="card-info-right relative fr">
+                                <label class="simple-label">CVV *</label>
+                                <input class="simple-input simple-input-sm" maxlength="3" type="text" ng-model="$ctrl.cardCvv" required>
+                                <img class="cvv-icon" src="img/cvv-icon.png" alt="icon">
+                                <div class="tooltip-block">
+                                    <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="empty-sm-30 empty-xs-30"></div>
+                        <div class="date-choose">
+                           <span>*Starts on<img src="img/calendar.png" alt="">repeats monthly</span>
+                        </div>
+                        <div class="empty-sm-10 empty-xs-10"></div>
+                    </div>
+                    <div class="empty-sm-30 empty-xs-30"></div>
+                    <input type="submit" value="Submit" class="app-btn app-btn-lg app-btn-lg_orange" ng-click="$ctrl.addCard(addCardForm)">
+                  </form>     
+            </div>
+            <div class="valid-message" ng-show="$ctrl.success">
+                <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrl.success}">
+                    <div class="app-popup-container-inner" >
+                        <img class="close-btn" ng-click="$ctrl.updateCardData()" src="img/close-btn.png" alt="icon">
+                        <div class="app-popup-text text-center" ng-show="!$ctrl.update">Thank you! Pre-authorized payments have been setup.</div>
+                        <div class="app-popup-text text-center" ng-show="$ctrl.update">Thank you! The information has been updated successfully</div>
+                        <div class="text-center mt-47 two-button-wrapp">
+                            <a class="app-btn" ng-click="$ctrl.updateCardData()">Ok</a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+           </div>
+         </div>
+       </div>
+   </div>
+</div>
+<div class="empty-sm-80 empty-xs-80"></div>

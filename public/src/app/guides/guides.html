@@ -1,0 +1,187 @@
+<section class="guide-section service-section">
+    <div class="container">
+        <div class="title-row">
+            <h2><img src="img/service-icon-2.png" alt="icon">User Guide</h2>
+            <ul class="balance-list custom-filter">
+                <li class="all" ng-class="{'active' : ($ctrl.blue && $ctrl.green && $ctrl.orange) }">
+                    <a ng-click="$ctrl.blue = true; $ctrl.green = true; $ctrl.orange = true;">All</a>
+                </li>
+                <li ng-class="{'active' : ($ctrl.blue && !$ctrl.green && !$ctrl.orange) }">
+                    <a ng-click="$ctrl.blue = true; $ctrl.green = false; $ctrl.orange = false;">Voice - Business Line</a>
+                </li>
+                <li ng-class="{'active' : (!$ctrl.blue && !$ctrl.green && $ctrl.orange) }">
+                    <a ng-click="$ctrl.orange = true; $ctrl.green = false; $ctrl.blue = false;">E100 Internet - Burstable</a>
+                </li>
+                <li ng-class="{'active' : (!$ctrl.blue && $ctrl.green && !$ctrl.orange) }">
+                    <a ng-click="$ctrl.green = true; $ctrl.orange = false; $ctrl.blue = false;">GigE Internet - Fixed 1000Mbps</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6" ng-show="$ctrl.blue">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.docx</span>
+
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        Installation Guide for First Time Users
+                    </h3>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6" ng-show="$ctrl.blue">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.pdf</span>
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        Setup Guide for Netgear NL-900
+                    </h3>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6" ng-show="$ctrl.blue">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.txt</span>
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        Read Me Document for Terabit System AM3D-90093E
+                    </h3>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6" ng-show="$ctrl.blue">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.xlsx</span>
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        Router Values for Optimal Performance
+                    </h3>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6" ng-show="$ctrl.green">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.docx</span>
+
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        2Installation Guide for First Time Users
+                    </h3>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6" ng-show="$ctrl.green">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.pdf</span>
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        2Setup Guide for Netgear NL-900
+                    </h3>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6" ng-show="$ctrl.green">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.txt</span>
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        2Read Me Document for Terabit System AM3D-90093E
+                    </h3>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6" ng-show="$ctrl.green">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.xlsx</span>
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        2Router Values for Optimal Performance
+                    </h3>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6" ng-show="$ctrl.orange">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.docx</span>
+
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        3Installation Guide for First Time Users
+                    </h3>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6" ng-show="$ctrl.orange">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.pdf</span>
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        3Setup Guide for Netgear NL-900
+                    </h3>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6" ng-show="$ctrl.orange">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.txt</span>
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        3Read Me Document for Terabit System AM3D-90093E
+                    </h3>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6" ng-show="$ctrl.orange">
+                <a class="guide-box" download href="pdf/info.pdf">
+                    <div class="guide-box-type">
+                        <span>.xlsx</span>
+                        <div class="guide-box-icon">
+                            <img src="img/icon-download.png" alt="icon">
+                        </div>
+                    </div>
+                    <h3 class="guide-title">
+                        3Router Values for Optimal Performance
+                    </h3>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>

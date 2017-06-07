@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <h1 class="auth-title auth-title-lg">
+                Resetting your password
+            </h1>
+            <div class="registration-step user-form">
+                <h3 class="step-title active">
+                   Please create a new password
+                </h3>
+                <form  name="varificationPassword" class="step-form step-form-1 clearfix" novalidate>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="reg-pass" class="simple-label simple-label-type_2">Password * :</label>
+                            <div class="auth-input-wrap"> 
+                            <button type="button" class="show-btn">Show</button>
+                            <input class="simple-input pass-input simple-input-type_2" id="reg-pass" ng-minlength="13" ng-model="$ctrlAuth.user.userPass" type="password" name="Pass" required>
+                            <div class="tooltip-block">
+                                <h6>All passwords must include <span>at least three of the four</span> following: </h6>
+                                <ul>
+                                    <li>13 or more characters</li>
+                                    <li>Upper & lowercase letters</li>
+                                    <li>At least one number (e.g. 0-9)</li>
+                                    <li>At least one special character
+                                        <i>(e.g., !$%^&*()_+|-={}[]:":'<>?,/)</i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="validation-tooltip" ng-class="{'str' : $ctrlAuth.v() >= 2}"></span>
+                            </div>
+                            <div class="empty-sm-30 empty-xs-30"></div> 
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="reg-pass2" class="simple-label simple-label-type_2">Confirm password * :</label>
+                            <div class="auth-input-wrap">
+                            <button type="button" class="show-btn">Show</button>
+                            <input class="simple-input pass-input simple-input-type_2" id="reg-pass2" ng-minlength="13" ng-model="$ctrlAuth.user.userPassConfirm" type="password" name="confirmPass" required>
+                            <div class="tooltip-block">
+                                <h5>Passwords should match</h5>
+                            </div>
+                            <span class="validation-tooltip" ng-class="{'str' : $ctrlAuth.user.userPass == $ctrlAuth.user.userPassConfirm}"></span>
+                            </div>
+                            <div class="empty-sm-30 empty-xs-30"></div> 
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="strength ">
+                                <h6>Password Strength:
+                                    <span ng-show="$ctrlAuth.v() == 1">Weak</span>
+                                    <span ng-show="$ctrlAuth.v() == 2">Medium</span>
+                                    <span ng-show="$ctrlAuth.v() >= 3">Strong</span>
+                                </h6>
+                                <div class="strength-progress">
+                                    <span ng-class="{'weak-pass' : $ctrlAuth.v() == 1, 'med-pass' : $ctrlAuth.v() == 2, 'strong-pass' : $ctrlAuth.v() >= 3}"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="center-btn mar-top-40">
+                        <input type="submit" class="app-btn app-btn-lg app-btn-lg_orange" ng-click="$ctrlAuth.createPass(varificationPassword)" value="Submit">
+                    </div>
+                </form>
+                
+                <div class="valid-message" ng-show="$ctrlAuth.error">
+                    <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrlAuth.error}">
+                        <div class="app-popup-container-inner" >
+                            <div class="app-popup-text text-center">Please make sure passwords match and try again</div>
+                            <div class="text-center popup-small-btn">
+                                <a class="app-btn mt5" ng-click="$ctrlAuth.error = false">Ok</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="valid-message" ng-show="$ctrlAuth.equalPass">
+                    <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrlAuth.equalPass}">
+                        <div class="app-popup-container-inner" >
+                            <div class="app-popup-text text-center">Please make sure the new password matches the requirements.</div>
+                            <div class="text-center popup-small-btn">
+                                <a class="app-btn mt5" ng-click="$ctrlAuth.equalPass = false">Ok</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="valid-message" ng-show="$ctrlAuth.errorPopup">
+                    <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrlAuth.errorPopup}">
+                        <div class="app-popup-container-inner" >
+                            <div class="app-popup-text text-center">Account information is incorrect. Please verify and try again</div>
+                            <div class="text-center popup-small-btn">
+                                <a class="app-btn mt5" ng-click="$ctrlAuth.errorPopup = false">Ok</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        

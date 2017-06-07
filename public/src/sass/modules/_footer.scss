@@ -1,0 +1,70 @@
+footer {
+    position: relative;
+	background: url("../img/footer-bg.png") repeat-x;
+	min-height: 79px;
+	padding-top: 36px;
+	margin-top: -79px;
+    & .container {position: relative;}
+	@media screen and (max-width:992px) {
+		background: #262526;
+	}
+	@media screen and (max-width:550px) {
+		min-height: 111px;
+		background-size: cover;
+	}
+	@media screen and (max-width:455px) {
+		padding-top: 31px;
+	}
+}
+
+.copy {
+	color: #aaaaaa;
+	font-size: 13px;
+	float: left;
+	letter-spacing: 1px;
+	@media screen and (max-width:992px) {
+		span {
+			display: none;
+		}
+	}
+	@media screen and (max-width:550px) {
+		float: none;
+		text-align: center;
+		width: 100%;
+		font-size: 15px;
+	}
+}
+
+.footer-link {
+	float: right;
+	font-size: 13px;
+	color: #aaaaaa;
+	letter-spacing: 1px;
+	cursor: pointer;
+	@extend .transition-color;
+	&:hover {
+		color: #f57f1f;
+		text-decoration: none;
+	}
+	@media screen and (max-width:550px) {
+		float: none;
+		text-align: center;
+		width: 100%;
+		display: block;
+		font-size: 15px;
+		margin-top: 9px;
+	}
+}
+.chat-block {position: relative; float: right; min-width: 140px; height: 90px; background: #343435; text-align: center; display: block; padding: 15px 10px; transition: all 0.35s ease-out; -webkit-transition: all 0.35s ease-out;-ms-transition: all 0.35s ease-out;}
+.chat-block span {color: #f57f1f; font-size: 13px; line-height: 14px; display: block;}
+.chat-block img {position: relative; display: block; margin: 0 auto; opacity: 0.5; transition: all 0.35s ease-out; -webkit-transition: all 0.35s ease-out;-ms-transition: all 0.35s ease-out;}
+.chat-block:hover {background: #272728;}
+.chat-block:hover img {opacity: 1;}
+.chat-block-wrapp {position: fixed; z-index: 500; right: 0%; bottom: 0px;}
+.chat-block-wrapp.fix-bottom {bottom: 79px; position: absolute;}
+
+@media screen and (max-width:992px) { 
+    .chat-block {height: 60px; width: 60px; min-width: inherit;}
+    .chat-block span {display: none;}
+    .chat-block img {max-width: 40px;}
+}

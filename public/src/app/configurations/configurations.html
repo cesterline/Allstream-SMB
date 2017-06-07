@@ -1,0 +1,48 @@
+<section class="service-section table-section bg-grey" id="configuration">
+    <div class="container">
+        <div class="title-row">
+            <h2><img src="img/service-icon-3.png" alt="icon">Configurations</h2>
+            <ul class="balance-list custom-filter">
+                <li class="all" ng-class="{'active' : ($ctrl.blue && $ctrl.green && $ctrl.orange) }">
+                    <a ng-click="$ctrl.blue = true; $ctrl.green = true; $ctrl.orange = true;">All</a>
+                </li>
+                <li ng-class="{'active' : ($ctrl.blue && !$ctrl.green && !$ctrl.orange) }">
+                    <a ng-click="$ctrl.blue = true; $ctrl.green = false; $ctrl.orange = false;">Voice - Business Line</a>
+                </li>
+                <li ng-class="{'active' : (!$ctrl.blue && !$ctrl.green && $ctrl.orange) }">
+                    <a ng-click="$ctrl.orange = true; $ctrl.green = false; $ctrl.blue = false;">E100 Internet - Burstable</a>
+                </li>
+                <li ng-class="{'active' : (!$ctrl.blue && $ctrl.green && !$ctrl.orange) }">
+                    <a ng-click="$ctrl.green = true; $ctrl.orange = false; $ctrl.blue = false;">GigE Internet - Fixed 1000Mbps</a>
+                </li>
+            </ul>
+        </div>
+        <div class="app-table-responsive">
+            <table class="table-type_1">
+                <tr class="caption-tr">
+                    <th>Product Name <img ng-click="$ctrl.changeSorting('product')"
+                                          class="filter-icon" src="img/filter-image.png" alt="icon"></th>
+                    <th>Description <img ng-click="$ctrl.changeSorting('desc')"
+                                         class="filter-icon" src="img/filter-image.png" alt="icon"></th>
+                    <th>Qty.</th>
+                    <th>Ship Date <img ng-click="$ctrl.changeSorting('ship')"
+                                       class="filter-icon" src="img/filter-image.png" alt="icon"></th>
+                    <th>Eff Date <img ng-click="$ctrl.changeSorting('eff')"
+                                      class="filter-icon" src="img/filter-image.png" alt="icon"></th>
+                    <th>Order # <img ng-click="$ctrl.changeSorting('order')"
+                                     class="filter-icon" src="img/filter-image.png" alt="icon"></th>
+                    <th>Contact</th>
+                </tr>
+                <tr ng-repeat="data in $ctrl.data2 | orderBy:$ctrl.sort.column:$ctrl.sort.descending"  ng-show="$ctrl.{{data.color}}" >
+                    <td ><span class="{{data.color}}"></span>{{data.product}}</td>
+                    <td>{{data.desc}}</td>
+                    <td>{{data.qty}}</td>
+                    <td class="number-format">{{data.ship}}</td>
+                    <td class="number-format">{{data.eff}}</td>
+                    <td class="number-format">{{data.order}}</td>
+                    <td>{{data.contact}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>

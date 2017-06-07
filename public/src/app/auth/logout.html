@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <h1 class="auth-title auth-title-lg">
+                Thank you for using ASAP+
+            </h1>
+            <div class="registration-step user-form">
+                <h3 class="step-title active">
+                    Changed your mind?
+                </h3>
+                <form name="loginForm" class="step-form step-form-1 clearfix" novalidate>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="reg-user" class="simple-label simple-label-type_2">Username * :</label>
+                            <input class="simple-input simple-input-type_2" ng-model="$ctrlAuth.user.userName" id="reg-user" type="email" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="reg-pass" class="simple-label simple-label-type_2">Password * :</label>
+                            <button type="button" class="show-btn">Show</button>
+                            <input class="simple-input pass-input simple-input-type_2" ng-model="$ctrlAuth.user.userPass" id="reg-pass" type="password" required>
+                        </div>
+                     </div>
+                    <div class="check-row login-check">
+                        <label class="checkbox-entry light">
+                            <input type="checkbox"><span>Keep me logged in</span>
+                        </label>
+                    </div>
+                    <div class="center-btn">
+                        <input type="submit" class="app-btn app-btn-lg app-btn-lg_orange" value="Login" ng-click="$ctrlAuth.loginForm(loginForm)">
+                    </div>
+                    <div class="forgot-area login-forgot-area">
+                       <span>Forgot your password? <a ui-sref="app.reset-pass">Click here</a> to restore.</span>
+                       <span>Forgot your username? <a ui-sref="app.reset-name">Click here</a> to restore.</span>
+                    </div>
+                </form>
+                <div class="valid-message" ng-show="$ctrlAuth.error">
+                    <div class="success-mess valid-mess flex-width-align" ng-class="{'active':$ctrlAuth.error}">
+                        <div class="app-popup-container-inner" >
+                            <div class="app-popup-text text-center">The account data is not correct. Plase verify and try again.</div>
+                            <div class="text-center popup-small-btn">
+                                <a class="app-btn mt5" ng-click="$ctrlAuth.error = false">Ok</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

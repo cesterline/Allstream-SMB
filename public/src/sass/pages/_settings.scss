@@ -1,0 +1,209 @@
+.settings-container {
+	padding-top: 50px;
+	padding-bottom: 60px;
+}
+
+.info-block {
+	h4 {
+		font-size: 18px;
+		font-family: 'HelveticaNeue-Medium';
+		color: #f57f1f;
+		margin-top: 15px;
+		letter-spacing: 0.5px;
+		&:first-of-type {
+			margin-top: 0;
+		}
+		& + ul {
+			margin-top: 10px;
+		}
+	}
+}
+
+.edit-link {
+	display: inline-block;
+	width: 20px;
+    vertical-align: middle;
+    margin-left: 10px;
+	cursor: pointer;
+	height: 20px;
+	transition: opacity 0.4s ease;
+    -webkit-transition: opacity 0.4s ease;
+	img {
+		width: 20px;
+		height: 20px;
+	}
+	&:hover {
+		opacity: 0.7;
+	}
+}
+.column-row {display: -moz-box;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;}
+
+.column-row > div[class*="col"] {position: relative;
+    -moz-box-flex: 1;
+    -webkit-flex: auto;
+    -moz-flex: auto;
+    -ms-flex: auto;
+    flex: auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex; 
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    
+}
+
+.upload-image-form {text-align: center;}
+.app-btn {line-height: 13px;}
+.upload-avatar {margin-top: 40px;}
+.upload-img {position: relative; display: inline-block;}
+.upload-img input {position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 5; cursor: pointer; opacity: 0;}
+.uplad-server {margin-left: 20px;}
+.avatar-img {position: relative; width: 100px; height: 100px; border-radius: 50%; overflow: hidden; display: block; margin: 0 auto 50px;
+    & .bg {position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background-position: center center; background-size: cover;}
+}
+
+
+.row-tr {position: relative; width: 100%; clear: both; margin-bottom: 15px; font-size: 0px;}
+.col-20 {position: relative; float: left; width: 20%;}
+.col-16 {position: relative; float: left; width: 16%;}
+.row-tr .col-20, .row-tr .col-16 {vertical-align: middle; display: inline-block; float: none;}
+.acc-check p {display: none;}
+.acc-caption {text-align: center; position: relative; width: 100%;}
+.acc-caption-bar {position: relative; padding-left: 20%; width: 100%; text-align: center; margin-bottom: 15px; display: inline-block;}
+.acc-check {text-align: center;}
+.account-notifications {width: 100%;}
+.info-block.lg {max-width: 800px;}
+.acc-check .checkbox-entry {display: block; margin: 0 auto; width: 16px; height: 16px; }
+.acc-check .checkbox-entry input {display: none;}
+.acc-check .checkbox-entry span {display: block; margin: 0px; top: 0px; width: 16px; height: 16px; position: relative;}
+.acc-check .checkbox-entry span:before, .acc-check .checkbox-entry span:after {left: 0px; top: 0px;}
+.acc-caption {font-size: 14px;}
+.account-name {font-size: 14px;
+    & b {font-weight: 700; line-height: 20px;}
+    & p {font-size: 14px;}
+}
+
+.info-block {position: relative;}
+.info-block.type-2 {width: 100%; float: left; max-width: 100%; margin-bottom: 30px;}
+.info-block.type-2 h2 {margin-top: 0px;}
+.info-block.type-2 .caption {font-size: 18px;}
+.info-block.type-2 .caption .edit-link {float: right;}
+.info-block.type-2 .simple-label {margin-top: 30px;}
+.style-popup-form .change-pass-form {text-align: left;}
+.style-popup-form .simple-input {font-size: 21px; color: #414042;}
+.two-button-wrapp .app-btn {margin: 0 5px; width: auto;}
+.info-block .col-50 {width: 50%; float: left; padding: 0 15px;}
+
+.app-popup-text.no-padd {padding: 0px;}
+
+.settings-container .column-row > div[class*="col"] {flex-direction: row;}
+.info-block .account-info h4 {margin-top: 0px;}
+.info-setting-title {position: relative; padding: 15px 30px; min-height: 70px; box-shadow: 2px 1px 8px rgba(23, 28, 30, 0.2); border-left: 4px solid #f57f20; transition: all 0.2s ease-out;}
+.info-setting-title .title {font-size: 27px; color: #6d6e71;}
+.info-setting-title .edit-button {position: absolute; right: 25px; top: 20px; opacity: 0;}
+.info-setting-title.active {background: #f57f20;}
+.info-setting-title.active .title {color: #fff;}
+.info-setting-title.active .edit-button {opacity: 1;}
+.edit-button .app-btn {display: inline-block; vertical-align: middle; margin-right: 30px; opacity: 0; transform: translateX(30px); transition: all 0.2s ease-out 0.1s;}
+.edit-button .discard-change {display: inline-block; vertical-align: middle; cursor: pointer; opacity: 0; transform: translateX(30px); transition: all 0.2s ease-out 0.25s;}
+.info-setting-title.active .edit-button .app-btn, .info-setting-title.active .edit-button .discard-change {transform: translateX(0px); opacity: 1;}
+.setting-block.info-block {padding: 0px!important;}
+.setting-block-content {padding: 40px;}
+.setting-block-field {position: relative; width: 100%; border-bottom: 1px solid #dddedf; display: flex; align-items: center; justify-content: flex-start; padding: 10px 30px;}
+.setting-block-field .right-align {right: 15px; top: 13px;}
+.setting-block-field input[type="password"] {width: 100%; padding-right: 135px;}
+.setting-block-field input {font-size: 24px; color: #6d6e71; border: 0 none;}
+.set-label {font-size: 15px; line-height: 23px; color: #343435; min-width: 100px; text-align: left;}
+
+.new-avatart {position: relative; width: 75px; height: 75px; border-radius: 50%; border: 1px solid #d9d9da; cursor: pointer;}
+.new-avatart img {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+.new-avatart .list {position: absolute; left: -100px; top: 100%; background: #1e1e1e; padding: 5px 10px; min-width: 205px; z-index: 50; text-align: left; margin-top: -10px;}
+.new-avatart .list li {font-size: 14px; line-height: 14px; border-bottom: 1px solid #2d2d2d; display: inline-block; width: 100%; padding: 20px 15px; color: #fff; transition: all 0.35s ease;} 
+.new-avatart .list li:last-child {border-bottom: 0 none;}
+.new-avatart .list li:hover {color: #f57f1f;}
+.new-avatart .bg {position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background-size: cover; background-position: center center; overflow: hidden; border-radius: 50%; background-repeat: no-repeat;}
+.new-avatart .bg.bg-def {background-size: 40px 32px;}
+.error-ava {padding-left: 15px; font-size: 15px; color: #343435;}
+
+.company-info {background: #343435;}
+.company-info .info-setting-title {box-shadow: none;}
+.company-info .info-setting-title .title {color: #fff;}
+.account-list-info ul {list-style: none;}
+.account-list-info li {color: #fff; font-size: 16px; color: #fff; display: flex; align-content: center; justify-content: flex-start; padding: 10px 0px;}
+.account-list-info li:before {display: none;}
+.account-list-info li span {min-width: 150px; display: block; font-family: 'HelveticaNeue-Medium';}
+.account-list-info li p {color: #fff; display: block;}
+
+.title-border {position: relative; padding: 0 0 10px; font-size: 15px; line-height: 18px; font-family: 'HelveticaNeue-Medium'; color: #6d6e71; border-bottom: 1px solid #dddedf; margin-bottom: 10px;} 
+.main-col-text select, .main-col-text input {color: #f57f1f; font-family: 'HelveticaNeue-Medium';}
+.main-col-text input::-webkit-input-placeholder {color:#f57f1f;}
+.main-col-text input::-moz-placeholder          {color:#f57f1f;}
+.main-col-text input:-moz-placeholder           {color:#f57f1f;}
+.main-col-text input:-ms-input-placeholder      {color:#f57f1f;}
+
+.edit-icon {position: absolute; right: 15px; top: 50%;margin-top: -20px; z-index: 5; cursor: pointer;}
+.info-setting-title.active .edit-icon {opacity: 0; visibility: hidden;}
+.right-block-vis {opacity: 1!important;}
+.account-info a {color: inherit; transition: all 0.35s ease-out;}
+.account-info a:hover {color: #f57f1f;}
+.save-mess {position: relative; margin: 15px 0px 0px; font-size: 14px; display: none; color: #f57f1f!important;}
+.tr-block .save-mess {position: absolute; left: 0px; bottom: 6px; width: 100%; text-align: center; white-space: nowrap; margin: 0px; font-size: 12px;}
+.tr-block {position: relative;}
+.img-card {margin-left: 15px;}
+.tooltip-block.type-2 {top: 15px;}
+
+@media screen and (max-width: 550px) {
+	.title {
+		font-size: 28px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+    .info-block .col-50 {width: 100%;}
+    .upload-avatar {margin: 30px 0px;}
+    .account-info .col-md-6 {width: 100%;}
+}
+
+@media screen and (max-width: 992px) {
+    .md-row-block {display: block!important;}
+}
+
+@media screen and (max-width: 768px) {
+    .acc-caption-bar {display: none;}
+    .row-tr .col-20 {width: 100%;}
+    .account-name {margin-bottom: 20px;}
+    .row-tr {display: inline-block; width: 50%; clear: none; float: left;}
+    .row-tr .col-20, .row-tr .col-16 {display: block; float: left;}
+    .row-tr .col-16  {width: 100%; min-height: 60px;}
+    .acc-check p {display: block; margin-bottom: 10px;}
+    .acc-check .checkbox-entry {margin: 0px;}
+    .acc-check {text-align: left;}
+    
+}
+@media screen and (max-width: 480px) {
+    .row-tr, .setting-block-field input {width: 100%;}
+    .setting-block-field input[type="password"] {padding-right: 0px;}
+    .info-block, .setting-block-content {padding: 30px 15px;}
+    .setting-block-field {padding: 10px 15px; flex-direction: column; display: block; float: left; width: 100%;}
+    .setting-block-field input {font-size: 22px; line-height: 22px;}
+    .set-label {min-width: 100%; margin-bottom: 10px;}
+    .new-avatart .list {left: 0px;}
+    .uplad-server {margin-left: 0px; float: left; margin-top: 10px;}
+    .info-setting-title .title {font-size: 20px;}
+    .info-setting-title {padding: 15px;}
+    .settings-container {padding-top: 30px;}
+    .info-setting-title .edit-button {right: 15px;}
+    .edit-button .app-btn {margin-right: 15px;}
+    
+}
